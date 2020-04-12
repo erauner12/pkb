@@ -1,37 +1,36 @@
-## Welcome to GitHub Pages
+---
+title: ""
+---
 
-You can use the [editor on GitHub](https://github.com/erauner12/wiki.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+## Programming
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+- [Architecture](/pkb/programming/architecture/index)
+- [Basic](/pkb/programming/basic/index)
+- [Book](/pkb/programming/book/index)
+- [C](/pkb/programming/c/index)
+- [Course](/pkb/programming/course/index)
+- [Cpp](/pkb/programming/cpp/index)
+- [Database](/pkb/programming/database/index)
+- [Devops](/pkb/programming/devops/index)
+- [Go](/pkb/programming/go/index)
+- [Interview](/pkb/programming/interview/index)
+- [Javascript](/pkb/programming/javascript/index)
+- [Language](/pkb/programming/language/index)
+- [Linux](/pkb/programming/linux/index)
+- [Misc](/pkb/programming/misc/index)
+- [Php](/pkb/programming/php/index)
+- [Python](/pkb/programming/python/index)
+- [Ruby](/pkb/programming/ruby/index)
+- [Tool](/pkb/programming/tool/index)
+- [Web](/pkb/programming/web/index)
 
-### Markdown
+## General
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/erauner12/wiki.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- [Book](/pkb/general/book/index)
+- [English](/pkb/general/english/index)
+- [French](/pkb/general/french/index)
+- [Japanese](/pkb/general/japanese/index)
+- [Misc](/pkb/general/misc/index)
+- [Photography](/pkb/general/photography/index)
+- [Scrap](/pkb/general/scrap/index)
+- [Video](/pkb/general/video/index)

@@ -1,5 +1,13 @@
-theme: jekyll-theme-midnight
+title: Personal Knowledge Base
 
-title: Welcome to my homepage
+theme: minima
+header_pages:
+  - index.md
+  - search.html
 
-description: feel free to boomark
+# Search settings, see https://github.com/jekylltools/jekyll-tipue-search
+tipue_search:
+  include:
+    pages: true
+  exclude:
+    files: [index.md, search.html]
