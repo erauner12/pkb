@@ -1,8 +1,9 @@
+---
+title: ""
+---
 
 ## Programming / C
 
-- [C++](/pkb/programming/c/c++.html)
-- [C++ Library](/pkb/programming/c/c++_library.html)
 - [C](/pkb/programming/c/c.html)
 - [C Library](/pkb/programming/c/c_library.html)
 - [C Scrap](/pkb/programming/c/c_scrap.html)

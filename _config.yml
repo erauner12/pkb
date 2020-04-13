@@ -1,1 +1,13 @@
-theme: jekyll-theme-cayman
+title: Personal Knowledge Base
+
+theme: minima
+header_pages:
+  - index.md
+  - search.html
+
+# Search settings, see https://github.com/jekylltools/jekyll-tipue-search
+tipue_search:
+  include:
+    pages: true
+  exclude:
+    files: [index.md, search.html]
