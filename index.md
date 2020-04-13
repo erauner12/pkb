@@ -2,7 +2,7 @@
 title: ""
 ---
 
-## Programming
+## Labs
 
 - [Basic](/pkb/programming/basic/index)
 - [Book](/pkb/programming/book/index)
