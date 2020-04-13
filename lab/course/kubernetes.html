@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-04-13 Mon 14:47 -->
+<!-- 2020-04-13 Mon 15:59 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Kubernetes</title>
@@ -239,33 +239,33 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org6861664">1. Links</a></li>
-<li><a href="#org66f1127">2. Commands</a>
+<li><a href="#org02f8bef">1. Links</a></li>
+<li><a href="#org5cb2326">2. Commands</a>
 <ul>
-<li><a href="#org500f5e1">2.1. kubernetes</a></li>
-<li><a href="#orgb6a4d4b">2.2. docker</a></li>
+<li><a href="#orgcd53ee1">2.1. kubernetes</a></li>
+<li><a href="#org9caf3f1">2.2. docker</a></li>
 </ul>
 </li>
-<li><a href="#org0f8148e">3. Docker and Kubernetes: The Big Picture</a>
+<li><a href="#org86e6e48">3. Docker and Kubernetes: The Big Picture</a>
 <ul>
-<li><a href="#orgb917423">3.1. Containers: Primer</a>
+<li><a href="#org939d9a7">3.1. Containers: Primer</a>
 <ul>
-<li><a href="#org14cf666">3.1.1. Hello VMWare</a></li>
-<li><a href="#org1459be3">3.1.2. Containers</a></li>
-<li><a href="#org26bca67">3.1.3. build a docker container</a></li>
+<li><a href="#orge1d2976">3.1.1. Hello VMWare</a></li>
+<li><a href="#org926baf7">3.1.2. Containers</a></li>
+<li><a href="#org8f93fa0">3.1.3. build a docker container</a></li>
 </ul>
 </li>
-<li><a href="#org2962169">3.2. Kubernetes</a>
+<li><a href="#orgf161931">3.2. Kubernetes</a>
 <ul>
-<li><a href="#org9a0b252">3.2.1. What is kubernetes</a></li>
-<li><a href="#orgd003078">3.2.2. Docker</a></li>
-<li><a href="#org7a3e0ef">3.2.3. Preparing for containers</a></li>
+<li><a href="#orgb79612e">3.2.1. What is kubernetes</a></li>
+<li><a href="#org5e59324">3.2.2. Docker</a></li>
+<li><a href="#org5c83ca5">3.2.3. Preparing for containers</a></li>
 </ul>
 </li>
-<li><a href="#org9b8c9d7">3.3. Enterprise and Producrtion Readiness</a>
+<li><a href="#org54160b5">3.3. Enterprise and Producrtion Readiness</a>
 <ul>
-<li><a href="#org74181ec">3.3.1. Docker</a></li>
-<li><a href="#org079288b">3.3.2. Kubernetes</a></li>
+<li><a href="#org8d3a774">3.3.1. Docker</a></li>
+<li><a href="#org860fc87">3.3.2. Kubernetes</a></li>
 </ul>
 </li>
 </ul>
@@ -276,8 +276,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-org6861664" class="outline-2">
-<h2 id="org6861664"><span class="section-number-2">1</span> Links</h2>
+<div id="outline-container-org02f8bef" class="outline-2">
+<h2 id="org02f8bef"><span class="section-number-2">1</span> Links</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <a href="https://blog.exxactcorp.com/building-a-kubernetes-cluster-using-vagrant">Kubernetes Vagrant Setup Lab</a>
@@ -299,12 +299,12 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-org66f1127" class="outline-2">
-<h2 id="org66f1127"><span class="section-number-2">2</span> Commands</h2>
+<div id="outline-container-org5cb2326" class="outline-2">
+<h2 id="org5cb2326"><span class="section-number-2">2</span> Commands</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org500f5e1" class="outline-3">
-<h3 id="org500f5e1"><span class="section-number-3">2.1</span> kubernetes</h3>
+<div id="outline-container-orgcd53ee1" class="outline-3">
+<h3 id="orgcd53ee1"><span class="section-number-3">2.1</span> kubernetes</h3>
 <div class="outline-text-3" id="text-2-1">
 <div class="org-src-container">
 <pre class="src src-go">kubectl get nodes
@@ -319,8 +319,8 @@ for the JavaScript code in this tag.
 </div>
 
 
-<div id="outline-container-orgb6a4d4b" class="outline-3">
-<h3 id="orgb6a4d4b"><span class="section-number-3">2.2</span> docker</h3>
+<div id="outline-container-org9caf3f1" class="outline-3">
+<h3 id="org9caf3f1"><span class="section-number-3">2.2</span> docker</h3>
 <div class="outline-text-3" id="text-2-2">
 <div class="org-src-container">
 <pre class="src src-go">dock image ls
@@ -341,12 +341,12 @@ for the JavaScript code in this tag.
 </div>
 
 
-<div id="outline-container-org0f8148e" class="outline-2">
-<h2 id="org0f8148e"><span class="section-number-2">3</span> Docker and Kubernetes: The Big Picture</h2>
+<div id="outline-container-org86e6e48" class="outline-2">
+<h2 id="org86e6e48"><span class="section-number-2">3</span> Docker and Kubernetes: The Big Picture</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgb917423" class="outline-3">
-<h3 id="orgb917423"><span class="section-number-3">3.1</span> Containers: Primer</h3>
+<div id="outline-container-org939d9a7" class="outline-3">
+<h3 id="org939d9a7"><span class="section-number-3">3.1</span> Containers: Primer</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 back in the day one app per server
@@ -358,8 +358,8 @@ waste of resources
 </div>
 
 
-<div id="outline-container-org14cf666" class="outline-4">
-<h4 id="org14cf666"><span class="section-number-4">3.1.1</span> Hello VMWare</h4>
+<div id="outline-container-orge1d2976" class="outline-4">
+<h4 id="orge1d2976"><span class="section-number-4">3.1.1</span> Hello VMWare</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <p>
 get a lot more bang for your buck
@@ -372,7 +372,7 @@ instead of one server to one app
 
 <p>
 Vmware Model
-<img src="file:///c:/erauner12.github.io/labs/course/placeholder.org_20200413_120416_C8bCuW.png" alt="placeholder.org_20200413_120416_C8bCuW.png" />
+<img src="../images/placeholder.org_20200413_120416_C8bCuW.png" alt="placeholder.org_20200413_120416_C8bCuW.png" />
 </p>
 
 
@@ -384,8 +384,8 @@ You don't need the whole operating system
 
 
 
-<div id="outline-container-org1459be3" class="outline-4">
-<h4 id="org1459be3"><span class="section-number-4">3.1.2</span> Containers</h4>
+<div id="outline-container-org926baf7" class="outline-4">
+<h4 id="org926baf7"><span class="section-number-4">3.1.2</span> Containers</h4>
 <div class="outline-text-4" id="text-3-1-2">
 <p>
 container model:
@@ -399,7 +399,7 @@ one app per container
 
 
 <div class="figure">
-<p><img src="file:///c:/erauner12.github.io/labs/course/placeholder.org_20200413_120659_XEaAxi.png" alt="placeholder.org_20200413_120659_XEaAxi.png" />
+<p><img src="../images/placeholder.org_20200413_120659_XEaAxi.png" alt="placeholder.org_20200413_120659_XEaAxi.png" />
 </p>
 </div>
 
@@ -410,7 +410,7 @@ The OS steals resources that you could be putting towards your applications
 
 
 <div class="figure">
-<p><img src="file:///c:/erauner12.github.io/labs/course/placeholder.org_20200413_121031_lmZLpD.png" alt="placeholder.org_20200413_121031_lmZLpD.png" />
+<p><img src="../images/placeholder.org_20200413_121031_lmZLpD.png" alt="placeholder.org_20200413_121031_lmZLpD.png" />
 </p>
 </div>
 
@@ -425,7 +425,7 @@ firing up a container here:
 
 
 <div class="figure">
-<p><img src="file:///c:/erauner12.github.io/labs/course/placeholder.org_20200413_121450_AXF47D.png" alt="placeholder.org_20200413_121450_AXF47D.png" />
+<p><img src="../images/placeholder.org_20200413_121450_AXF47D.png" alt="placeholder.org_20200413_121450_AXF47D.png" />
 </p>
 </div>
 
@@ -433,7 +433,7 @@ firing up a container here:
 
 
 <div class="figure">
-<p><img src="file:///c:/erauner12.github.io/labs/course/placeholder.org_20200413_121531_O59jAB.png" alt="placeholder.org_20200413_121531_O59jAB.png" />
+<p><img src="../images/placeholder.org_20200413_121531_O59jAB.png" alt="placeholder.org_20200413_121531_O59jAB.png" />
 </p>
 </div>
 
@@ -447,7 +447,7 @@ installed this from docker hub and exposed it on a network port
 
 <p>
 bringing it back up
-<img src="file:///c:/erauner12.github.io/labs/course/placeholder.org_20200413_121709_J18TF5.png" alt="placeholder.org_20200413_121709_J18TF5.png" />
+<img src="../images/placeholder.org_20200413_121709_J18TF5.png" alt="placeholder.org_20200413_121709_J18TF5.png" />
 </p>
 
 
@@ -458,14 +458,14 @@ monolotihic apps everything is backed into a single binary
 
 
 <div class="figure">
-<p><img src="file:///c:/erauner12.github.io/labs/course/placeholder.org_20200413_122002_GAuD3j.png" alt="placeholder.org_20200413_122002_GAuD3j.png" />
+<p><img src="../images/placeholder.org_20200413_122002_GAuD3j.png" alt="placeholder.org_20200413_122002_GAuD3j.png" />
 </p>
 </div>
 
 
 <p>
 manage services independently
-<img src="file:///c:/erauner12.github.io/labs/course/placeholder.org_20200413_122253_d1CQOy.png" alt="placeholder.org_20200413_122253_d1CQOy.png" />
+<img src="../images/placeholder.org_20200413_122253_d1CQOy.png" alt="placeholder.org_20200413_122253_d1CQOy.png" />
 </p>
 </div>
 </div>
@@ -477,8 +477,8 @@ manage services independently
 
 
 
-<div id="outline-container-org26bca67" class="outline-4">
-<h4 id="org26bca67"><span class="section-number-4">3.1.3</span> build a docker container</h4>
+<div id="outline-container-org8f93fa0" class="outline-4">
+<h4 id="org8f93fa0"><span class="section-number-4">3.1.3</span> build a docker container</h4>
 <div class="outline-text-4" id="text-3-1-3">
 <p>
 image is just a stopped container
@@ -487,13 +487,13 @@ image is just a stopped container
 
 
 <div class="figure">
-<p><img src="file:///c:/erauner12.github.io/labs/course/kubernetes.org_20200413_124613_GR80VW.png" alt="kubernetes.org_20200413_124613_GR80VW.png" />
+<p><img src="../images/kubernetes.org_20200413_124613_GR80VW.png" alt="kubernetes.org_20200413_124613_GR80VW.png" />
 </p>
 </div>
 
 
 <div class="figure">
-<p><img src="file:///c:/erauner12.github.io/labs/course/kubernetes.org_20200413_124644_0h7wPI.png" alt="kubernetes.org_20200413_124644_0h7wPI.png" />
+<p><img src="../images/kubernetes.org_20200413_124644_0h7wPI.png" alt="kubernetes.org_20200413_124644_0h7wPI.png" />
 </p>
 </div>
 
@@ -507,12 +507,12 @@ at this point you can run the container like we did earlier
 
 
 
-<div id="outline-container-org2962169" class="outline-3">
-<h3 id="org2962169"><span class="section-number-3">3.2</span> Kubernetes</h3>
+<div id="outline-container-orgf161931" class="outline-3">
+<h3 id="orgf161931"><span class="section-number-3">3.2</span> Kubernetes</h3>
 <div class="outline-text-3" id="text-3-2">
 </div>
-<div id="outline-container-org9a0b252" class="outline-4">
-<h4 id="org9a0b252"><span class="section-number-4">3.2.1</span> What is kubernetes</h4>
+<div id="outline-container-orgb79612e" class="outline-4">
+<h4 id="orgb79612e"><span class="section-number-4">3.2.1</span> What is kubernetes</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <p>
 kubernets cares about vs what docker cares about:
@@ -520,7 +520,7 @@ kubernets cares about vs what docker cares about:
 
 
 <div class="figure">
-<p><img src="file:///c:/erauner12.github.io/labs/course/kubernetes.org_20200413_125456_lOL5c7.png" alt="kubernetes.org_20200413_125456_lOL5c7.png" />
+<p><img src="../images/kubernetes.org_20200413_125456_lOL5c7.png" alt="kubernetes.org_20200413_125456_lOL5c7.png" />
 </p>
 </div>
 
@@ -540,13 +540,13 @@ each node is running kubernetes and container runtime ( so that node can run con
 
 
 <div class="figure">
-<p><img src="file:///c:/erauner12.github.io/labs/course/kubernetes.org_20200413_125715_MhRT6U.png" alt="kubernetes.org_20200413_125715_MhRT6U.png" />
+<p><img src="../images/kubernetes.org_20200413_125715_MhRT6U.png" alt="kubernetes.org_20200413_125715_MhRT6U.png" />
 </p>
 </div>
 
 
 <div class="figure">
-<p><img src="file:///c:/erauner12.github.io/labs/course/kubernetes.org_20200413_125733_k3p9yu.png" alt="kubernetes.org_20200413_125733_k3p9yu.png" />
+<p><img src="../images/kubernetes.org_20200413_125733_k3p9yu.png" alt="kubernetes.org_20200413_125733_k3p9yu.png" />
 </p>
 </div>
 
@@ -561,7 +561,7 @@ decouples from where our applications are actually running
 
 
 <div class="figure">
-<p><img src="file:///c:/erauner12.github.io/labs/course/kubernetes.org_20200413_130138_5OG4Qi.png" alt="kubernetes.org_20200413_130138_5OG4Qi.png" />
+<p><img src="../images/kubernetes.org_20200413_130138_5OG4Qi.png" alt="kubernetes.org_20200413_130138_5OG4Qi.png" />
 </p>
 </div>
 
@@ -576,8 +576,8 @@ we build a kubernetes cluster to host our applications
 
 
 
-<div id="outline-container-orgd003078" class="outline-4">
-<h4 id="orgd003078"><span class="section-number-4">3.2.2</span> Docker</h4>
+<div id="outline-container-org5e59324" class="outline-4">
+<h4 id="org5e59324"><span class="section-number-4">3.2.2</span> Docker</h4>
 <div class="outline-text-4" id="text-3-2-2">
 <p>
 docker's goal is to make applications run on containers easily
@@ -586,8 +586,8 @@ docker's goal is to make applications run on containers easily
 </div>
 
 
-<div id="outline-container-org7a3e0ef" class="outline-4">
-<h4 id="org7a3e0ef"><span class="section-number-4">3.2.3</span> Preparing for containers</h4>
+<div id="outline-container-org5c83ca5" class="outline-4">
+<h4 id="org5c83ca5"><span class="section-number-4">3.2.3</span> Preparing for containers</h4>
 <div class="outline-text-4" id="text-3-2-3">
 <p>
 Stateless vs Stateful
@@ -599,12 +599,12 @@ Stateless vs Stateful
 
 
 
-<div id="outline-container-org9b8c9d7" class="outline-3">
-<h3 id="org9b8c9d7"><span class="section-number-3">3.3</span> Enterprise and Producrtion Readiness</h3>
+<div id="outline-container-org54160b5" class="outline-3">
+<h3 id="org54160b5"><span class="section-number-3">3.3</span> Enterprise and Producrtion Readiness</h3>
 <div class="outline-text-3" id="text-3-3">
 </div>
-<div id="outline-container-org74181ec" class="outline-4">
-<h4 id="org74181ec"><span class="section-number-4">3.3.1</span> Docker</h4>
+<div id="outline-container-org8d3a774" class="outline-4">
+<h4 id="org8d3a774"><span class="section-number-4">3.3.1</span> Docker</h4>
 <div class="outline-text-4" id="text-3-3-1">
 <p>
 Community Edition and Enterprise Edition
@@ -613,14 +613,14 @@ Community Edition and Enterprise Edition
 
 
 <div class="figure">
-<p><img src="file:///c:/erauner12.github.io/labs/course/kubernetes.org_20200413_141601_9UYGuP.png" alt="kubernetes.org_20200413_141601_9UYGuP.png" />
+<p><img src="../images/kubernetes.org_20200413_141601_9UYGuP.png" alt="kubernetes.org_20200413_141601_9UYGuP.png" />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org079288b" class="outline-4">
-<h4 id="org079288b"><span class="section-number-4">3.3.2</span> Kubernetes</h4>
+<div id="outline-container-org860fc87" class="outline-4">
+<h4 id="org860fc87"><span class="section-number-4">3.3.2</span> Kubernetes</h4>
 <div class="outline-text-4" id="text-3-3-2">
 <p>
 can use on prem and in the cloud
@@ -628,7 +628,7 @@ can use on prem and in the cloud
 
 
 <div class="figure">
-<p><img src="file:///c:/erauner12.github.io/labs/course/kubernetes.org_20200413_141847_aW3qDA.png" alt="kubernetes.org_20200413_141847_aW3qDA.png" />
+<p><img src="../images/kubernetes.org_20200413_141847_aW3qDA.png" alt="kubernetes.org_20200413_141847_aW3qDA.png" />
 </p>
 </div>
 
@@ -639,7 +639,7 @@ openstack is what Cerner uses
 
 
 <ol class="org-ol">
-<li><a id="orgb3b8cdc"></a>Features:<br />
+<li><a id="org340fe82"></a>Features:<br />
 <div class="outline-text-5" id="text-3-3-2-1">
 <p>
 Alpha, Beta, GA
@@ -647,7 +647,7 @@ Alpha, Beta, GA
 
 
 <div class="figure">
-<p><img src="file:///c:/erauner12.github.io/labs/course/kubernetes.org_20200413_142045_GRgVRo.png" alt="kubernetes.org_20200413_142045_GRgVRo.png" />
+<p><img src="../images/kubernetes.org_20200413_142045_GRgVRo.png" alt="kubernetes.org_20200413_142045_GRgVRo.png" />
 </p>
 </div>
 </div>
@@ -658,7 +658,7 @@ Alpha, Beta, GA
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2020-04-13 Mon 14:47</p>
+<p class="date">Created: 2020-04-13 Mon 15:59</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

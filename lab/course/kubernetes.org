@@ -68,7 +68,7 @@ instead of one server to one app
 
 
 Vmware Model
-[[file:../images/placeholder.org_20200413_120416_C8bCuW.png]]
+file:../images/placeholder.org_20200413_120416_C8bCuW.png
 
 
 You don't need the whole operating system
@@ -83,7 +83,7 @@ one app per container
 -smaller and more efficient
 
 
-[[file:../images/placeholder.org_20200413_120659_XEaAxi.png]]
+file:../images/placeholder.org_20200413_120659_XEaAxi.png
 
 
 The OS steals resources that you could be putting towards your applications
@@ -114,11 +114,11 @@ file:../images/placeholder.org_20200413_121709_J18TF5.png
 monolotihic apps everything is backed into a single binary
 
 
-[[file:../images/placeholder.org_20200413_122002_GAuD3j.png]]
+file:../images/placeholder.org_20200413_122002_GAuD3j.png
 
 
 manage services independently
-[[file:../images/placeholder.org_20200413_122253_d1CQOy.png]]
+file:../images/placeholder.org_20200413_122253_d1CQOy.png
 
 
 
@@ -132,9 +132,9 @@ manage services independently
 image is just a stopped container
 
 
-[[file:../images/kubernetes.org_20200413_124613_GR80VW.png]]
+file:../images/kubernetes.org_20200413_124613_GR80VW.png
 
-[[file:../images/kubernetes.org_20200413_124644_0h7wPI.png]]
+file:../images/kubernetes.org_20200413_124644_0h7wPI.png
 
 at this point you can run the container like we did earlier
 
@@ -147,7 +147,7 @@ at this point you can run the container like we did earlier
 
 kubernets cares about vs what docker cares about:
 
-[[file:../images/kubernetes.org_20200413_125456_lOL5c7.png]]
+file:../images/kubernetes.org_20200413_125456_lOL5c7.png
 
 docker  = esxi
 kubernetes = vcenter
@@ -157,16 +157,16 @@ each node is running kubernetes and container runtime ( so that node can run con
 
 - docker takes care of the low level stuff and kubernetes controls it all
 
-[[file:../images/kubernetes.org_20200413_125715_MhRT6U.png]]
+file:../images/kubernetes.org_20200413_125715_MhRT6U.png
 
-[[file:../images/kubernetes.org_20200413_125733_k3p9yu.png]]
+file:../images/kubernetes.org_20200413_125733_k3p9yu.png
 
 
 if your apps are running on-prem, is not difficult to move to the cloud and back if need be:
 
 decouples from where our applications are actually running
 
-[[file:../images/kubernetes.org_20200413_130138_5OG4Qi.png]]
+file:../images/kubernetes.org_20200413_130138_5OG4Qi.png
 
 we build a kubernetes cluster to host our applications
 
@@ -194,13 +194,13 @@ Stateless vs Stateful
 Community Edition and Enterprise Edition
 
 
-[[file:../images/kubernetes.org_20200413_141601_9UYGuP.png]]
+file:../images/kubernetes.org_20200413_141601_9UYGuP.png
 
 *** Kubernetes
 
 can use on prem and in the cloud
 
-[[file:../images/kubernetes.org_20200413_141847_aW3qDA.png]]
+file:../images/kubernetes.org_20200413_141847_aW3qDA.png
 
 openstack is what Cerner uses
 
@@ -209,6 +209,6 @@ openstack is what Cerner uses
 
 Alpha, Beta, GA
 
-[[file:../images/kubernetes.org_20200413_142045_GRgVRo.png]]
+file:../images/kubernetes.org_20200413_142045_GRgVRo.png
 
 
