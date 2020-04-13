@@ -2,6 +2,6 @@
 title: ""
 ---
 
-## Labs / Course
+## Lab / Course
 
 - [Placeholder](/pkb/labs/course/placeholder.html)
