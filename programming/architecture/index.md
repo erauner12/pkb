@@ -4,4 +4,4 @@ title: ""
 
 ## Programming / Architecture
 
-- [Cloud Computing](/pkb/programming/architecture/cloud_computing.html)
+- [Architecture Scrap](/pkb/programming/architecture/architecture_scrap.html)
