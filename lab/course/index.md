@@ -4,4 +4,4 @@ title: ""
 
 ## Lab / Course
 
-- [Placeholder](/pkb/labs/course/kubernetes.html)
+- [Placeholder](/pkb/lab/course/kubernetes.html)
