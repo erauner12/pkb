@@ -78,7 +78,7 @@ window.SphinxRtdTheme = (function (jquery) {
 $(function(){
     $('table').each(function(){
 
-        // 表格隔行背景色
+
         if ($(this).children('tbody').size() > 0) {
             $i = 0;
             $(this).children('tbody').each(function(){
@@ -90,7 +90,7 @@ $(function(){
             });
         }
 
-        // // 测量原始宽度
+
         // $(this).css('position', 'absolute');
         // $(this).css('width', 'auto');
         // var oldWidth = $(this)[0].offsetWidth;
@@ -99,7 +99,7 @@ $(function(){
 
         //     $(this).addClass('float-table');
 
-        //     // 将表格移动至最左侧，测量自由展开的宽度
+
         //     $(this).css('left', '0px');
         //     var newWidth = $(this)[0].offsetWidth;
         //     // 如果自由展开宽度过大，则规定一个宽度
@@ -107,14 +107,14 @@ $(function(){
         //         $(this).css('width', $(window).width() - 60);
         //     }
 
-        //     // 水平居中
+
         //     // var newWidth = $(this)[0].offsetWidth;
         //     // var left = ($(window).width() - newWidth) / 2;
         //     // var left = 387;
         //     // $(this).css('left', left + 'px');
         //     $(this).css('left', 'auto');
 
-        //     // 表格后填充一个空白
+
         //     if (!$(this).next('.table-placeholder').length) {
         //         var newHeight = $(this)[0].offsetHeight + 36;
         //         if ($(this).find('caption').length) {
@@ -131,14 +131,14 @@ $(function(){
     $('.outline-2 a[href^="#"]').click(function(e) {
         var href = $(this).attr('href');
 
-        // 点击页面内链接时，变为点击标题
+
         if (!href.match('^sec-')) {
             e.preventDefault();
 
-            // 获取所属 section 标题
+
             var secTitle = $(href).closest('div[class^=outline-text-]').prev('[id^=sec-]');
 
-            // 模拟标题点击
+
             window.location = '#' + secTitle.attr('id');
         }
     });
