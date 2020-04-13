@@ -11,7 +11,7 @@ $(function() {
     $('.danger').before("<p class='admonition-title danger'>Danger</p>");
 });
 
-$( document ).ready(function() {
+$(document).ready(function(){
 
     // Shift nav in mobile when clicking the menu.
     $(document).on('click', "[data-toggle='wy-nav-top']", function() {
@@ -36,22 +36,13 @@ $( document ).ready(function() {
                                         // a Bootstrap nav component.
     $('body').scrollspy({target: '#text-table-of-contents'});
 
-    // DON'T add sticky table headers (Fix issue #69?)
+    // add sticky table headers
     // $('table').stickyTableHeaders();
 
-    // set the height of tableOfContents
     var $postamble = $('#postamble');
     var $tableOfContents = $('#table-of-contents');
-    $tableOfContents.css({paddingBottom: $postamble.outerHeight()});
-
-    // add TOC button
-    var toggleSidebar = $('<div id="toggle-sidebar"><a href="#table-of-contents"><h2>Table of Contents</h2></a></div>');
-    $('#content').prepend(toggleSidebar);
-
-    // add close button when sidebar showed in mobile screen
-    var closeBtn = $('<a class="close-sidebar" href="#">Close</a>');
-    var tocTitle = $('#table-of-contents').find('h2');
-    tocTitle.append(closeBtn);
+    // set the height of tableOfContents
+    // $tableOfContents.height($tableOfContents.height() - $postamble.outerHeight());
 });
 
 window.SphinxRtdTheme = (function (jquery) {
@@ -66,11 +57,11 @@ window.SphinxRtdTheme = (function (jquery) {
                     navBar.removeClass(stickyNavCssClass);
                 }
             },
-            enable = function () {
+            enable = function() {
                 applyStickNav();
                 win.on('resize', applyStickNav);
             },
-            init = function () {
+            init = function() {
                 navBar = jquery('nav.wy-nav-side:first');
                 win    = jquery(window);
             };
@@ -83,3 +74,132 @@ window.SphinxRtdTheme = (function (jquery) {
         StickyNav : stickyNav
     };
 }($));
+
+$(function(){
+    $('table').each(function(){
+
+        // 表格隔行背景色
+        if ($(this).children('tbody').size() > 0) {
+            $i = 0;
+            $(this).children('tbody').each(function(){
+                if ($i % 2 == 0) {
+                    // $(this).children('tr').css('background-color', '#F4F4F4');
+                    $(this).children('tr').addClass('color-strip');
+                }
+                $i += 1;
+            });
+        }
+
+        // // 测量原始宽度
+        // $(this).css('position', 'absolute');
+        // $(this).css('width', 'auto');
+        // var oldWidth = $(this)[0].offsetWidth;
+              
+        // if (oldWidth >= 835) {
+
+        //     $(this).addClass('float-table');
+
+        //     // 将表格移动至最左侧，测量自由展开的宽度
+        //     $(this).css('left', '0px');
+        //     var newWidth = $(this)[0].offsetWidth;
+        //     // 如果自由展开宽度过大，则规定一个宽度
+        //     if (newWidth >= ($(window).width() - 60)) {
+        //         $(this).css('width', $(window).width() - 60);
+        //     }
+
+        //     // 水平居中
+        //     // var newWidth = $(this)[0].offsetWidth;
+        //     // var left = ($(window).width() - newWidth) / 2;
+        //     // var left = 387;
+        //     // $(this).css('left', left + 'px');
+        //     $(this).css('left', 'auto');
+
+        //     // 表格后填充一个空白
+        //     if (!$(this).next('.table-placeholder').length) {
+        //         var newHeight = $(this)[0].offsetHeight + 36;
+        //         if ($(this).find('caption').length) {
+        //             newHeight += 32;
+        //         }
+        //         $(this).after('<div class="table-placeholder" style="height:' + (newHeight)+ 'px;margin:36px 0;">');
+        //     }
+        
+        // } else {
+        //     $(this).css('position', 'static');
+        // }
+    });
+
+    $('.outline-2 a[href^="#"]').click(function(e) {
+        var href = $(this).attr('href');
+
+        // 点击页面内链接时，变为点击标题
+        if (!href.match('^sec-')) {
+            e.preventDefault();
+
+            // 获取所属 section 标题
+            var secTitle = $(href).closest('div[class^=outline-text-]').prev('[id^=sec-]');
+
+            // 模拟标题点击
+            window.location = '#' + secTitle.attr('id');
+        }
+    });
+});
+
+// $(function(){
+//     $('#text-table-of-contents .nav > li').bind('mouseover', function(){
+//         if (!$(this).hasClass('active')) {
+//             // $(this).children('ul').slideDown(200);
+//             $(this).children('ul').children('li').show();
+//         }
+//     });
+//     $('#text-table-of-contents .nav > li').bind('mouseout', function(){
+//         if (!$(this).hasClass('active')) {
+//             // $(this).children('ul').slideUp(200);
+//             $(this).children('ul').children('li').hide();
+//         }
+//     });
+// });
+
+$(function(){
+    // 词汇例句部分
+    $('pre.example').each(function(){
+        var html = $(this).html();
+        var oldLines = html.split('\n');
+        var newLines = [];
+        $.each(oldLines, function(key, value){
+            if (value.length > 0) {
+                newLines.push(' '.repeat(8) + '<span>' + value + '</span>');
+            }
+        });
+        $(this).html(newLines.join('\n'));
+    });
+});
+
+// $(function(){
+//     MathJax.Hub.Config({
+//         jax: [
+//             'input/TeX',
+//             'input/MathML',
+//             'input/AsciiMath',
+//             // 'output/HTML-CSS',
+//             'output/CommonHTML',
+//             'output/PreviewHTML',
+//         ],
+//         extensions: [
+//             'tex2jax.js',
+//             'mml2jax.js',
+//             'asciimath2jax.js',
+//             'MathMenu.js',
+//             'MathZoom.js',
+//             'AssistiveMML.js',
+//             '[Contrib]/a11y/accessibility-menu.js'
+//         ],
+//         TeX: {
+//             extensions: [
+//                 'AMSmath.js',
+//                 'AMSsymbols.js',
+//                 'noErrors.js',
+//                 'noUndefined.js'
+//             ]
+//         }
+//     });
+// });
