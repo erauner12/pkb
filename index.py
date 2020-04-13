@@ -95,7 +95,7 @@ def writeTitle(dirPath, title):
 
 
 def writeEntry(dirPath, name, link):
-	writeLine(dirPath, '- [' + name + link + ')\n')
+	writeLine(dirPath, '- [' + name + '](/pkb/' + link + ')\n')
 
 
 def writeLine(dirPath, line):
