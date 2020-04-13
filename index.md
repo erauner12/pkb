@@ -4,7 +4,7 @@ title: ""
 
 ## Programming
 
-- [Basic](/pkb/programming/placeholder/index)
+- [Basic](/pkb/programming/basic/index)
 - [Book](/pkb/programming/book/index)
 - [Course](/pkb/programming/course/index)
 - [Devops](/pkb/programming/devops/index)
