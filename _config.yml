@@ -1,6 +1,6 @@
 title: Personal Knowledge Base
 
-theme: jekyll-theme-cayman
+theme: minima
 header_pages:
   - index.md
   - search.html
