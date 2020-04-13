@@ -1,6 +1,0 @@
-#+SETUPFILE: ../../styles/readtheorg.setup
-#+TITLE: Chart Test
-
-* PlantUML
-* Ditaa
-* TikZ

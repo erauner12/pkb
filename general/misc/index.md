@@ -2,7 +2,6 @@
 title: ""
 ---
 
-## General / Misc
+## Programming / Basic
 
-- [Chart Test](/pkb/general/misc/chart_test.html)
-- [Style Sample](/pkb/general/misc/style_sample.html)
+- [Placeholder](/pkb/general/misc/placeholder.html)
