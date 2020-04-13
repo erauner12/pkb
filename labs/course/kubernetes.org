@@ -1,0 +1,186 @@
+#+SETUPFILE: ../../styles/readtheorg.setup
+#+TITLE: Kubernetes
+
+
+
+* Links
+
+
+[[https://blog.exxactcorp.com/building-a-kubernetes-cluster-using-vagrant][Kubernetes Vagrant Setup Lab]]
+
+https://app.pluralsight.com/library/courses/docker-kubernetes-big-picture/table-of-contents
+
+https://app.pluralsight.com/library/courses/docker-getting-started/table-of-contents
+
+https://app.pluralsight.com/library/courses/getting-started-kubernetes/table-of-contents
+
+
+
+* Commands
+
+** kubernetes
+
+
+#+CAPTION:
+#+BEGIN_SRC go
+kubectl get nodes
+#+END_SRC
+
+#+CAPTION:
+#+BEGIN_SRC go
+kubectl get all --all-namespaces
+#+END_SRC
+
+
+** docker
+
+#+CAPTION:
+#+BEGIN_SRC go
+dock image ls
+#+END_SRC
+
+#+CAPTION:
+#+BEGIN_SRC go
+docker start web
+#+END_SRC
+
+#+CAPTION:
+#+BEGIN_SRC go
+docker stop web
+#+END_SRC
+
+
+* Docker and Kubernetes: The Big Picture
+
+
+** Containers: Primer
+
+back in the day one app per server
+
+waste of resources
+
+
+*** Hello VMWare
+
+get a lot more bang for your buck
+
+instead of one server to one app
+
+
+Vmware Model
+[[file:c:/erauner12.github.io/labs/course/placeholder.org_20200413_120416_C8bCuW.png]]
+
+
+You don't need the whole operating system
+
+
+
+*** Containers
+
+container model:
+
+one app per container
+-smaller and more efficient
+
+
+[[file:c:/erauner12.github.io/labs/course/placeholder.org_20200413_120659_XEaAxi.png]]
+
+
+The OS steals resources that you could be putting towards your applications
+
+file:c:/erauner12.github.io/labs/course/placeholder.org_20200413_121031_lmZLpD.png
+
+
+docker image is like a VM template
+
+firing up a container here:
+ 
+file:c:/erauner12.github.io/labs/course/placeholder.org_20200413_121450_AXF47D.png
+
+
+
+file:c:/erauner12.github.io/labs/course/placeholder.org_20200413_121531_O59jAB.png
+
+
+installed this from docker hub and exposed it on a network port
+
+
+
+
+bringing it back up
+file:c:/erauner12.github.io/labs/course/placeholder.org_20200413_121709_J18TF5.png
+
+
+monolotihic apps everything is backed into a single binary
+
+
+[[file:c:/erauner12.github.io/labs/course/placeholder.org_20200413_122002_GAuD3j.png]]
+
+
+manage services independently
+[[file:c:/erauner12.github.io/labs/course/placeholder.org_20200413_122253_d1CQOy.png]]
+
+
+
+
+
+
+
+
+** Docker
+
+docker's goal is to make applications run on containers easily
+
+*** build a docker container
+
+image is just a stopped container
+
+
+[[file:c:/erauner12.github.io/labs/course/kubernetes.org_20200413_124613_GR80VW.png]]
+
+[[file:c:/erauner12.github.io/labs/course/kubernetes.org_20200413_124644_0h7wPI.png]]
+
+at this point you can run the container like we did earlier
+
+
+
+
+* Kubernetes
+
+** What is kubernetes
+
+kubernets cares about vs what docker cares about:
+
+[[file:c:/erauner12.github.io/labs/course/kubernetes.org_20200413_125456_lOL5c7.png]]
+
+docker  = esxi
+kubernetes = vcenter
+
+
+each node is running kubernetes and container runtime ( so that node can run containers)
+
+- docker takes care of the low level stuff and kubernetes controls it all
+
+[[file:c:/erauner12.github.io/labs/course/kubernetes.org_20200413_125715_MhRT6U.png]]
+
+[[file:c:/erauner12.github.io/labs/course/kubernetes.org_20200413_125733_k3p9yu.png]]
+
+
+if your apps are running on-prem, is not difficult to move to the cloud and back if need be:
+
+decouples from where our applications are actually running
+
+[[file:c:/erauner12.github.io/labs/course/kubernetes.org_20200413_130138_5OG4Qi.png]]
+
+we build a kubernetes cluster to host our applications
+
+
+
+
+
+** Preparing for containers
+
+
+
+
+
