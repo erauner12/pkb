@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-04-13 Mon 13:15 -->
+<!-- 2020-04-13 Mon 14:47 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Kubernetes</title>
@@ -179,14 +179,12 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="../../styles/readtheorg/css/font.css"/>
-<link rel="stylesheet" type="text/css" href="../../styles/readtheorg/css/readtheorg.css"/>
-<link rel="stylesheet" type="text/css" href="../../styles/readtheorg/css/htmlize.css"/>
-<script type="text/javascript" src="../../styles/readtheorg/js/jquery.min.js"></script>
-<script type="text/javascript" src="../../styles/readtheorg/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../../styles/readtheorg/js/readtheorg.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -241,32 +239,35 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8fafe16">1. Links</a></li>
-<li><a href="#orgbba98c5">2. Commands</a>
+<li><a href="#org6861664">1. Links</a></li>
+<li><a href="#org66f1127">2. Commands</a>
 <ul>
-<li><a href="#org0ff7d61">2.1. kubernetes</a></li>
-<li><a href="#org73d13f3">2.2. docker</a></li>
+<li><a href="#org500f5e1">2.1. kubernetes</a></li>
+<li><a href="#orgb6a4d4b">2.2. docker</a></li>
 </ul>
 </li>
-<li><a href="#orgc7d8052">3. Docker and Kubernetes: The Big Picture</a>
+<li><a href="#org0f8148e">3. Docker and Kubernetes: The Big Picture</a>
 <ul>
-<li><a href="#org751dd01">3.1. Containers: Primer</a>
+<li><a href="#orgb917423">3.1. Containers: Primer</a>
 <ul>
-<li><a href="#orgf283744">3.1.1. Hello VMWare</a></li>
-<li><a href="#orgd4648ca">3.1.2. Containers</a></li>
+<li><a href="#org14cf666">3.1.1. Hello VMWare</a></li>
+<li><a href="#org1459be3">3.1.2. Containers</a></li>
+<li><a href="#org26bca67">3.1.3. build a docker container</a></li>
 </ul>
 </li>
-<li><a href="#org10ff425">3.2. Docker</a>
+<li><a href="#org2962169">3.2. Kubernetes</a>
 <ul>
-<li><a href="#org9772ca7">3.2.1. build a docker container</a></li>
+<li><a href="#org9a0b252">3.2.1. What is kubernetes</a></li>
+<li><a href="#orgd003078">3.2.2. Docker</a></li>
+<li><a href="#org7a3e0ef">3.2.3. Preparing for containers</a></li>
 </ul>
 </li>
+<li><a href="#org9b8c9d7">3.3. Enterprise and Producrtion Readiness</a>
+<ul>
+<li><a href="#org74181ec">3.3.1. Docker</a></li>
+<li><a href="#org079288b">3.3.2. Kubernetes</a></li>
 </ul>
 </li>
-<li><a href="#orge887815">4. Kubernetes</a>
-<ul>
-<li><a href="#org1a2c249">4.1. What is kubernetes</a></li>
-<li><a href="#org6dfee4a">4.2. Preparing for containers</a></li>
 </ul>
 </li>
 </ul>
@@ -275,14 +276,9 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-org8fafe16" class="outline-2">
-<h2 id="org8fafe16"><span class="section-number-2">1</span> Links</h2>
+<div id="outline-container-org6861664" class="outline-2">
+<h2 id="org6861664"><span class="section-number-2">1</span> Links</h2>
 <div class="outline-text-2" id="text-1">
-<p>
-:HTML<sub>CONTAINER</sub><sub>CLASS</sub>: hsCollapsed
-</p>
-
-
 <p>
 <a href="https://blog.exxactcorp.com/building-a-kubernetes-cluster-using-vagrant">Kubernetes Vagrant Setup Lab</a>
 </p>
@@ -303,12 +299,12 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-orgbba98c5" class="outline-2">
-<h2 id="orgbba98c5"><span class="section-number-2">2</span> Commands</h2>
+<div id="outline-container-org66f1127" class="outline-2">
+<h2 id="org66f1127"><span class="section-number-2">2</span> Commands</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org0ff7d61" class="outline-3">
-<h3 id="org0ff7d61"><span class="section-number-3">2.1</span> kubernetes</h3>
+<div id="outline-container-org500f5e1" class="outline-3">
+<h3 id="org500f5e1"><span class="section-number-3">2.1</span> kubernetes</h3>
 <div class="outline-text-3" id="text-2-1">
 <div class="org-src-container">
 <pre class="src src-go">kubectl get nodes
@@ -323,8 +319,8 @@ for the JavaScript code in this tag.
 </div>
 
 
-<div id="outline-container-org73d13f3" class="outline-3">
-<h3 id="org73d13f3"><span class="section-number-3">2.2</span> docker</h3>
+<div id="outline-container-orgb6a4d4b" class="outline-3">
+<h3 id="orgb6a4d4b"><span class="section-number-3">2.2</span> docker</h3>
 <div class="outline-text-3" id="text-2-2">
 <div class="org-src-container">
 <pre class="src src-go">dock image ls
@@ -345,12 +341,12 @@ for the JavaScript code in this tag.
 </div>
 
 
-<div id="outline-container-orgc7d8052" class="outline-2">
-<h2 id="orgc7d8052"><span class="section-number-2">3</span> Docker and Kubernetes: The Big Picture</h2>
+<div id="outline-container-org0f8148e" class="outline-2">
+<h2 id="org0f8148e"><span class="section-number-2">3</span> Docker and Kubernetes: The Big Picture</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org751dd01" class="outline-3">
-<h3 id="org751dd01"><span class="section-number-3">3.1</span> Containers: Primer</h3>
+<div id="outline-container-orgb917423" class="outline-3">
+<h3 id="orgb917423"><span class="section-number-3">3.1</span> Containers: Primer</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 back in the day one app per server
@@ -362,8 +358,8 @@ waste of resources
 </div>
 
 
-<div id="outline-container-orgf283744" class="outline-4">
-<h4 id="orgf283744"><span class="section-number-4">3.1.1</span> Hello VMWare</h4>
+<div id="outline-container-org14cf666" class="outline-4">
+<h4 id="org14cf666"><span class="section-number-4">3.1.1</span> Hello VMWare</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <p>
 get a lot more bang for your buck
@@ -388,8 +384,8 @@ You don't need the whole operating system
 
 
 
-<div id="outline-container-orgd4648ca" class="outline-4">
-<h4 id="orgd4648ca"><span class="section-number-4">3.1.2</span> Containers</h4>
+<div id="outline-container-org1459be3" class="outline-4">
+<h4 id="org1459be3"><span class="section-number-4">3.1.2</span> Containers</h4>
 <div class="outline-text-4" id="text-3-1-2">
 <p>
 container model:
@@ -473,7 +469,6 @@ manage services independently
 </p>
 </div>
 </div>
-</div>
 
 
 
@@ -482,17 +477,9 @@ manage services independently
 
 
 
-<div id="outline-container-org10ff425" class="outline-3">
-<h3 id="org10ff425"><span class="section-number-3">3.2</span> Docker</h3>
-<div class="outline-text-3" id="text-3-2">
-<p>
-docker's goal is to make applications run on containers easily
-</p>
-</div>
-
-<div id="outline-container-org9772ca7" class="outline-4">
-<h4 id="org9772ca7"><span class="section-number-4">3.2.1</span> build a docker container</h4>
-<div class="outline-text-4" id="text-3-2-1">
+<div id="outline-container-org26bca67" class="outline-4">
+<h4 id="org26bca67"><span class="section-number-4">3.1.3</span> build a docker container</h4>
+<div class="outline-text-4" id="text-3-1-3">
 <p>
 image is just a stopped container
 </p>
@@ -516,18 +503,17 @@ at this point you can run the container like we did earlier
 </div>
 </div>
 </div>
+
+
+
+
+<div id="outline-container-org2962169" class="outline-3">
+<h3 id="org2962169"><span class="section-number-3">3.2</span> Kubernetes</h3>
+<div class="outline-text-3" id="text-3-2">
 </div>
-
-
-
-
-<div id="outline-container-orge887815" class="outline-2">
-<h2 id="orge887815"><span class="section-number-2">4</span> Kubernetes</h2>
-<div class="outline-text-2" id="text-4">
-</div>
-<div id="outline-container-org1a2c249" class="outline-3">
-<h3 id="org1a2c249"><span class="section-number-3">4.1</span> What is kubernetes</h3>
-<div class="outline-text-3" id="text-4-1">
+<div id="outline-container-org9a0b252" class="outline-4">
+<h4 id="org9a0b252"><span class="section-number-4">3.2.1</span> What is kubernetes</h4>
+<div class="outline-text-4" id="text-3-2-1">
 <p>
 kubernets cares about vs what docker cares about:
 </p>
@@ -589,13 +575,90 @@ we build a kubernetes cluster to host our applications
 
 
 
-<div id="outline-container-org6dfee4a" class="outline-3">
-<h3 id="org6dfee4a"><span class="section-number-3">4.2</span> Preparing for containers</h3>
+
+<div id="outline-container-orgd003078" class="outline-4">
+<h4 id="orgd003078"><span class="section-number-4">3.2.2</span> Docker</h4>
+<div class="outline-text-4" id="text-3-2-2">
+<p>
+docker's goal is to make applications run on containers easily
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org7a3e0ef" class="outline-4">
+<h4 id="org7a3e0ef"><span class="section-number-4">3.2.3</span> Preparing for containers</h4>
+<div class="outline-text-4" id="text-3-2-3">
+<p>
+Stateless vs Stateful
+</p>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org9b8c9d7" class="outline-3">
+<h3 id="org9b8c9d7"><span class="section-number-3">3.3</span> Enterprise and Producrtion Readiness</h3>
+<div class="outline-text-3" id="text-3-3">
+</div>
+<div id="outline-container-org74181ec" class="outline-4">
+<h4 id="org74181ec"><span class="section-number-4">3.3.1</span> Docker</h4>
+<div class="outline-text-4" id="text-3-3-1">
+<p>
+Community Edition and Enterprise Edition
+</p>
+
+
+
+<div class="figure">
+<p><img src="file:///c:/erauner12.github.io/labs/course/kubernetes.org_20200413_141601_9UYGuP.png" alt="kubernetes.org_20200413_141601_9UYGuP.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org079288b" class="outline-4">
+<h4 id="org079288b"><span class="section-number-4">3.3.2</span> Kubernetes</h4>
+<div class="outline-text-4" id="text-3-3-2">
+<p>
+can use on prem and in the cloud
+</p>
+
+
+<div class="figure">
+<p><img src="file:///c:/erauner12.github.io/labs/course/kubernetes.org_20200413_141847_aW3qDA.png" alt="kubernetes.org_20200413_141847_aW3qDA.png" />
+</p>
+</div>
+
+<p>
+openstack is what Cerner uses
+</p>
+</div>
+
+
+<ol class="org-ol">
+<li><a id="orgb3b8cdc"></a>Features:<br />
+<div class="outline-text-5" id="text-3-3-2-1">
+<p>
+Alpha, Beta, GA
+</p>
+
+
+<div class="figure">
+<p><img src="file:///c:/erauner12.github.io/labs/course/kubernetes.org_20200413_142045_GRgVRo.png" alt="kubernetes.org_20200413_142045_GRgVRo.png" />
+</p>
+</div>
+</div>
+</li>
+</ol>
+</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2020-04-13 Mon 13:15</p>
+<p class="date">Created: 2020-04-13 Mon 14:47</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

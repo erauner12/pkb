@@ -1,4 +1,4 @@
-#+SETUPFILE: ../../styles/readtheorg.setup
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
 #+TITLE: Kubernetes
 
 
@@ -127,10 +127,6 @@ manage services independently
 
 
 
-** Docker
-
-docker's goal is to make applications run on containers easily
-
 *** build a docker container
 
 image is just a stopped container
@@ -145,9 +141,9 @@ at this point you can run the container like we did earlier
 
 
 
-* Kubernetes
+** Kubernetes
 
-** What is kubernetes
+*** What is kubernetes
 
 kubernets cares about vs what docker cares about:
 
@@ -178,9 +174,41 @@ we build a kubernetes cluster to host our applications
 
 
 
-** Preparing for containers
+
+*** Docker
+
+docker's goal is to make applications run on containers easily
+
+
+*** Preparing for containers
+
+Stateless vs Stateful
 
 
 
+
+** Enterprise and Producrtion Readiness
+
+*** Docker
+
+Community Edition and Enterprise Edition
+
+
+[[file:c:/erauner12.github.io/labs/course/kubernetes.org_20200413_141601_9UYGuP.png]]
+
+*** Kubernetes
+
+can use on prem and in the cloud
+
+[[file:c:/erauner12.github.io/labs/course/kubernetes.org_20200413_141847_aW3qDA.png]]
+
+openstack is what Cerner uses
+
+
+**** Features:
+
+Alpha, Beta, GA
+
+[[file:c:/erauner12.github.io/labs/course/kubernetes.org_20200413_142045_GRgVRo.png]]
 
 
