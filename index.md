@@ -5,7 +5,7 @@ title: ""
 ## Programming
 
 - [Architecture](/pkb/programming/architecture/index)
-- [Basic](/pkb/programming/basic/index)
+- [Basic](/pkb/programming/placeholder/index)
 - [Book](/pkb/programming/book/index)
 - [C](/pkb/programming/c/index)
 - [Course](/pkb/programming/course/index)
