@@ -5,6 +5,9 @@
 #+HTML_HEAD: <style> p{max-width:800px;}</style>
 #+HTML_HEAD: <style> li{max-width:800px;}</style
 
+# Change the background of source block.
+#+HTML_HEAD: <style>pre.src{background:#343131;color:white;} </style>
+
 file:c:/erauner12.github.io/lab/Course/kubernetes.org_20200413_172241_Qh5Rx8.png
 
 * Links
