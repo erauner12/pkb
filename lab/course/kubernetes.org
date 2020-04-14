@@ -1,7 +1,11 @@
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
 #+TITLE: Kubernetes
 
+#+HTML_HEAD: <style> #content{max-width:1800px;}</style>
+#+HTML_HEAD: <style> p{max-width:800px;}</style>
+#+HTML_HEAD: <style> li{max-width:800px;}</style
 
+file:c:/erauner12.github.io/lab/Course/kubernetes.org_20200413_172241_Qh5Rx8.png
 
 * Links
 
@@ -13,6 +17,7 @@ https://app.pluralsight.com/library/courses/docker-kubernetes-big-picture/table-
 https://app.pluralsight.com/library/courses/docker-getting-started/table-of-contents
 
 https://app.pluralsight.com/library/courses/getting-started-kubernetes/table-of-contents
+
 
 
 
