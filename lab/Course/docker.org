@@ -124,11 +124,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 - virtual machine hypervisor
 
-  - file:../images/docker.org_20200413_235441_sv1w28.png
-
+  - [[file:c:/erauner12.github.io/lab/Course/docker.org_20200413_235441_sv1w28.png]]
 
 - Docker
-  - file:../images/docker.org_20200413_235501_X2ksF7.png
+  - [[file:c:/erauner12.github.io/lab/Course/docker.org_20200413_235501_X2ksF7.png]]
 
 
 ** The 'docker run' Command
@@ -213,7 +212,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 
 - You can see that it was running at one point though below:
 
-#+CAPTION:
+#+CAPTION: using -a flag
 #+BEGIN_SRC Shell Script
 [vagrant@dropwizard ~]$ docker ps -a
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                     PORTS               NAMESe13c18cbdd12        hello-world         "/hello"            5 minutes ago       Exited (0) 5 minutes ago                       naughty_albattani
@@ -242,7 +241,7 @@ hello-world         latest              fce289e99eb9        15 months ago       
       - the docker daemon did not have it, then it pulled it and made a copy
 	- at that point it created the container
 
-file:../images/docker.org_20200414_000936_a2z6Dc.png
+[[file:c:/erauner12.github.io/lab/Course/docker.org_20200414_000936_a2z6Dc.png]]
 
 
 
@@ -470,7 +469,7 @@ Deleted: sha256:af0b15c8625bb1938f1d7b17081031f649fd14e6b233688eea3c5483994a66a3
 
 - docker run is just a client command
 
-  - file:../images/docker.org_20200414_174308_6t4bIJ.png
+  - [[file:c:/erauner12.github.io/lab/Course/docker.org_20200414_174308_6t4bIJ.png]]
 
 - docker is just talking to the daemon which is doing all the heavy lfiting through the docker api
 
@@ -516,9 +515,24 @@ docker rm
 
 ** Module Intro
 
+- We are going to build a swarm
+
+  - start using services, scale them, and update them in this section
+
+- deploy a multi-service app with stacks and bundles
+
+
 ** Swarm Mode Theory
 
 ** Configuring Swarm Mode
+
+- native clustering
+
+  - a cluster = a swarm
+
+    - docker engines in a swam run in swarm mdoe
+
+    - 
 
 ** Services
 

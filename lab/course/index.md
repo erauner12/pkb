@@ -4,6 +4,6 @@ title: ""
 
 ## Lab / Course
 
-- [Docker](/pkb/lab/course/docker.html)
+- [Docker](/pkb/lab/Course/docker.html)
 
 
