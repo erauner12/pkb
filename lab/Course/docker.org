@@ -1,0 +1,267 @@
+#+SETUPFILE: https://erauner12.github.io/pkb/setup/theme-readtheorg.setup
+#+TITLE: Docker
+
+
+* Links
+
+https://app.pluralsight.com/library/courses/docker-getting-started/table-of-contents
+
+
+
+* Commands
+
+#+CAPTION:
+#+BEGIN_SRC go
+dock image ls
+#+END_SRC
+
+#+CAPTION:
+#+BEGIN_SRC go
+docker start web
+#+END_SRC
+
+#+CAPTION:
+#+BEGIN_SRC go
+docker stop web
+#+END_SRC
+
+
+
+
+
+* Course Overview
+
+** Course Overview
+
+
+
+* Course Introduction
+
+** Introduction
+
+
+- Docker and containers massive pasrt of the future of IT.
+
+  - just finished the big picture
+
+  - isntall docker
+
+  - working with containers
+
+  - working with apps
+
+- kubernetes is a bigger deal but docker swarm is also on the map
+
+
+- quick refresher
+
+  - modern day apps are made up of services
+
+    - need an orchestration layer like kubernetes
+
+      - going to see how to install it on various platforms
+
+      - going to finish play finish and play around
+ 
+
+* Installing Docker
+
+** Module Intro
+
+- you can isntall on various platforms
+
+  - window
+  - linux
+  - mac
+
+- 
+
+  - on prem
+  - cloud
+  - local
+
+
+- This course will be doing docker on AWS
+
+
+** Docker for Windows
+
+- Windows 10 64 bit only
+
+  - install a docker
+
+** Docker for Mac
+
+** Installing Docker on Windows Server 2016
+
+** Installing Docker on Linux
+** Module Summary
+
+
+
+* Working with Containers
+
+** What Is a Container?
+
+- virtual machine hypervisor
+
+  - [[file:c:/erauner12.github.io/lab/Course/docker.org_20200413_235441_sv1w28.png]]
+
+- Docker
+  - [[file:c:/erauner12.github.io/lab/Course/docker.org_20200413_235501_X2ksF7.png]]
+
+
+** The 'docker run' Command
+
+#+CAPTION:
+#+BEGIN_SRC go
+[vagrant@dropwizard ~]$ docker version
+
+Client: Docker Engine - Community
+ Version:           19.03.8
+ API version:       1.40
+ Go version:        go1.12.17
+ Git commit:        afacb8b
+ Built:             Wed Mar 11 01:27:04 2020
+ OS/Arch:           linux/amd64
+ Experimental:      false
+
+Server: Docker Engine - Community
+ Engine:
+  Version:          19.03.8
+  API version:      1.40 (minimum version 1.12)
+  Go version:       go1.12.17
+  Git commit:       afacb8b
+  Built:            Wed Mar 11 01:25:42 2020
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          1.2.13
+  GitCommit:        7ad184331fa3e55e52b890ea95e65ba581ae3429
+ runc:
+  Version:          1.0.0-rc10
+  GitCommit:        dc9208a3303feef5b3839f4323d9beb36df0a9dd
+ docker-init:
+  Version:          0.18.0
+#+END_SRC
+
+
+
+#+CAPTION: We are creating a container below
+#+BEGIN_SRC 
+
+[vagrant@dropwizard ~]$ docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+1b930d010525: Pull complete
+Digest: sha256:f9dfddf63636d84ef479d645ab5885156ae030f611a56f3a7ac7f2fdd86d7e4e
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+#+END_SRC
+
+
+
+- all the container did was open up and say "Hello from Docker" It's no longer running. Will show you below
+  - prints to screen then exits
+
+#+CAPTION: Not running
+#+BEGIN_SRC ruby
+[vagrant@dropwizard ~]$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+#+END_SRC
+
+- You can see that it was running at one point though below:
+
+#+CAPTION:
+#+BEGIN_SRC go
+[vagrant@dropwizard ~]$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                     PORTS               NAMESe13c18cbdd12        hello-world         "/hello"            5 minutes ago       Exited (0) 5 minutes ago                       naughty_albattani
+#+END_SRC
+
+#+CAPTION: shows images that were local
+#+BEGIN_SRC go
+[vagrant@dropwizard ~]$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+hello-world         latest              fce289e99eb9        15 months ago       1.84kB
+
+#+END_SRC
+
+- Quick recap
+
+  - Docker client and Docker Daemon on the same host
+
+    - docker client made api calls to the talker daemon
+
+    - docker says start me a container with a hello world image
+
+      - went out to docker hub to get the image
+
+    - on premise registry is likely would cerner would have for their own applications
+
+      - the docker daemon did not have it, then it pulled it and made a copy
+	- at that point it created the container
+
+[[file:c:/erauner12.github.io/lab/Course/docker.org_20200414_000936_a2z6Dc.png]]
+
+
+
+
+
+
+
+
+
+
+
+** Theory of Pulling and Running Containers
+
+** Working with Images
+
+** Container Lifecycle
+
+** Lesson Recap
+
+
+* Swarm Mode and Microservices
+
+** Module Intro
+
+** Swarm Mode Theory
+
+** Configuring Swarm Mode
+
+** Services
+
+** Scaling Services
+
+** Rolling Updates
+
+** Stacks and DABs
+
+** Recap
+
+
+* What Next!
+
+** Next Steps

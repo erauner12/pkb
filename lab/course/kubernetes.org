@@ -1,14 +1,7 @@
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
 #+TITLE: Kubernetes
 
-#+HTML_HEAD: <style> #content{max-width:1800px;}</style>
-#+HTML_HEAD: <style> p{max-width:800px;}</style>
-#+HTML_HEAD: <style> li{max-width:800px;}</style
 
-# Change the background of source block.
-#+HTML_HEAD: <style>pre.src{background:#343131;color:white;} </style>
-
-file:c:/erauner12.github.io/lab/Course/kubernetes.org_20200413_172241_Qh5Rx8.png
 
 * Links
 
@@ -70,13 +63,12 @@ waste of resources
 
 *** Hello VMWare
 
-get a lot more bang for your buck
+get a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buck
 
 instead of one server to one app
 
 
 Vmware Model
-file:../images/placeholder.org_20200413_120416_C8bCuW.png
 
 
 You don't need the whole operating system
@@ -91,23 +83,17 @@ one app per container
 -smaller and more efficient
 
 
-file:../images/placeholder.org_20200413_120659_XEaAxi.png
 
 
 The OS steals resources that you could be putting towards your applications
 
-file:../images/placeholder.org_20200413_121031_lmZLpD.png
+
 
 
 docker image is like a VM template
 
 firing up a container here:
  
-file:../images/placeholder.org_20200413_121450_AXF47D.png
-
-
-
-file:../images/placeholder.org_20200413_121531_O59jAB.png
 
 
 installed this from docker hub and exposed it on a network port
@@ -116,17 +102,17 @@ installed this from docker hub and exposed it on a network port
 
 
 bringing it back up
-file:../images/placeholder.org_20200413_121709_J18TF5.png
+
 
 
 monolotihic apps everything is backed into a single binary
 
 
-file:../images/placeholder.org_20200413_122002_GAuD3j.png
+
 
 
 manage services independently
-file:../images/placeholder.org_20200413_122253_d1CQOy.png
+
 
 
 
@@ -140,9 +126,7 @@ file:../images/placeholder.org_20200413_122253_d1CQOy.png
 image is just a stopped container
 
 
-file:../images/kubernetes.org_20200413_124613_GR80VW.png
 
-file:../images/kubernetes.org_20200413_124644_0h7wPI.png
 
 at this point you can run the container like we did earlier
 
@@ -153,9 +137,9 @@ at this point you can run the container like we did earlier
 
 *** What is kubernetes
 
-kubernets cares about vs what docker cares about:
+kubernetes cares about vs what docker cares about:
 
-file:../images/kubernetes.org_20200413_125456_lOL5c7.png
+
 
 docker  = esxi
 kubernetes = vcenter
@@ -165,16 +149,14 @@ each node is running kubernetes and container runtime ( so that node can run con
 
 - docker takes care of the low level stuff and kubernetes controls it all
 
-file:../images/kubernetes.org_20200413_125715_MhRT6U.png
 
-file:../images/kubernetes.org_20200413_125733_k3p9yu.png
 
 
 if your apps are running on-prem, is not difficult to move to the cloud and back if need be:
 
 decouples from where our applications are actually running
 
-file:../images/kubernetes.org_20200413_130138_5OG4Qi.png
+
 
 we build a kubernetes cluster to host our applications
 
@@ -202,21 +184,40 @@ Stateless vs Stateful
 Community Edition and Enterprise Edition
 
 
-file:../images/kubernetes.org_20200413_141601_9UYGuP.png
+
 
 *** Kubernetes
 
-can use on prem and in the cloud
-
-file:../images/kubernetes.org_20200413_141847_aW3qDA.png
-
-openstack is what Cerner uses
+Orchestration
 
 
+- can use on prem and in the cloud
+
+- we don't make the container bigger
+  testing testing testing
+  testing testing
+  testing testing testing testing
+
+
+- fskjdfl;dskj
+
+  - this is a test
+    - this is  test.
+      I am going to continue typing over and over
+
+  - ksdjflksdjfl;sdk
+
+  - this is a test
+
+  - this is a test
+
+    - this is a test
+
+      - this is a test
+
+      - this is a test
+
+  - this is a test
+
+testing
 **** Features:
-
-Alpha, Beta, GA
-
-file:../images/kubernetes.org_20200413_142045_GRgVRo.png
-
-

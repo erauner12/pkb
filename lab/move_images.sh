@@ -6,6 +6,8 @@ find . -type f -name "*.org" -exec sed -i 's/\[\[file/file/g' {} \;
 # remove the "[[file" and "png]]"
 find . -type f -name "*.org" -exec sed -i 's/png\]\]/png/g' {} \;
 
+./update_org_files.sh
+
 
 # remove windows path
 
