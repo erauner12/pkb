@@ -1,6 +1,5 @@
-#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
+#+SETUPFILE: ../../styles/readtheorg.setup
 #+TITLE: Docker
-
 
 * Links
 
@@ -10,20 +9,21 @@ https://app.pluralsight.com/library/courses/docker-getting-started/table-of-cont
 
 * Commands
 
-#+CAPTION:
-#+BEGIN_SRC go
+#+CAPTION:this command does this
+#+BEGIN_SRC Shell Script
 dock image ls
 #+END_SRC
 
-#+CAPTION:
-#+BEGIN_SRC go
+#+CAPTION:this command does that
+#+BEGIN_SRC ruby
 docker start web
 #+END_SRC
 
-#+CAPTION:
+#+CAPTION:this command does this
 #+BEGIN_SRC go
 docker stop web
 #+END_SRC
+
 
 
 
@@ -38,6 +38,9 @@ docker stop web
 * Course Introduction
 
 ** Introduction
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 
 
 - Docker and containers massive pasrt of the future of IT.
@@ -113,8 +116,8 @@ docker stop web
 
 ** The 'docker run' Command
 
-#+CAPTION:
-#+BEGIN_SRC go
+#+CAPTION:test
+#+BEGIN_SRC Shell Script
 [vagrant@dropwizard ~]$ docker version
 
 Client: Docker Engine - Community
@@ -148,7 +151,7 @@ Server: Docker Engine - Community
 
 
 #+CAPTION: We are creating a container below
-#+BEGIN_SRC 
+#+BEGIN_SRC Shell Script
 
 [vagrant@dropwizard ~]$ docker run hello-world
 Unable to find image 'hello-world:latest' locally
@@ -194,13 +197,13 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 - You can see that it was running at one point though below:
 
 #+CAPTION:
-#+BEGIN_SRC go
+#+BEGIN_SRC Shell Script
 [vagrant@dropwizard ~]$ docker ps -a
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                     PORTS               NAMESe13c18cbdd12        hello-world         "/hello"            5 minutes ago       Exited (0) 5 minutes ago                       naughty_albattani
 #+END_SRC
 
 #+CAPTION: shows images that were local
-#+BEGIN_SRC go
+#+BEGIN_SRC Shell Script
 [vagrant@dropwizard ~]$ docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 hello-world         latest              fce289e99eb9        15 months ago       1.84kB
