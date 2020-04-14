@@ -1,4 +1,4 @@
-#+SETUPFILE: https://erauner12.github.io/pkb/setup/theme-readtheorg.setup
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
 #+TITLE: Docker
 
 
@@ -44,7 +44,7 @@ docker stop web
 
   - just finished the big picture
 
-  - isntall docker
+  - install docker
 
   - working with containers
 
