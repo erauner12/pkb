@@ -10,3 +10,7 @@ title: ""
 
 - [Book](/pkb/general/book/index)
 - [Misc](/pkb/general/misc/index)
+
+## Commands
+
+- [Test](/pkb/commands/test/index)
