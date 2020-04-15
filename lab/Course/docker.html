@@ -1,12 +1,9 @@
----
-title: "Docker"
----
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-04-14 Tue 20:34 -->
+<!-- 2020-04-14 Tue 20:58 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Docker</title>
@@ -244,71 +241,71 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1ac33ea">1. Links</a></li>
-<li><a href="#org7252ad0">2. Commands</a></li>
-<li><a href="#org32f6c3d">3. Course Overview</a>
+<li><a href="#org7d0c882">1. Links</a></li>
+<li><a href="#orgdcf0d9c">2. Commands</a></li>
+<li><a href="#orgfe1afe0">3. Course Overview</a>
 <ul>
-<li><a href="#org209923c">3.1. Course Overview</a></li>
+<li><a href="#org35f44ae">3.1. Course Overview</a></li>
 </ul>
 </li>
-<li><a href="#org45194c2">4. Course Introduction</a>
+<li><a href="#org94bb09b">4. Course Introduction</a>
 <ul>
-<li><a href="#orgda3e237">4.1. Introduction</a></li>
+<li><a href="#org9b92f75">4.1. Introduction</a></li>
 </ul>
 </li>
-<li><a href="#org93999c1">5. Installing Docker</a>
+<li><a href="#org95bd362">5. Installing Docker</a>
 <ul>
-<li><a href="#orge8fd404">5.1. Module Intro</a></li>
-<li><a href="#orgda3b5a5">5.2. Docker for Windows</a></li>
-<li><a href="#orgbc97f18">5.3. Docker for Mac</a></li>
-<li><a href="#org6fde91e">5.4. Installing Docker on Windows Server 2016</a></li>
-<li><a href="#org9f79e70">5.5. Installing Docker on Linux</a></li>
-<li><a href="#orge726883">5.6. Module Summary</a></li>
+<li><a href="#orgf900f44">5.1. Module Intro</a></li>
+<li><a href="#orgb250715">5.2. Docker for Windows</a></li>
+<li><a href="#org95d0ad3">5.3. Docker for Mac</a></li>
+<li><a href="#orge529192">5.4. Installing Docker on Windows Server 2016</a></li>
+<li><a href="#orge119da5">5.5. Installing Docker on Linux</a></li>
+<li><a href="#org4d53716">5.6. Module Summary</a></li>
 </ul>
 </li>
-<li><a href="#org138c4a2">6. Working with Containers</a>
+<li><a href="#org723e025">6. Working with Containers</a>
 <ul>
-<li><a href="#orgc9c9913">6.1. What Is a Container?</a></li>
-<li><a href="#org88a81bb">6.2. The 'docker run' Command</a></li>
-<li><a href="#org1c9e251">6.3. Theory of Pulling and Running Containers</a></li>
-<li><a href="#org4f27771">6.4. Working with Images</a></li>
-<li><a href="#org6c0ae45">6.5. Container Lifecycle</a>
+<li><a href="#org1be537d">6.1. What Is a Container?</a></li>
+<li><a href="#org6847be3">6.2. The 'docker run' Command</a></li>
+<li><a href="#org0e2851f">6.3. Theory of Pulling and Running Containers</a></li>
+<li><a href="#orgfe3d63b">6.4. Working with Images</a></li>
+<li><a href="#org7c4412f">6.5. Container Lifecycle</a>
 <ul>
-<li><a href="#orge43b3ca">6.5.1. vagrant config on workstation</a></li>
+<li><a href="#org3a66576">6.5.1. vagrant config on workstation</a></li>
 </ul>
 </li>
-<li><a href="#org197550b">6.6. back to container</a></li>
-<li><a href="#orga1b555f">6.7. Lesson Recap</a></li>
+<li><a href="#org1951fdb">6.6. back to container</a></li>
+<li><a href="#org7c8cb9a">6.7. Lesson Recap</a></li>
 </ul>
 </li>
-<li><a href="#orgeb857d6">7. Swarm Mode and Microservices</a>
+<li><a href="#org0bdee65">7. Swarm Mode and Microservices</a>
 <ul>
-<li><a href="#org04895ff">7.1. Module Intro</a></li>
-<li><a href="#orgb5998c2">7.2. Swarm Mode Theory</a></li>
-<li><a href="#org03f4119">7.3. Configuring Swarm Mode</a>
+<li><a href="#org3643024">7.1. Module Intro</a></li>
+<li><a href="#orgcf7d4f6">7.2. Swarm Mode Theory</a></li>
+<li><a href="#org2059b57">7.3. Configuring Swarm Mode</a>
 <ul>
-<li><a href="#orgf2934f7">7.3.1. this ended up failing</a></li>
-<li><a href="#org31f9281">7.3.2. Second Attempt</a></li>
+<li><a href="#orgdb84526">7.3.1. this ended up failing</a></li>
+<li><a href="#orgb49764b">7.3.2. Second Attempt</a></li>
 </ul>
 </li>
-<li><a href="#org7e570a9">7.4. Services</a></li>
-<li><a href="#org46bd888">7.5. Scaling Services</a></li>
-<li><a href="#org0bcddbb">7.6. Rolling Updates</a></li>
-<li><a href="#org0d20dfa">7.7. Stacks and DABs</a></li>
-<li><a href="#org6518bb1">7.8. Recap</a></li>
+<li><a href="#org429db17">7.4. Services</a></li>
+<li><a href="#org5d60da1">7.5. Scaling Services</a></li>
+<li><a href="#orgf1a494b">7.6. Rolling Updates</a></li>
+<li><a href="#orgb9e306d">7.7. Stacks and DABs</a></li>
+<li><a href="#org759350c">7.8. Recap</a></li>
 </ul>
 </li>
-<li><a href="#orgf12f6a7">8. What Next!</a>
+<li><a href="#orgb5b2cb6">8. What Next!</a>
 <ul>
-<li><a href="#org398ea54">8.1. Next Steps</a></li>
+<li><a href="#org172d1f3">8.1. Next Steps</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org1ac33ea" class="outline-2">
-<h2 id="org1ac33ea"><span class="section-number-2">1</span> Links</h2>
+<div id="outline-container-org7d0c882" class="outline-2">
+<h2 id="org7d0c882"><span class="section-number-2">1</span> Links</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <a href="https://app.pluralsight.com/library/courses/docker-getting-started/table-of-contents">https://app.pluralsight.com/library/courses/docker-getting-started/table-of-contents</a>
@@ -318,8 +315,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-org7252ad0" class="outline-2">
-<h2 id="org7252ad0"><span class="section-number-2">2</span> Commands</h2>
+<div id="outline-container-orgdcf0d9c" class="outline-2">
+<h2 id="orgdcf0d9c"><span class="section-number-2">2</span> Commands</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <label class="org-src-name"><span class="listing-number">Listing 1: </span>starts a new container</label><pre class="src src-go">docker run
@@ -359,23 +356,23 @@ for the JavaScript code in this tag.
 </div>
 
 
-<div id="outline-container-org32f6c3d" class="outline-2">
-<h2 id="org32f6c3d"><span class="section-number-2">3</span> Course Overview</h2>
+<div id="outline-container-orgfe1afe0" class="outline-2">
+<h2 id="orgfe1afe0"><span class="section-number-2">3</span> Course Overview</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org209923c" class="outline-3">
-<h3 id="org209923c"><span class="section-number-3">3.1</span> Course Overview</h3>
+<div id="outline-container-org35f44ae" class="outline-3">
+<h3 id="org35f44ae"><span class="section-number-3">3.1</span> Course Overview</h3>
 </div>
 </div>
 
 
 
-<div id="outline-container-org45194c2" class="outline-2">
-<h2 id="org45194c2"><span class="section-number-2">4</span> Course Introduction</h2>
+<div id="outline-container-org94bb09b" class="outline-2">
+<h2 id="org94bb09b"><span class="section-number-2">4</span> Course Introduction</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orgda3e237" class="outline-3">
-<h3 id="orgda3e237"><span class="section-number-3">4.1</span> Introduction</h3>
+<div id="outline-container-org9b92f75" class="outline-3">
+<h3 id="org9b92f75"><span class="section-number-3">4.1</span> Introduction</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -422,12 +419,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 </div>
 
 
-<div id="outline-container-org93999c1" class="outline-2">
-<h2 id="org93999c1"><span class="section-number-2">5</span> Installing Docker</h2>
+<div id="outline-container-org95bd362" class="outline-2">
+<h2 id="org95bd362"><span class="section-number-2">5</span> Installing Docker</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-orge8fd404" class="outline-3">
-<h3 id="orge8fd404"><span class="section-number-3">5.1</span> Module Intro</h3>
+<div id="outline-container-orgf900f44" class="outline-3">
+<h3 id="orgf900f44"><span class="section-number-3">5.1</span> Module Intro</h3>
 <div class="outline-text-3" id="text-5-1">
 <ul class="org-ul">
 <li>you can isntall on various platforms
@@ -453,8 +450,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 </div>
 
 
-<div id="outline-container-orgda3b5a5" class="outline-3">
-<h3 id="orgda3b5a5"><span class="section-number-3">5.2</span> Docker for Windows</h3>
+<div id="outline-container-orgb250715" class="outline-3">
+<h3 id="orgb250715"><span class="section-number-3">5.2</span> Docker for Windows</h3>
 <div class="outline-text-3" id="text-5-2">
 <ul class="org-ul">
 <li>Windows 10 64 bit only
@@ -466,30 +463,30 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 </div>
 </div>
 
-<div id="outline-container-orgbc97f18" class="outline-3">
-<h3 id="orgbc97f18"><span class="section-number-3">5.3</span> Docker for Mac</h3>
+<div id="outline-container-org95d0ad3" class="outline-3">
+<h3 id="org95d0ad3"><span class="section-number-3">5.3</span> Docker for Mac</h3>
 </div>
 
-<div id="outline-container-org6fde91e" class="outline-3">
-<h3 id="org6fde91e"><span class="section-number-3">5.4</span> Installing Docker on Windows Server 2016</h3>
+<div id="outline-container-orge529192" class="outline-3">
+<h3 id="orge529192"><span class="section-number-3">5.4</span> Installing Docker on Windows Server 2016</h3>
 </div>
 
-<div id="outline-container-org9f79e70" class="outline-3">
-<h3 id="org9f79e70"><span class="section-number-3">5.5</span> Installing Docker on Linux</h3>
+<div id="outline-container-orge119da5" class="outline-3">
+<h3 id="orge119da5"><span class="section-number-3">5.5</span> Installing Docker on Linux</h3>
 </div>
-<div id="outline-container-orge726883" class="outline-3">
-<h3 id="orge726883"><span class="section-number-3">5.6</span> Module Summary</h3>
+<div id="outline-container-org4d53716" class="outline-3">
+<h3 id="org4d53716"><span class="section-number-3">5.6</span> Module Summary</h3>
 </div>
 </div>
 
 
 
-<div id="outline-container-org138c4a2" class="outline-2">
-<h2 id="org138c4a2"><span class="section-number-2">6</span> Working with Containers</h2>
+<div id="outline-container-org723e025" class="outline-2">
+<h2 id="org723e025"><span class="section-number-2">6</span> Working with Containers</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-orgc9c9913" class="outline-3">
-<h3 id="orgc9c9913"><span class="section-number-3">6.1</span> What Is a Container?</h3>
+<div id="outline-container-org1be537d" class="outline-3">
+<h3 id="org1be537d"><span class="section-number-3">6.1</span> What Is a Container?</h3>
 <div class="outline-text-3" id="text-6-1">
 <ul class="org-ul">
 <li>virtual machine hypervisor
@@ -507,8 +504,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 </div>
 
 
-<div id="outline-container-org88a81bb" class="outline-3">
-<h3 id="org88a81bb"><span class="section-number-3">6.2</span> The 'docker run' Command</h3>
+<div id="outline-container-org6847be3" class="outline-3">
+<h3 id="org6847be3"><span class="section-number-3">6.2</span> The 'docker run' Command</h3>
 <div class="outline-text-3" id="text-6-2">
 <div class="org-src-container">
 <label class="org-src-name"><span class="listing-number">Listing 8: </span>docker version</label><pre class="src src-Shell">[vagrant@dropwizard ~]$ docker version
@@ -655,12 +652,12 @@ hello-world         latest              fce289e99eb9        15 months ago       
 
 
 
-<div id="outline-container-org1c9e251" class="outline-3">
-<h3 id="org1c9e251"><span class="section-number-3">6.3</span> Theory of Pulling and Running Containers</h3>
+<div id="outline-container-org0e2851f" class="outline-3">
+<h3 id="org0e2851f"><span class="section-number-3">6.3</span> Theory of Pulling and Running Containers</h3>
 </div>
 
-<div id="outline-container-org4f27771" class="outline-3">
-<h3 id="org4f27771"><span class="section-number-3">6.4</span> Working with Images</h3>
+<div id="outline-container-orgfe3d63b" class="outline-3">
+<h3 id="orgfe3d63b"><span class="section-number-3">6.4</span> Working with Images</h3>
 <div class="outline-text-3" id="text-6-4">
 <ul class="org-ul">
 <li>images are just stopped containers</li>
@@ -721,8 +718,8 @@ hello-world         latest              fce289e99eb9        15 months ago       
 
 
 
-<div id="outline-container-org6c0ae45" class="outline-3">
-<h3 id="org6c0ae45"><span class="section-number-3">6.5</span> Container Lifecycle</h3>
+<div id="outline-container-org7c4412f" class="outline-3">
+<h3 id="org7c4412f"><span class="section-number-3">6.5</span> Container Lifecycle</h3>
 <div class="outline-text-3" id="text-6-5">
 <p>
 lifecycle of a container is shortlived
@@ -762,8 +759,8 @@ Status: Downloaded newer image for nigelpoulton/pluralsight-docker-ci:latest
 </div>
 
 
-<div id="outline-container-orge43b3ca" class="outline-4">
-<h4 id="orge43b3ca"><span class="section-number-4">6.5.1</span> vagrant config on workstation</h4>
+<div id="outline-container-org3a66576" class="outline-4">
+<h4 id="org3a66576"><span class="section-number-4">6.5.1</span> vagrant config on workstation</h4>
 <div class="outline-text-4" id="text-6-5-1">
 <div class="org-src-container">
 <label class="org-src-name"><span class="listing-number">Listing 21: </span>add the following to docker vagrant file</label><pre class="src src-go">config.vm.network "forwarded_port", guest: 80, host: 80
@@ -828,8 +825,8 @@ you should get your page
 
 
 
-<div id="outline-container-org197550b" class="outline-3">
-<h3 id="org197550b"><span class="section-number-3">6.6</span> back to container</h3>
+<div id="outline-container-org1951fdb" class="outline-3">
+<h3 id="org1951fdb"><span class="section-number-3">6.6</span> back to container</h3>
 <div class="outline-text-3" id="text-6-6">
 <ul class="org-ul">
 <li>let's log in to the container and look inside</li>
@@ -905,8 +902,8 @@ Deleted: sha256:af0b15c8625bb1938f1d7b17081031f649fd14e6b233688eea3c5483994a66a3
 </div>
 
 
-<div id="outline-container-orga1b555f" class="outline-3">
-<h3 id="orga1b555f"><span class="section-number-3">6.7</span> Lesson Recap</h3>
+<div id="outline-container-org7c8cb9a" class="outline-3">
+<h3 id="org7c8cb9a"><span class="section-number-3">6.7</span> Lesson Recap</h3>
 <div class="outline-text-3" id="text-6-7">
 <ul class="org-ul">
 <li>docker run is just a client command
@@ -961,12 +958,12 @@ Deleted: sha256:af0b15c8625bb1938f1d7b17081031f649fd14e6b233688eea3c5483994a66a3
 </div>
 </div>
 
-<div id="outline-container-orgeb857d6" class="outline-2">
-<h2 id="orgeb857d6"><span class="section-number-2">7</span> Swarm Mode and Microservices</h2>
+<div id="outline-container-org0bdee65" class="outline-2">
+<h2 id="org0bdee65"><span class="section-number-2">7</span> Swarm Mode and Microservices</h2>
 <div class="outline-text-2" id="text-7">
 </div>
-<div id="outline-container-org04895ff" class="outline-3">
-<h3 id="org04895ff"><span class="section-number-3">7.1</span> Module Intro</h3>
+<div id="outline-container-org3643024" class="outline-3">
+<h3 id="org3643024"><span class="section-number-3">7.1</span> Module Intro</h3>
 <div class="outline-text-3" id="text-7-1">
 <ul class="org-ul">
 <li>We are going to build a swarm
@@ -981,8 +978,8 @@ Deleted: sha256:af0b15c8625bb1938f1d7b17081031f649fd14e6b233688eea3c5483994a66a3
 </div>
 
 
-<div id="outline-container-orgb5998c2" class="outline-3">
-<h3 id="orgb5998c2"><span class="section-number-3">7.2</span> Swarm Mode Theory</h3>
+<div id="outline-container-orgcf7d4f6" class="outline-3">
+<h3 id="orgcf7d4f6"><span class="section-number-3">7.2</span> Swarm Mode Theory</h3>
 <div class="outline-text-3" id="text-7-2">
 <ul class="org-ul">
 <li>cluster = a swarm
@@ -1037,12 +1034,12 @@ Deleted: sha256:af0b15c8625bb1938f1d7b17081031f649fd14e6b233688eea3c5483994a66a3
 </div>
 </div>
 
-<div id="outline-container-org03f4119" class="outline-3">
-<h3 id="org03f4119"><span class="section-number-3">7.3</span> Configuring Swarm Mode</h3>
+<div id="outline-container-org2059b57" class="outline-3">
+<h3 id="org2059b57"><span class="section-number-3">7.3</span> Configuring Swarm Mode</h3>
 <div class="outline-text-3" id="text-7-3">
 </div>
-<div id="outline-container-orgf2934f7" class="outline-4">
-<h4 id="orgf2934f7"><span class="section-number-4">7.3.1</span> this ended up failing</h4>
+<div id="outline-container-orgdb84526" class="outline-4">
+<h4 id="orgdb84526"><span class="section-number-4">7.3.1</span> this ended up failing</h4>
 <div class="outline-text-4" id="text-7-3-1">
 <ul class="org-ul">
 <li>Vagrant Setup:
@@ -1054,7 +1051,7 @@ Deleted: sha256:af0b15c8625bb1938f1d7b17081031f649fd14e6b233688eea3c5483994a66a3
 
 
 <div class="org-src-container">
-<pre class="src src-go">λ vagrant status
+<pre class="src src-go">¦Ë vagrant status
 Current machine states:
 
 manager                   running (virtualbox)
@@ -1082,7 +1079,7 @@ To add a manager to this swarm, run 'docker swarm join-token manager' and follow
 
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 37: </span>take the command that was generated and run it on the worker nodes</label><pre class="src src-go">λ vagrant ssh worker-1
+<label class="org-src-name"><span class="listing-number">Listing 37: </span>take the command that was generated and run it on the worker nodes</label><pre class="src src-go">¦Ë vagrant ssh worker-1
 Welcome to Ubuntu 14.04.6 LTS (GNU/Linux 3.13.0-170-generic x86_64)
 
  * Documentation:  https://help.ubuntu.com/
@@ -1113,7 +1110,7 @@ logout
 Connection to 127.0.0.1 closed.
 
 C:\Users\Evan\Desktop\vagrant_lab\docker-lab\docker-swarm-vagrant (master -&gt; origin)
-λ vagrant ssh worker-2
+¦Ë vagrant ssh worker-2
 Welcome to Ubuntu 14.04.6 LTS (GNU/Linux 3.13.0-170-generic x86_64)
 
  * Documentation:  https://help.ubuntu.com/
@@ -1216,10 +1213,10 @@ Use `docker service ps 7ts4gxy2cfw6eyn4lw3n2nhq3` to check progress.
 vagrant@manager:~$ docker service ps 7ts4gxy2cfw6eyn4lw3n2nhq3
 ID                  NAME                IMAGE                                       NODE                DESIRED STATE       CURRENT STATE                     ERROR                              PORTS
 njopbxxqozad        psight1.1           nigelpoulton/pluralsight-docker-ci:latest   worker-2            Running             Starting less than a second ago
-9b68yk1rq4gh         \_ psight1.1       nigelpoulton/pluralsight-docker-ci:latest   worker-1            Shutdown            Failed 3 seconds ago              "starting container failed: OC…"
-ectzwhjtcyck         \_ psight1.1       nigelpoulton/pluralsight-docker-ci:latest   manager             Shutdown            Failed 10 seconds ago             "starting container failed: OC…"
-skf2unhgsvbh         \_ psight1.1       nigelpoulton/pluralsight-docker-ci:latest   manager             Shutdown            Failed 15 seconds ago             "starting container failed: OC…"
-u8gxf5ybaza6         \_ psight1.1       nigelpoulton/pluralsight-docker-ci:latest   worker-2            Shutdown            Failed 21 seconds ago             "starting container failed: OC…"
+9b68yk1rq4gh         \_ psight1.1       nigelpoulton/pluralsight-docker-ci:latest   worker-1            Shutdown            Failed 3 seconds ago              "starting container failed: OC¡­"
+ectzwhjtcyck         \_ psight1.1       nigelpoulton/pluralsight-docker-ci:latest   manager             Shutdown            Failed 10 seconds ago             "starting container failed: OC¡­"
+skf2unhgsvbh         \_ psight1.1       nigelpoulton/pluralsight-docker-ci:latest   manager             Shutdown            Failed 15 seconds ago             "starting container failed: OC¡­"
+u8gxf5ybaza6         \_ psight1.1       nigelpoulton/pluralsight-docker-ci:latest   worker-2            Shutdown            Failed 21 seconds ago             "starting container failed: OC¡­"
 ...
 
 #+CAPTION:you can view all the output by passing this flag
@@ -1248,8 +1245,8 @@ vagrant@manager:~$ docker service rm psight1
 
 
 
-<div id="outline-container-org31f9281" class="outline-4">
-<h4 id="org31f9281"><span class="section-number-4">7.3.2</span> Second Attempt</h4>
+<div id="outline-container-orgb49764b" class="outline-4">
+<h4 id="orgb49764b"><span class="section-number-4">7.3.2</span> Second Attempt</h4>
 <div class="outline-text-4" id="text-7-3-2">
 <ul class="org-ul">
 <li><a href="https://medium.com/@gauravtalele/docker-swarm-cluster-setup-with-vagrant-bca5ddb7a672">https://medium.com/@gauravtalele/docker-swarm-cluster-setup-with-vagrant-bca5ddb7a672</a></li>
@@ -1351,39 +1348,39 @@ slpu9nfbms4z        psight1.5           nigelpoulton/pluralsight-docker-ci:lates
 
 
 
-<div id="outline-container-org7e570a9" class="outline-3">
-<h3 id="org7e570a9"><span class="section-number-3">7.4</span> Services</h3>
+<div id="outline-container-org429db17" class="outline-3">
+<h3 id="org429db17"><span class="section-number-3">7.4</span> Services</h3>
 </div>
 
-<div id="outline-container-org46bd888" class="outline-3">
-<h3 id="org46bd888"><span class="section-number-3">7.5</span> Scaling Services</h3>
+<div id="outline-container-org5d60da1" class="outline-3">
+<h3 id="org5d60da1"><span class="section-number-3">7.5</span> Scaling Services</h3>
 </div>
 
-<div id="outline-container-org0bcddbb" class="outline-3">
-<h3 id="org0bcddbb"><span class="section-number-3">7.6</span> Rolling Updates</h3>
+<div id="outline-container-orgf1a494b" class="outline-3">
+<h3 id="orgf1a494b"><span class="section-number-3">7.6</span> Rolling Updates</h3>
 </div>
 
-<div id="outline-container-org0d20dfa" class="outline-3">
-<h3 id="org0d20dfa"><span class="section-number-3">7.7</span> Stacks and DABs</h3>
+<div id="outline-container-orgb9e306d" class="outline-3">
+<h3 id="orgb9e306d"><span class="section-number-3">7.7</span> Stacks and DABs</h3>
 </div>
 
-<div id="outline-container-org6518bb1" class="outline-3">
-<h3 id="org6518bb1"><span class="section-number-3">7.8</span> Recap</h3>
+<div id="outline-container-org759350c" class="outline-3">
+<h3 id="org759350c"><span class="section-number-3">7.8</span> Recap</h3>
 </div>
 </div>
 
 
-<div id="outline-container-orgf12f6a7" class="outline-2">
-<h2 id="orgf12f6a7"><span class="section-number-2">8</span> What Next!</h2>
+<div id="outline-container-orgb5b2cb6" class="outline-2">
+<h2 id="orgb5b2cb6"><span class="section-number-2">8</span> What Next!</h2>
 <div class="outline-text-2" id="text-8">
 </div>
-<div id="outline-container-org398ea54" class="outline-3">
-<h3 id="org398ea54"><span class="section-number-3">8.1</span> Next Steps</h3>
+<div id="outline-container-org172d1f3" class="outline-3">
+<h3 id="org172d1f3"><span class="section-number-3">8.1</span> Next Steps</h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2020-04-14 Tue 20:34</p>
+<p class="date">Created: 2020-04-14 Tue 20:58</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
