@@ -124,7 +124,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 - virtual machine hypervisor
 
-  - docker.org_20200413_235441_sv1w28.png
+  - file:../../images/docker.org_20200413_235441_sv1w28.png
 
 - Docker
   - file:../../images/docker.org_20200413_235501_X2ksF7.png

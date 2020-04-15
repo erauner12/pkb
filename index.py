@@ -119,5 +119,5 @@ def info(message):
 
 index(
 	['lab', 'general','commands'],
-	['images']
+	['images', 'todo']
 )

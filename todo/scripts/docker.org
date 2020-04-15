@@ -1,0 +1,2 @@
+#+SETUPFILE: ../../styles/readtheorg.setup
+#+TITLE: script ideas
