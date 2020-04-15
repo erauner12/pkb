@@ -2,7 +2,7 @@
 title: ""
 ---
 
-## Labs
+## Lab
 
 - [Course](/pkb/lab/course/index)
 

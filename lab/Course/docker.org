@@ -524,15 +524,289 @@ docker rm
 
 ** Swarm Mode Theory
 
+- cluster = a swarm
+
+  - all about true native clustering
+
+- manager nodes maintain the swarm
+
+  - the more managers you have, the longer it takes to come to a conclusion
+  - only one is a leader
+
+- worker nodes execute tasks
+
+- services
+  - declaritive way of running tasks
+
+#+CAPTION: go create a service named web-fe with 5 instances of the continual task it is going to run
+#+BEGIN_SRC go
+docker service create --name web-fe --replicas 5 ...
+#+END_SRC
+
+- this is desired state. docker going to make sure actual state = desired state
+
+- tasks
+
+  - assigned to workers
+
+  - task is more or less a container
+
+- swarm consists of manager and worker nodes
+
+  - manager splits the service into tasks
+
+  - schedules tasks against available nodes in the swarm
+
+    - worker node executes the tasks
+
 ** Configuring Swarm Mode
+*** this ended up failing
+- Vagrant Setup:
 
-- native clustering
+  - https://https://github.com/monicagangwar/docker-swarm-vagrant
 
-  - a cluster = a swarm
 
-    - docker engines in a swam run in swarm mdoe
+#+CAPTION:
+#+BEGIN_SRC go
+¦Ë vagrant status
+Current machine states:
 
-    - 
+manager                   running (virtualbox)
+worker-1                  running (virtualbox)
+worker-2                  running (virtualbox)
+
+This environment represents multiple VMs. The VMs are all listed
+above with their current state. For more information about a specific
+VM, run `vagrant status NAME`.
+#+END_SRC
+
+
+#+CAPTION:initialize the swarm with the IP in the vagrant file
+#+BEGIN_SRC go
+vagrant@manager:~$ docker swarm init --advertise-addr 192.168.100.10:2377
+Swarm initialized: current node (y1qo6dke3ycq1d9sb742p1tax) is now a manager.
+
+To add a worker to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-087ujuq7iejr18p0yjc83n31l44t6k2mqneswl9prdt2lnyk9c-1tg0hg8baif9c3qf59ksmymnn 192.168.100.10:2377
+
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+#+END_SRC
+
+
+#+CAPTION:take the command that was generated and run it on the worker nodes
+#+BEGIN_SRC go
+¦Ë vagrant ssh worker-1
+Welcome to Ubuntu 14.04.6 LTS (GNU/Linux 3.13.0-170-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Apr 14 23:38:42 UTC 2020
+
+  System load:  0.23              Users logged in:        0
+  Usage of /:   4.3% of 39.34GB   IP address for eth0:    10.0.2.15
+  Memory usage: 19%               IP address for eth1:    192.168.100.11
+  Swap usage:   0%                IP address for docker0: 172.17.0.1
+  Processes:    84
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+New release '16.04.6 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+
+vagrant@worker-1:~$
+vagrant@worker-1:~$ docker swarm join --token SWMTKN-1-087ujuq7iejr18p0yjc83n31l44t6k2mqneswl9prdt2lnyk9c-1tg0hg8baif9c 3qf59ksmymnn 192.168.100.10:2377
+This node joined a swarm as a worker.
+vagrant@worker-1:~$
+vagrant@worker-1:~$
+vagrant@worker-1:~$ exit
+logout
+Connection to 127.0.0.1 closed.
+
+C:\Users\Evan\Desktop\vagrant_lab\docker-lab\docker-swarm-vagrant (master -> origin)
+¦Ë vagrant ssh worker-2
+Welcome to Ubuntu 14.04.6 LTS (GNU/Linux 3.13.0-170-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Apr 14 23:40:05 UTC 2020
+
+  System load:  0.07              Users logged in:        0
+  Usage of /:   4.3% of 39.34GB   IP address for eth0:    10.0.2.15
+  Memory usage: 19%               IP address for eth1:    192.168.100.12
+  Swap usage:   0%                IP address for docker0: 172.17.0.1
+  Processes:    83
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+New release '16.04.6 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+vagrant@worker-2:~$ docker swarm join --token SWMTKN-1-087ujuq7iejr18p0yjc83n31l44t6k2mqneswl9prdt2lnyk9c-1tg0hg8baif9c 3qf59ksmymnn 192.168.100.10:2377
+This node joined a swarm as a worker.
+#+END_SRC
+
+
+
+- Now go back to your manager and see if you can see the workers you just added
+
+#+CAPTION: we only have one node and it is the leader. If there were more they would show as 'Reachable'
+#+BEGIN_SRC go
+vagrant@manager:~$ docker node ls
+ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
+y1qo6dke3ycq1d9sb742p1tax *   manager             Ready               Active              Leader              18.06.3-cet5oyge8yi03guttihfblt8kdu     worker-1            Ready               Active                                  18.06.3-ceu5gknij4qqpkyivd2nkot57nq     worker-2            Ready               Active                                  18.06.3-cevagrant@manager:~$
+
+#+END_SRC
+
+
+- you can add managers the same way with the following command to generate a command:
+
+#+CAPTION: this is how you would do it. not going to in this lab
+#+BEGIN_SRC go
+vagrant@manager:~$ docker swarm join-token manager
+To add a manager to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-087ujuq7iejr18p0yjc83n31l44t6k2mqneswl9prdt2lnyk9c-8yebc12bg5mf50ew4tpbjqdti 192.168.100.10:2377
+
+#+END_SRC
+
+
+- creates an overlay network with the name specified which each of the container can join
+random-network will be the overlay network that our application containers live on
+-d tells which driver to use. Currently overlay driver is being used
+
+#+CAPTION:
+#+BEGIN_SRC go
+vagrant@manager:~$ docker network create -d overlay my-overlay
+59da67u0bhow6l1hcmwp2gvnc
+#+END_SRC
+
+
+- might take a little bit since it has to pull the image down for every node
+
+  - running into an error here:
+
+#+CAPTION:this is an error
+#+BEGIN_SRC go
+vagrant@manager:~$ docker service create --name psight1 -p 8080:8080 --replicas 5 nigelpoulton/pluralsight-docker-ci
+7ts4gxy2cfw6eyn4lw3n2nhq3
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+1/5: ready     [======================================>            ]
+2/5: ready     [======================================>            ]
+3/5: ready     [======================================>            ]
+4/5: ready     [======================================>            ]
+5/5: ready     [======================================>            ]
+^COperation continuing in background.
+Use `docker service ps 7ts4gxy2cfw6eyn4lw3n2nhq3` to check progress.
+vagrant@manager:~$ docker service ps 7ts4gxy2cfw6eyn4lw3n2nhq3
+ID                  NAME                IMAGE                                       NODE                DESIRED STATE       CURRENT STATE                     ERROR                              PORTS
+njopbxxqozad        psight1.1           nigelpoulton/pluralsight-docker-ci:latest   worker-2            Running             Starting less than a second ago
+9b68yk1rq4gh         \_ psight1.1       nigelpoulton/pluralsight-docker-ci:latest   worker-1            Shutdown            Failed 3 seconds ago              "starting container failed: OC¡­"
+ectzwhjtcyck         \_ psight1.1       nigelpoulton/pluralsight-docker-ci:latest   manager             Shutdown            Failed 10 seconds ago             "starting container failed: OC¡­"
+skf2unhgsvbh         \_ psight1.1       nigelpoulton/pluralsight-docker-ci:latest   manager             Shutdown            Failed 15 seconds ago             "starting container failed: OC¡­"
+u8gxf5ybaza6         \_ psight1.1       nigelpoulton/pluralsight-docker-ci:latest   worker-2            Shutdown            Failed 21 seconds ago             "starting container failed: OC¡­"
+...
+
+#+CAPTION:you can view all the output by passing this flag
+#+BEGIN_SRC go
+docker service ps --no-trunc wamnlhva5t4zhfmihtbh6lhvn
+#+END_SRC
+
+
+## went ahead and removed it
+
+vagrant@manager:~$ docker service rm psight1
+
+#+END_SRC
+
+
+
+
+
+
+*** Second Attempt
+
+- https://medium.com/@gauravtalele/docker-swarm-cluster-setup-with-vagrant-bca5ddb7a672
+
+
+- Follow these steps and continue with pluralsight course:
+
+
+#+CAPTION:  got it working
+#+BEGIN_SRC go
+vagrant@manager:~$ docker service create --name psight1 -p 8080:8080 --replicas 5 nigelpoulton/pluralsight-docker-ci
+m2zu80xa6xklraxbxx7oj4o2j
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+1/5: preparing [=================================>                 ]
+2/5: preparing [=================================>                 ]
+3/5: preparing [=================================>                 ]
+4/5: preparing [=================================>                 ]
+5/5: preparing [=================================>                 ]
+^COperation continuing in background.
+Use `docker service ps m2zu80xa6xklraxbxx7oj4o2j` to check progress.
+vagrant@manager:~$ docker service ps m2zu80xa6xklraxbxx7oj4o2j
+ID                  NAME                IMAGE                                       NODE                DESIRED STATE       CURRENT STATE                    ERROR               PORTS
+5r9exmy840dq        psight1.1           nigelpoulton/pluralsight-docker-ci:latest   worker02            Running             Running less than a second ago
+dytl0pbj3snu        psight1.2           nigelpoulton/pluralsight-docker-ci:latest   worker01            Running             Running 2 seconds ago
+kx5wtjmvfd3x        psight1.3           nigelpoulton/pluralsight-docker-ci:latest   worker02            Running             Running 1 second ago
+i9agm7xsi36p        psight1.4           nigelpoulton/pluralsight-docker-ci:latest   manager             Running             Running 3 seconds ago
+slpu9nfbms4z        psight1.5           nigelpoulton/pluralsight-docker-ci:latest   worker01            Running             Running 3 seconds ago
+
+#+END_SRC
+
+
+- grab the IP address of both workers
+
+#+CAPTION:
+#+BEGIN_SRC go
+ifconfig
+#+END_SRC
+
+- access locally
+http://10.100.199.201:8080/
+http://10.100.199.202:8080/
+
+- you can even hit it from the manager node:
+
+http://10.100.199.200:8080/
+
+
+file:c:/erauner12.github.io/lab/course/docker.org_20200414_202242_OSUFM0.png
+
+
+
+- wrap up what we did:
+
+- you can hit any of the nodes on port 8080, even the manager
+[[file:c:/erauner12.github.io/lab/course/docker.org_20200414_202928_SMuRe8.png]]
+
+- the swarmwide mesh container load balancer shown here, will balance across all the containers in the service
+
+  - fully container aware load balancer "routing mesh"
+
+  - 
+[[file:c:/erauner12.github.io/lab/course/docker.org_20200414_203011_1FuTy6.png]]
+
+
 
 ** Services
 

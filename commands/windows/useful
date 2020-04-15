@@ -1,0 +1,5 @@
+
+#+CAPTION: Opens up gui windows explorer in that dir
+#+BEGIN_SRC go
+explorer .
+#+END_SRC
