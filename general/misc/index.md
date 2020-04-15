@@ -2,6 +2,6 @@
 title: ""
 ---
 
-## General / Misc
+## Programming / Basic
 
 - [Placeholder](/pkb/general/misc/placeholder.html)

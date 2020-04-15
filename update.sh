@@ -1,5 +1,3 @@
-#!/bin/bash
-
 python index.py
 
 git add -A
