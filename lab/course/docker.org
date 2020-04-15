@@ -124,10 +124,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 - virtual machine hypervisor
 
-  - file:c:/erauner12.github.io/lab/Course/docker.org_20200413_235441_sv1w28.png
+  - docker.org_20200413_235441_sv1w28.png
 
 - Docker
-  - file:c:/erauner12.github.io/lab/Course/docker.org_20200413_235501_X2ksF7.png
+  - file:../../images/docker.org_20200413_235501_X2ksF7.png
 
 
 ** The 'docker run' Command
@@ -241,7 +241,7 @@ hello-world         latest              fce289e99eb9        15 months ago       
       - the docker daemon did not have it, then it pulled it and made a copy
 	- at that point it created the container
 
-file:c:/erauner12.github.io/lab/Course/docker.org_20200414_000936_a2z6Dc.png
+file:../../images/docker.org_20200414_000936_a2z6Dc.png
 
 
 
@@ -469,7 +469,7 @@ Deleted: sha256:af0b15c8625bb1938f1d7b17081031f649fd14e6b233688eea3c5483994a66a3
 
 - docker run is just a client command
 
-  - file:c:/erauner12.github.io/lab/Course/docker.org_20200414_174308_6t4bIJ.png
+  - file:../../images/docker.org_20200414_174308_6t4bIJ.png
 
 - docker is just talking to the daemon which is doing all the heavy lfiting through the docker api
 
@@ -790,21 +790,21 @@ http://10.100.199.202:8080/
 http://10.100.199.200:8080/
 
 
-file:c:/erauner12.github.io/lab/course/docker.org_20200414_202242_OSUFM0.png
+file:../../images/docker.org_20200414_202242_OSUFM0.png
 
 
 
 - wrap up what we did:
 
 - you can hit any of the nodes on port 8080, even the manager
-file:c:/erauner12.github.io/lab/course/docker.org_20200414_202928_SMuRe8.png
+file:../../images/docker.org_20200414_202928_SMuRe8.png
 
 - the swarmwide mesh container load balancer shown here, will balance across all the containers in the service
 
   - fully container aware load balancer "routing mesh"
 
   - 
-file:c:/erauner12.github.io/lab/course/docker.org_20200414_203011_1FuTy6.png
+file:../../images/docker.org_20200414_203011_1FuTy6.png
 
 
 
