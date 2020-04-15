@@ -1,4 +1,4 @@
-﻿#+TITLE:     ReadTheOrg style
+#+TITLE:     ReadTheOrg style
 #+AUTHOR:    Fabrice Niessen
 #+EMAIL:     (concat "fniessen" at-sign "pirilampo.org")
 #+DESCRIPTION:
