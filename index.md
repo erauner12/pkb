@@ -4,7 +4,7 @@ title: ""
 
 ## Lab
 
-- [Course](/pkb/lab/Course/index)
+- [Course](/pkb/lab/course/index)
 
 ## General
 
