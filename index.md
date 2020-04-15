@@ -8,7 +8,8 @@ title: ""
 
 ## Commands
 
-- [Test](/pkb/commands/test/index)
+- [Linux](/pkb/commands/linux/index)
+- [Windows](/pkb/commands/windows/index)
 
 ## Todo
 

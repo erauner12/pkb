@@ -8,37 +8,37 @@ https://app.pluralsight.com/library/courses/docker-getting-started/table-of-cont
 
 
 * Commands
-
+test
 #+CAPTION: starts a new container
 #+BEGIN_SRC go
 docker run
 #+END_SRC
-
+test
 #+CAPTION: copies images to the docker ost
 #+BEGIN_SRC go
 docker pull
 #+END_SRC
-
+test
 #+CAPTION:lists images on the docker host
 #+BEGIN_SRC go
 docker images
 #+END_SRC
-
+test
 #+CAPTION:removes images from the docker host
 #+BEGIN_SRC go
 docker rmi
 #+END_SRC
-
+test
 #+CAPTION:lists running containers
 #+BEGIN_SRC go
 docker ps
 #+END_SRC
-
+test
 #+CAPTION:stops running containers
 #+BEGIN_SRC go
 docker stop
 #+END_SRC
-
+test
 #+CAPTION:removes (deletes) stopped containers
 #+BEGIN_SRC go
 docker rm
