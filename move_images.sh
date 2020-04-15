@@ -1,4 +1,4 @@
-find ./lab -name "*.png" -exec mv "{}" /../images \;
+find ./lab -name "*.png" -exec mv "{}" ./images \;
 
 # replace with "file"  and "png"
 find ./lab -type f -name "*.org" -exec sed -i 's/\[\[file/file/g' {} \;
@@ -16,6 +16,3 @@ find ./lab -type f -name "*.org" -exec sed -i 's/png\]\]/png/g' {} \;
 
 # file:../images/
 
-
-
-#find . \( -path './dir1' -o -path './dir2' \) -prune -o -type f -iname
