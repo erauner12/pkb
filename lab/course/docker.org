@@ -38,7 +38,8 @@ test
 #+BEGIN_SRC go
 docker stop
 #+END_SRC
-test
+
+removes (deletes) stopped containers
 #+CAPTION:removes (deletes) stopped containers
 #+BEGIN_SRC go
 docker rm
@@ -129,7 +130,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 - Docker
   - file:../../images/docker.org_20200413_235501_X2ksF7.png
 
-
+    
 ** The 'docker run' Command
 
 #+CAPTION:docker version
@@ -511,6 +512,7 @@ docker stop
 docker rm
 #+END_SRC
 
+
 * Swarm Mode and Microservices
 
 ** Module Intro
@@ -810,15 +812,242 @@ file:../../images/docker.org_20200414_203011_1FuTy6.png
 
 ** Services
 
+
 ** Scaling Services
+
+- 
+
+#+CAPTION:
+#+BEGIN_SRC go
+vagrant@manager:~$ docker service ls
+ID                  NAME                MODE                REPLICAS            IMAGE                                       PORTS m2zu80xa6xkl        psight1             replicated          5/5                 nigelpoulton/pluralsight-docker-ci:latest   *:8080->8080/tcp
+#+END_SRC
+
+
+#+CAPTION:
+#+BEGIN_SRC go
+vagrant@manager:~$ docker service ps psight1
+ID                  NAME                IMAGE                                       NODE                DESIRED STATE       CURRENT STATE                 ERROR               PORTS
+xdonhierynle        psight1.1           nigelpoulton/pluralsight-docker-ci:latest   manager             Running             Running 3 minutes ago
+5r9exmy840dq         \_ psight1.1       nigelpoulton/pluralsight-docker-ci:latest   worker02            Shutdown            Shutdown about a minute ago
+di8claalixnm        psight1.2           nigelpoulton/pluralsight-docker-ci:latest   manager             Running             Running 3 minutes ago
+dytl0pbj3snu         \_ psight1.2       nigelpoulton/pluralsight-docker-ci:latest   worker01            Shutdown            Shutdown 2 minutes ago
+z24xnt4cp6ag        psight1.3           nigelpoulton/pluralsight-docker-ci:latest   manager             Running             Running 3 minutes ago
+kx5wtjmvfd3x         \_ psight1.3       nigelpoulton/pluralsight-docker-ci:latest   worker02            Shutdown            Shutdown about a minute ago
+i9agm7xsi36p        psight1.4           nigelpoulton/pluralsight-docker-ci:latest   manager             Running             Running 21 hours ago
+2irl5rq5qwep        psight1.5           nigelpoulton/pluralsight-docker-ci:latest   manager             Running             Running 3 minutes ago
+slpu9nfbms4z         \_ psight1.5       nigelpoulton/pluralsight-docker-ci:latest   worker01            Shutdown            Shutdown 2 minutes ago
+#+END_SRC
+
+- actual state matches desired state
+
+  - the ones with \_ next to it indicate that it is shutdown
+
+
+
+- Now we we want to add running instances to this to scal the service:
+
+#+CAPTION:
+#+BEGIN_SRC go
+vagrant@manager:~$ docker service scale psight1=7
+psight1 scaled to 7
+overall progress: 7 out of 7 tasks
+1/7: running   [==================================================>]
+2/7: running   [==================================================>]
+3/7: running   [==================================================>]
+4/7: running   [==================================================>]
+5/7: running   [==================================================>]
+6/7: running   [==================================================>]
+7/7: running   [==================================================>]
+verify: Service converged
+
+
+vagrant@manager:~$ docker service ps psight1 | grep Running
+ID                  NAME                IMAGE                                       NODE                DESIRED STATE       CURRENT STATE                 ERROR               PORTS
+xdonhierynle        psight1.1           nigelpoulton/pluralsight-docker-ci:latest   manager             Running             Running 10 minutes ago
+di8claalixnm        psight1.2           nigelpoulton/pluralsight-docker-ci:latest   manager             Running             Running 10 minutes ago
+z24xnt4cp6ag        psight1.3           nigelpoulton/pluralsight-docker-ci:latest   manager             Running             Running 10 minutes ago
+i9agm7xsi36p        psight1.4           nigelpoulton/pluralsight-docker-ci:latest   manager             Running             Running 22 hours ago
+2irl5rq5qwep        psight1.5           nigelpoulton/pluralsight-docker-ci:latest   manager             Running             Running 10 minutes ago
+hgqxfm3eod5g        psight1.6           nigelpoulton/pluralsight-docker-ci:latest   worker02            Running             Running 2 minutes ago
+4hmxvdgxr3xi        psight1.7           nigelpoulton/pluralsight-docker-ci:latest   worker01            Running             Running 2 minutes ago
+#+END_SRC
+
+
+- 
+
+
+
+
+
+
 
 ** Rolling Updates
 
+- rolling updates 
+  - always been a pain, rolling updates with containers is better
+
+
+- Going to create an overlay network below
+  - also going to create a service on top of it
+    - notice the :1 at the end. That is a version tag
+
+#+CAPTION:
+#+BEGIN_SRC go
+vagrant@manager:~$ docker network create -d overlay ps-net
+
+
+vagrant@manager:~$ docker service create --name psight2 --network ps-net -p 80:80 --replicas 12 nigelpoulton/tu-demo:v1
+w4kktdn6k46p5j4zf5igz98nc
+overall progress: 12 out of 12 tasks
+1/12: running   [==================================================>]
+2/12: running   [==================================================>]
+3/12: running   [==================================================>]
+4/12: running   [==================================================>]
+5/12: running   [==================================================>]
+6/12: running   [==================================================>]
+7/12: running   [==================================================>]
+8/12: running   [==================================================>]
+9/12: running   [==================================================>]
+10/12: running   [==================================================>]
+11/12: running   [==================================================>]
+12/12: running   [==================================================>]
+
+
+vagrant@manager:~$ docker service ps psight2
+ID                  NAME                IMAGE                     NODE                DESIRED STATE       CURRENT STATE                ERROR               PORTS
+tbo7pcn491oi        psight2.1           nigelpoulton/tu-demo:v1   worker02            Running             Running about a minute ago
+m15tnlyqei6u        psight2.2           nigelpoulton/tu-demo:v1   manager             Running             Running about a minute ago
+t97wldzlj00m        psight2.3           nigelpoulton/tu-demo:v1   manager             Running             Running about a minute ago
+um78ta64pdyn        psight2.4           nigelpoulton/tu-demo:v1   worker01            Running             Running about a minute ago
+yzt6ybgbesc4        psight2.5           nigelpoulton/tu-demo:v1   manager             Running             Running about a minute ago
+pwn23ocjr462        psight2.6           nigelpoulton/tu-demo:v1   worker02            Running             Running about a minute ago
+qt345jnyfjdl        psight2.7           nigelpoulton/tu-demo:v1   worker01            Running             Running about a minute ago
+snra2jl9k1s1        psight2.8           nigelpoulton/tu-demo:v1   worker02            Running             Running about a minute ago
+e86rdmhuvvft        psight2.9           nigelpoulton/tu-demo:v1   manager             Running             Running about a minute ago
+72yh2woehpic        psight2.10          nigelpoulton/tu-demo:v1   worker01            Running             Running about a minute ago
+k2xaihxxhhir        psight2.11          nigelpoulton/tu-demo:v1   worker02            Running             Running about a minute ago
+i2mwkryn64ll        psight2.12          nigelpoulton/tu-demo:v1   worker01            Running             Running about a minute ago
+#+END_SRC
+
+- notice how there are two tasks per worker node
+  - UpdateConfig is what we are going to change
+
+#+CAPTION:
+#+BEGIN_SRC go
+vagrant@manager:~$ docker service inspect --pretty psight2
+
+ID:             w4kktdn6k46p5j4zf5igz98nc
+Name:           psight2
+Service Mode:   Replicated
+ Replicas:      12
+Placement:
+UpdateConfig:
+ Parallelism:   1
+ On failure:    pause
+ Monitoring Period: 5s
+ Max failure ratio: 0
+ Update order:      stop-first
+RollbackConfig:
+ Parallelism:   1
+ On failure:    pause
+ Monitoring Period: 5s
+ Max failure ratio: 0
+ Rollback order:    stop-first
+ContainerSpec:
+ Image:         nigelpoulton/tu-demo:v1@sha256:674cb034447ab34d442b8df03e0db6506a99390a1e282d126fb44af8598e4d2a
+ Init:          false
+Resources:
+Networks: ps-net
+Endpoint Mode:  vip
+Ports:
+ PublishedPort = 80
+  Protocol = tcp
+  TargetPort = 80
+  PublishMode = ingress
+
+#+END_SRC
+
+- showing rolling event going from v:1 to v:2. update 2 at a time and wait 10 seconds in between
+
+#+CAPTION:
+#+BEGIN_SRC go
+docker service update --image nigelpoulton/tu-demo:v2 --update-parallelism 2 --update-delay 10s psight2
+
+vagrant@manager:~$ docker service ps psight2 | grep :v2
+qr043j59552u        psight2.1           nigelpoulton/tu-demo:v2   worker02            Running             Running about a minute ago
+s2v1bon48u7w        psight2.2           nigelpoulton/tu-demo:v2   manager             Running             Running about a minute ago
+i7kiba3xeb38        psight2.3           nigelpoulton/tu-demo:v2   manager             Running             Running about a minute ago
+svdpcsiln02d        psight2.4           nigelpoulton/tu-demo:v2   worker01            Running             Running about a minute ago
+wwt744notimr        psight2.5           nigelpoulton/tu-demo:v2   manager             Running             Running about a minute ago
+jrie6ilhrtvb        psight2.6           nigelpoulton/tu-demo:v2   worker02            Running             Running 43 seconds ago
+8vhcvba8ysih        psight2.7           nigelpoulton/tu-demo:v2   worker01            Running             Running about a minute ago
+t6cabwqzcgiw        psight2.8           nigelpoulton/tu-demo:v2   worker02            Running             Running 43 seconds ago
+i7akkjtqfe5g        psight2.9           nigelpoulton/tu-demo:v2   manager             Running             Running 57 seconds ago
+nk8nte95k38e        psight2.10          nigelpoulton/tu-demo:v2   worker01            Running             Running 57 seconds ago
+n0xmq9feht67        psight2.11          nigelpoulton/tu-demo:v2   worker01            Running             Running about a minute ago
+k9uz4cv4krcs        psight2.12          nigelpoulton/tu-demo:v2   worker02            Running             Running about a minute ago
+#+END_SRC 
+
 ** Stacks and DABs
 
+stacks and bundles
+
+stack is an application made up of multiple services files
+- made up of DAB files
+
+
+here is the app we are going to work with:
+
+file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/docker.org_20200415_181638_M3CuEF.png
+
+it is made up of 5 microservices
+
+
+docker compose
+- before stacks and dabs
+  - pass docker compose yml files compose.yml files
+
+
 ** Recap
+
+
+file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/docker.org_20200415_182837_14FDE8.png
+
+#+CAPTION:
+#+BEGIN_SRC go
+docker swarm init ...
+#+END_SRC
+
+#+CAPTION:joinging worker with manageer
+#+BEGIN_SRC go
+docker swarm join ...
+#+END_SRC
+
+#+CAPTION:scaling services
+#+BEGIN_SRC go
+docker service create ...
+#+END_SRC
+
+#+CAPTION:turning more instance
+#+BEGIN_SRC go
+docker service scale ...
+#+END_SRC
+
+#+CAPTION:update from v:1 to v:2
+#+BEGIN_SRC go
+docker service update ...
+#+END_SRC
+
+#+CAPTION:
+#+BEGIN_SRC go
+docker stack deploy
+#+END_SRC
+
+file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/docker.org_20200415_183147_dhlX7F.png
 
 
 * What Next!
 
 ** Next Steps
+
