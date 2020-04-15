@@ -4,4 +4,4 @@ title: ""
 
 ## Todo / Scripts
 
-- [script ideas](/pkb/todo/scripts/script ideas.html)
+- [Script Ideas](/pkb/todo/scripts/script ideas.html)
