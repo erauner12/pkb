@@ -56,9 +56,6 @@ docker rm
 
 ** Introduction
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-
 
 - Docker and containers massive pasrt of the future of IT.
 
@@ -999,7 +996,7 @@ stack is an application made up of multiple services files
 
 here is the app we are going to work with:
 
-file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/docker.org_20200415_181638_M3CuEF.png
+file:../../images/docker.org_20200415_181638_M3CuEF.png
 
 it is made up of 5 microservices
 
@@ -1012,7 +1009,7 @@ docker compose
 ** Recap
 
 
-file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/docker.org_20200415_182837_14FDE8.png
+file:../../images/docker.org_20200415_182837_14FDE8.png
 
 #+CAPTION:
 #+BEGIN_SRC go
@@ -1044,7 +1041,7 @@ docker service update ...
 docker stack deploy
 #+END_SRC
 
-file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/docker.org_20200415_183147_dhlX7F.png
+file:../../images/docker.org_20200415_183147_dhlX7F.png
 
 
 * What Next!

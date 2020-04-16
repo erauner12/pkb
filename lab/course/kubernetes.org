@@ -110,11 +110,11 @@ Big picture view
 
 Kubernetes is just an orchestrator for microservice apps
 
-file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_193424_e4YYOS.png
+file:../../images/kubernetes.org_20200415_193424_e4YYOS.png
 
 package up your application and give it to the cluster
 
-file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_193726_LpcgYX.png
+file:../../images/kubernetes.org_20200415_193726_LpcgYX.png
 
 
 - Masters
@@ -140,7 +140,7 @@ file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_1
 ** Masters
 
 platform agnostic
-file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_194008_jZjkb2.png
+file:../../images/kubernetes.org_20200415_194008_jZjkb2.png
 - all it wants is linux
   - linux does not care if it running on bare metal,openstack, cloud
 
@@ -181,7 +181,7 @@ kube-apiserver
 
   - assigns work to nodes
 
-file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_194815_YRQj8A.png
+file:../../images/kubernetes.org_20200415_194815_YRQj8A.png
 
 
 - issuing commands to the master
@@ -191,7 +191,7 @@ file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_1
 - kubectl talks to the apiserver (master) via json files
   - works gets passed to nodes from the scheduler
 
-file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_195033_dNRDgH.png
+file:../../images/kubernetes.org_20200415_195033_dNRDgH.png
 
 ** Nodes
 
@@ -233,7 +233,7 @@ file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_1
 
     - a service will load balance the traffic from a web server pod to a backend pod
 
-file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_202902_rwb6NU.png
+file:../../images/kubernetes.org_20200415_202902_rwb6NU.png
 
 
 wrapup
@@ -257,7 +257,7 @@ wrapup
       - starting containers
 
 
-file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_203208_jDExm4.png
+file:../../images/kubernetes.org_20200415_203208_jDExm4.png
 
 
 - example of desired state of a cluster
@@ -267,11 +267,11 @@ file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_2
 
   - 3 nodes, one pod is running on each of those nodes:
 
-file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_203611_C3Fuu0.png
+file:../../images/kubernetes.org_20200415_203611_C3Fuu0.png
 
 - node goes down
 
-file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_203648_ajXxvQ.png
+file:../../images/kubernetes.org_20200415_203648_ajXxvQ.png
 
 ** Pods
 
@@ -289,16 +289,16 @@ file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_2
 
   - ring-fenced environment
 
-  - file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_204247_XeWH4M.png
+  - file:../../images/kubernetes.org_20200415_204247_XeWH4M.png
   - if the use case for containers are tightly coupled and need access to the same resources
 
     - stick them in the same pod
 
-    - file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_204413_q0l134.png
+    - file:../../images/kubernetes.org_20200415_204413_q0l134.png
 
     - if the use case can be loosely coupled, stick them in separate pods in couple them over the networks
 
-    - file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_204539_t4x81j.png
+    - file:../../images/kubernetes.org_20200415_204539_t4x81j.png
 
     - the unit of scaling in kube is the pod
 
@@ -307,16 +307,16 @@ file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_2
       - you don't scale by adding more containers to an existing pod
 	- add/remove pod replicas
 
-      - file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_204709_iAeHa3.png
+      - file:../../images/kubernetes.org_20200415_204709_iAeHa3.png
 
   - example of a multi-container pod
 
     - two or more complimentary containers
       - web server and log scraper tailing logs off somewhere else
 
-      - file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_205121_fc31Rc.png
+      - file:../../images/kubernetes.org_20200415_205121_fc31Rc.png
 
-      - file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_205155_iwHUeu.png
+      - file:../../images/kubernetes.org_20200415_205155_iwHUeu.png
 
 	- web server = main
 	- log scraper = sidecar
@@ -333,7 +333,7 @@ file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_2
 
     - they are born, live and die. you don't bring one back to life
 
-    - file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_205509_7BGlRp.png
+    - file:../../images/kubernetes.org_20200415_205509_7BGlRp.png
 
     - this is consistent with pet vs cattle. when pods die, a totally new one can pop up in it's place and replace it
 
@@ -353,7 +353,7 @@ file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_2
   - this is where services come to play
 
   - provides a single dns name and IP here so that the pods IP have nothing to do with it
-  - file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_210400_X7Jizk.png
+  - file:../../images/kubernetes.org_20200415_210400_X7Jizk.png
 
   - if a pod dies and replaces itself, service updates and knows about it
 
@@ -363,15 +363,15 @@ file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_2
 
   - labeled BE pods with relevant information, the labels tie the pod to the service
 
-  - file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_210806_yR1gZf.png
+  - file:../../images/kubernetes.org_20200415_210806_yR1gZf.png
 
   - when we are updating can remove the tag on the service that makes it exclusive to servicing one version
 
-  - file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_210929_ZDY4Ij.png
+  - file:../../images/kubernetes.org_20200415_210929_ZDY4Ij.png
 
     - load balancing across them all until we are ready to be fully on the new version
 
-  - file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_211024_HEbPA3.png
+  - file:../../images/kubernetes.org_20200415_211024_HEbPA3.png
 
   - services only send traffic to healthy pods
 
@@ -380,7 +380,7 @@ file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_2
 ** Deployments
 
 - our infrastructure = masters and nodes
-  - file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_211946_63N0dm.png
+  - file:../../images/kubernetes.org_20200415_211946_63N0dm.png
 
   - pods are running on the nodes
 
