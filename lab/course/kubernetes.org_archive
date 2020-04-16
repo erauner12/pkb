@@ -1,0 +1,82 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file //wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org
+
+
+* Nodes
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-04-15 Wed 20:03
+  :ARCHIVE_FILE: //wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org
+  :ARCHIVE_OLPATH: Kubernetes Architecture
+  :ARCHIVE_CATEGORY: kubernetes
+  :END:
+
+- nodes are the kubernetes workers
+
+
+- kubelet
+
+  - kubelet essentially is the node
+
+  - the main kubernetes agent
+
+  - registers node with cluster
+
+  - watches apiserver
+
+  - instantiates pods
+
+  - reports back to the master
+
+    - if a node or process fails, the kubelet does not do anything to heal it by itself
+
+    - reports the info to the master
+
+  - kubelets work with pods
+
+    - pods are just containers packages together as a single unit
+
+
+- container engine (what kubelet uses to interface with containers)
+
+  - does container management
+
+    - pulling images
+    - starting and stoping containers
+
+  - talks to the container runtime
+    - can use any of them (pluggable)
+      - docker
+      - rkt
+
+
+- kube-proxy
+
+  - kubernetes networking:
+
+    - pod ip addresses
+
+      - all containers in a pod share a single IP
+
+	- you will you ports to contact the containers
+
+	- load balances across all pods in a service
+	- service = way of hiding multiple pods behind a single network address
+
+  - web service talking to a backend
+    - front end is configured to talk to the service
+    - then it will balance requests to all three backends like so:
+
+[[file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_200151_msqTEe.png]]
+
+
+- this load balancing that is being done is being done by the *kube proxy*
+
+
+
+
+
+
+
+

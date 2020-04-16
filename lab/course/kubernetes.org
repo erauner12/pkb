@@ -98,7 +98,7 @@ Big picture view
 
 - nodes
 
-- pods
+- pods[[
 
 - Services
 
@@ -193,23 +193,260 @@ file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_1
 
 file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_195033_dNRDgH.png
 
+** Nodes
+
+- kubelet
+ 
+  - kubelet is the main kubernetes agent on the node (pretty much is the node)
+
+    - talks to containers
+
+    - registers node with cluster
+    - watches apiserver
+    - instantiates pods
+    - then it reports back the state back to the master
+      - kubelet itself does not do anything if something goes wrong, just reports it
+
+    - a pod is just a bunch of containers packaged together as a single unit
+
+      - because it is interacing with a container
+
+  - kubelet needs to interact container runtime
+    - container runtime examples (pluggable) does not matter which
+      - docker
+      - rkt
+
+
+- kube proxy
+
+  - network brains of the node
+
+  - makes sure every pod get's it's ip
+
+    - ip per pod
+
+    - if you want to interface with each container in the pod, you will need to interface with a port
+
+  - proxy is also load balances across all pods in a service
+
+  - bunch of web servers talk to a backend
+
+    - a service will load balance the traffic from a web server pod to a backend pod
+
+file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_202902_rwb6NU.png
+
+
+wrapup
+- kubelet
+- container engine
+- kube-proxy
+
 
 ** Desired State and the Declarative Model
 
+- kubernetes operates on declarative model
+
+  - YAML or JSON is contains the desired state
+
+    - they are manifest files that describe a record of intent 
+
+
+    - it's up to kubernetes to get it there at that point
+      - pulling images
+      - building networks
+      - starting containers
+
+
+file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_203208_jDExm4.png
+
+
+- example of desired state of a cluster
+
+  -  kubernetes control plane runs through reconciliation loops that constantly check if desired state = actual state
+
+
+  - 3 nodes, one pod is running on each of those nodes:
+
+file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_203611_C3Fuu0.png
+
+- node goes down
+
+file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_203648_ajXxvQ.png
 
 ** Pods
 
+- vmware runs vms
+- docker runs containers
+
+- kubernetes runs pods
+  - cannot run a container directly on kubernetes
+  - needs to be running on a pod
+
+  - typically one container running on a pod but in more advanced configuration you can have more than one container running on a pod
+
+
+- what actually is a pod
+
+  - ring-fenced environment
+
+  - file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_204247_XeWH4M.png
+  - if the use case for containers are tightly coupled and need access to the same resources
+
+    - stick them in the same pod
+
+    - file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_204413_q0l134.png
+
+    - if the use case can be loosely coupled, stick them in separate pods in couple them over the networks
+
+    - file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_204539_t4x81j.png
+
+    - the unit of scaling in kube is the pod
+
+      - you want to scale an app? you would add/remove pods
+
+      - you don't scale by adding more containers to an existing pod
+	- add/remove pod replicas
+
+      - file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_204709_iAeHa3.png
+
+  - example of a multi-container pod
+
+    - two or more complimentary containers
+      - web server and log scraper tailing logs off somewhere else
+
+      - file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_205121_fc31Rc.png
+
+      - file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_205155_iwHUeu.png
+
+	- web server = main
+	- log scraper = sidecar
+
+- pods are atomic
+
+  - it is either not there or there
+    - no state that it is in the process of coming up
+    - pod is not declared available until the whole pod is up and running
+
+  - you cannot have a single pod spead over multiple nodes
+
+  - pods's lifecycle
+
+    - they are born, live and die. you don't bring one back to life
+
+    - file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_205509_7BGlRp.png
+
+    - this is consistent with pet vs cattle. when pods die, a totally new one can pop up in it's place and replace it
+
+  - pod deployments
+
+    - replace replication controllers
+
 ** Services
 
+- pods die and come back up somewhere else in the cluster (on a different node possibly)
+
+  - example of how IP address churn is addressed
+
+  - say pods running apps need access to pods running databases
+    - ips changing constantly. lose and gain when you scale
+
+  - this is where services come to play
+
+  - provides a single dns name and IP here so that the pods IP have nothing to do with it
+  - file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_210400_X7Jizk.png
+
+  - if a pod dies and replaces itself, service updates and knows about it
+
+  - example of this happening is when the pods are being updated to a new version, can auto scale from 2 to 4 and back to two as easy as that
+
+- labels
+
+  - labeled BE pods with relevant information, the labels tie the pod to the service
+
+  - file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_210806_yR1gZf.png
+
+  - when we are updating can remove the tag on the service that makes it exclusive to servicing one version
+
+  - file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_210929_ZDY4Ij.png
+
+    - load balancing across them all until we are ready to be fully on the new version
+
+  - file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_211024_HEbPA3.png
+
+  - services only send traffic to healthy pods
+
+  - can configure the service to point to things outside the cluster
 
 ** Deployments
 
+- our infrastructure = masters and nodes
+  - file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_211946_63N0dm.png
+
+  - pods are running on the nodes
+
+- deployments = declarativeness
+
+  - declare through the manfiest yml or json files
+
+  - self documenting, versioned, spec-once deploy many
+
+  - makes for much simpler rollbacks and rolling updates
+
+  - the declaration is deployed by kube via the apiserver
+
+- rolling updates
+
+  - can run multiple concurrent versions
+
+  - blue-green deployments
+  - canary releases
 
 ** Bringing It Home
+
+- just give us linux, we'll give you kubernetes
+- master node setup
+
+- master (control plane
+  - apiserver
+  - cluster store
+    - api server talks to it
+
+- node/minion
+
+  - where the work happens
+
+  - kubelet
+  - container engine
+  - kube-proxy
+
+
+- example
+
+  - issue work to master via api server (instruction = manifest files)
+
+  - master decides where to run the work
+
+    - gets dished out to the worker nodes
+
+    - they report back state changes to the master
+
+
+- rest objects in kubernets api
+  - pods
+    - atomic unit of scheduling
+  - replciaiton controllers
+    - old
+
+  - deployments
+    - RC, roling updates, rollbacks
+
+  - services
+    - stable networking
 
 * Installing Kubernetes
 
 ** Module Intro
+
 
 
 ** Minikube
@@ -224,6 +461,7 @@ file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_1
 
 
 ** Module Summary
+
 
 
 * Working with Pods
