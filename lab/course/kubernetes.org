@@ -1,223 +1,286 @@
 #+SETUPFILE: ../../styles/readtheorg.setup
 #+TITLE: Kubernetes
 
-
-
 * Links
-
-
-[[https://blog.exxactcorp.com/building-a-kubernetes-cluster-using-vagrant][Kubernetes Vagrant Setup Lab]]
-
-https://app.pluralsight.com/library/courses/docker-kubernetes-big-picture/table-of-contents
-
-https://app.pluralsight.com/library/courses/docker-getting-started/table-of-contents
 
 https://app.pluralsight.com/library/courses/getting-started-kubernetes/table-of-contents
 
+* Vagrant Lab
 
-
-
-* Commands
-
-** kubernetes
+https://blog.exxactcorp.com/building-a-kubernetes-cluster-using-vagrant/
 
 
 #+CAPTION:
 #+BEGIN_SRC go
-kubectl get nodes
-#+END_SRC
-
-#+CAPTION:
-#+BEGIN_SRC go
-kubectl get all --all-namespaces
+git clone https://exxsyseng@bitbucket.org/exxsyseng/k8s_centos.git      # Centos k8s Cluster
+git clone https://exxsyseng@bitbucket.org/exxsyseng/k8s_ubuntu.git      # Ubuntu k8s Cluster
 #+END_SRC
 
 
-** docker
 
-#+CAPTION:
-#+BEGIN_SRC go
-dock image ls
-#+END_SRC
+* Course Overview
 
-#+CAPTION:
-#+BEGIN_SRC go
-docker start web
-#+END_SRC
+** Course Introduction
 
-#+CAPTION:
-#+BEGIN_SRC go
-docker stop web
-#+END_SRC
+fundamental parts of kubernetes
 
+- going to install kubernetes for a lab
 
-* Docker and Kubernetes: The Big Picture
+- going to work with pods
 
+- going to do some deployments
 
-** Containers: Primer
 
-back in the day one app per server
 
-waste of resources
+* Course Introduction
 
+** Course intro
 
-*** Hello VMWare
+* What Is Kubernetes?
 
-get a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buckget a lot more bang for your buck
+** Kubernetes: Where It Came From
 
-instead of one server to one app
+- written in go/golang
+  - https://github.com/kubernetes/kubernetes
 
+- came from google
+- borg
+  - omega
+    - kubernetes
 
-Vmware Model
 
+Kubernetes = K8s
 
-You don't need the whole operating system
 
 
+** Kubernetes: What and Why
 
-*** Containers
+Containers
+- Challenges they bring
+  - brings new scalability challenges
 
-container model:
+  - application developers do not care about cpu is running their code
 
-one app per container
--smaller and more efficient
+  - Pets vs Cattle
 
+    - kubernetes, I got this app and it consists of these containers
 
+      - kubernetes take care of all the hard work and logistics
 
 
-The OS steals resources that you could be putting towards your applications
+- what is it made up of?
 
+  - standard package format
 
+  - manifest
 
 
-docker image is like a VM template
+- very platfrom agnostic
 
-firing up a container here:
- 
+  - as long as you can install the agent, it wil work
 
 
-installed this from docker hub and exposed it on a network port
+- lets you target deployments
 
+  - it makes decisions about to where to run it
 
+- Kubernetes is moving very fast
 
+  - get your hands dirty and keep playing with it
 
-bringing it back up
+* Kubernetes Architecture
 
+** Module Intro
 
+Big picture view
 
-monolotihic apps everything is backed into a single binary
+- masters
 
+- nodes
 
+- pods
 
+- Services
 
+  - networking
 
-manage services independently
+- deployments
 
+** Big Picture View
 
+Kubernetes is just an orchestrator for microservice apps
 
+file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_193424_e4YYOS.png
 
+package up your application and give it to the cluster
 
+file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_193726_LpcgYX.png
 
 
+- Masters
 
+  - master control plane
 
-*** build a docker container
+  - 
 
-image is just a stopped container
+- Nodes
 
+  - do the actual work
+  - report back to master about the changes that are happening
 
 
+- package the application it up in what is called a deployment
 
-at this point you can run the container like we did earlier
+  - manifest file tells cluster what configuration settings it has
 
 
 
 
-** Kubernetes
 
-*** What is kubernetes
+** Masters
 
-kubernetes cares about vs what docker cares about:
+platform agnostic
+file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_194008_jZjkb2.png
+- all it wants is linux
+  - linux does not care if it running on bare metal,openstack, cloud
 
 
+kube-apiserver
+- front-end to the control plane
+- exposes the API (REST)
+- Consumes JSON via manfiest files
+  - declare the state of our app for. record of intent
 
-docker  = esxi
-kubernetes = vcenter
 
+- Cluster Store
 
-each node is running kubernetes and container runtime ( so that node can run containers)
+  - perisent sotrage
+  - cluster state and config
+  - uses etcd
+    - source of truth for the cluster
 
-- docker takes care of the low level stuff and kubernetes controls it all
 
+- kube controller-manager
 
+  - controller of controllers
 
+  - node controller
 
-if your apps are running on-prem, is not difficult to move to the cloud and back if need be:
+  - endpoints controller
 
-decouples from where our applications are actually running
+  - namespace controller
 
+  - watches for changes
 
+  - helps maintain desired state
+    - current state = desired state
 
-we build a kubernetes cluster to host our applications
+- kuber-scheduler
 
+  - watches apiserver for new pods
 
+  - assigns work to nodes
 
+file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_194815_YRQj8A.png
 
 
+- issuing commands to the master
+  - master = api server
+    - that is where you are actually issuing commands
 
-*** Docker
+- kubectl talks to the apiserver (master) via json files
+  - works gets passed to nodes from the scheduler
 
-docker's goal is to make applications run on containers easily
+file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200415_195033_dNRDgH.png
 
 
-*** Preparing for containers
+** Desired State and the Declarative Model
 
-Stateless vs Stateful
 
+** Pods
 
+** Services
 
 
-** Enterprise and Producrtion Readiness
+** Deployments
 
-*** Docker
 
-Community Edition and Enterprise Edition
+** Bringing It Home
 
+* Installing Kubernetes
 
+** Module Intro
 
 
-*** Kubernetes
+** Minikube
 
-Orchestration
 
+** Google Container Engine
 
-- can use on prem and in the cloud
 
-- we don't make the container bigger
-  testing testing testing
-  testing testing
-  testing testing testing testing
+** Installing in AWS with kops
 
+** Installing Manually with kubeadm
 
-- fskjdfl;dskj
 
-  - this is a test
-    - this is  test.
-      I am going to continue typing over and over
+** Module Summary
 
-  - ksdjflksdjfl;sdk
 
-  - this is a test
+* Working with Pods
 
-  - this is a test
 
-    - this is a test
+** Pod Theory
 
-      - this is a test
 
-      - this is a test
+** Deploying Your First Pod
 
-  - this is a test
 
-testing
-**** Features:
+** Deploying Pods via Replication Controllers
+
+
+** Module Summary
+
+
+** Kubernetes Services
+
+
+** Module Intro
+
+
+** The Theory
+
+
+** Creating a Service the Iterative Way
+
+
+** Creating a Service the Declarative Way
+
+
+** In the Real World
+
+
+** Summary
+
+
+* Kubernetes Deployments
+
+
+** Module Intro
+
+
+** Deployment Theory
+
+
+** Creating Your First Kubernetes Deployment
+
+
+** Updating a Deployment
+
+
+** Module Summary
+
+
+* What Next?
+
+
+** What Next?
