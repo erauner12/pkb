@@ -9,10 +9,13 @@ https://app.pluralsight.com/library/courses/docker-getting-started/table-of-cont
 * Commands
 test
 starts a new container
+
 #+BEGIN_SRC go
 docker run
 #+END_SRC
+
 test
+
 copies images to the docker ost
 #+BEGIN_SRC go
 docker pull
