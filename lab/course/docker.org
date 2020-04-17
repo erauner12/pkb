@@ -9,7 +9,6 @@ https://app.pluralsight.com/library/courses/docker-getting-started/table-of-cont
 * Commands
 
 starts a new container
-
 #+BEGIN_SRC go
 docker run
 #+END_SRC
@@ -38,6 +37,16 @@ test
 stops running containers
 #+BEGIN_SRC go
 docker stop
+#+END_SRC
+
+
+
+#+BEGIN_SRC go
+bash commmand m261
+#+END_SRC
+
+#+BEGIN_SRC go
+bash command domain
 #+END_SRC
 
 removes (deletes) stopped containers
