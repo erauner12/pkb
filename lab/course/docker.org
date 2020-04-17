@@ -131,7 +131,7 @@ docker rm
 ** The 'docker run' Command
 
 #+CAPTION:docker version
-#+BEGIN_SRC Shell Script
+#+BEGIN_SRC shell script
 [vagrant@dropwizard ~]$ docker version
 
 Client: Docker Engine - Community
@@ -165,7 +165,7 @@ Server: Docker Engine - Community
 
 
 #+CAPTION: We are creating a container below
-#+BEGIN_SRC Shell Script
+#+BEGIN_SRC shell script
 
 [vagrant@dropwizard ~]$ docker run hello-world
 Unable to find image 'hello-world:latest' locally
@@ -211,13 +211,13 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 - You can see that it was running at one point though below:
 
 #+CAPTION: using -a flag
-#+BEGIN_SRC Shell Script
+#+BEGIN_SRC shell script
 [vagrant@dropwizard ~]$ docker ps -a
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                     PORTS               NAMESe13c18cbdd12        hello-world         "/hello"            5 minutes ago       Exited (0) 5 minutes ago                       naughty_albattani
 #+END_SRC
 
 #+CAPTION: shows images that were local
-#+BEGIN_SRC Shell Script
+#+BEGIN_SRC shell script
 [vagrant@dropwizard ~]$ docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 hello-world         latest              fce289e99eb9        15 months ago       1.84kB

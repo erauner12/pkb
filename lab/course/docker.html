@@ -1,0 +1,1462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Docker</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="EVAN-PC" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Docker</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org6665efb">1. Links</a></li>
+<li><a href="#orgfb3fae2">2. Commands</a></li>
+<li><a href="#org435f3c1">3. Course Overview</a>
+<ul>
+<li><a href="#org9bbbb2c">3.1. Course Overview</a></li>
+</ul>
+</li>
+<li><a href="#orgd76a7b0">4. Course Introduction</a>
+<ul>
+<li><a href="#orgb5a5a3a">4.1. Introduction</a></li>
+</ul>
+</li>
+<li><a href="#org52e4c6f">5. Installing Docker</a>
+<ul>
+<li><a href="#org86519eb">5.1. Module Intro</a></li>
+<li><a href="#org0f3f367">5.2. Docker for Windows</a></li>
+<li><a href="#org049baa4">5.3. Docker for Mac</a></li>
+<li><a href="#org1eeca89">5.4. Installing Docker on Windows Server 2016</a></li>
+<li><a href="#org7c6a5a3">5.5. Installing Docker on Linux</a></li>
+<li><a href="#orgef041cf">5.6. Module Summary</a></li>
+</ul>
+</li>
+<li><a href="#org476fc55">6. Working with Containers</a>
+<ul>
+<li><a href="#org7822298">6.1. What Is a Container?</a></li>
+<li><a href="#org9916d83">6.2. The &rsquo;docker run&rsquo; Command</a></li>
+<li><a href="#orgc832c79">6.3. Theory of Pulling and Running Containers</a></li>
+<li><a href="#orgcfa0ccc">6.4. Working with Images</a></li>
+<li><a href="#org3c863e7">6.5. Container Lifecycle</a>
+<ul>
+<li><a href="#org210a89e">6.5.1. vagrant config on workstation</a></li>
+</ul>
+</li>
+<li><a href="#org1fa6898">6.6. back to container</a></li>
+<li><a href="#org3c8ce3b">6.7. Lesson Recap</a></li>
+</ul>
+</li>
+<li><a href="#orgc682159">7. Swarm Mode and Microservices</a>
+<ul>
+<li><a href="#orgeb35dc1">7.1. Module Intro</a></li>
+<li><a href="#org2f5a34a">7.2. Swarm Mode Theory</a></li>
+<li><a href="#org1242cf5">7.3. Configuring Swarm Mode</a>
+<ul>
+<li><a href="#org2a5c648">7.3.1. this ended up failing</a></li>
+<li><a href="#org9fb1450">7.3.2. Second Attempt</a></li>
+</ul>
+</li>
+<li><a href="#org27e9031">7.4. Services</a></li>
+<li><a href="#orgb051847">7.5. Scaling Services</a></li>
+<li><a href="#org83bd349">7.6. Rolling Updates</a></li>
+<li><a href="#orgbc62843">7.7. Stacks and DABs</a></li>
+<li><a href="#org85f61b6">7.8. Recap</a></li>
+</ul>
+</li>
+<li><a href="#org833c020">8. What Next!</a>
+<ul>
+<li><a href="#org846861d">8.1. Next Steps</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6665efb" class="outline-2">
+<h2 id="org6665efb"><span class="section-number-2">1</span> Links</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<a href="https://app.pluralsight.com/library/courses/docker-getting-started/table-of-contents">https://app.pluralsight.com/library/courses/docker-getting-started/table-of-contents</a>
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgfb3fae2" class="outline-2">
+<h2 id="orgfb3fae2"><span class="section-number-2">2</span> Commands</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+test
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>starts a new container</label><pre class="src src-go">docker run
+</pre>
+</div>
+<p>
+test
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 2: </span>copies images to the docker ost</label><pre class="src src-go">docker pull
+</pre>
+</div>
+<p>
+test
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 3: </span>lists images on the docker host</label><pre class="src src-go">docker images
+</pre>
+</div>
+<p>
+test
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 4: </span>removes images from the docker host</label><pre class="src src-go">docker rmi
+</pre>
+</div>
+<p>
+test
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 5: </span>lists running containers</label><pre class="src src-go">docker ps
+</pre>
+</div>
+<p>
+test
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 6: </span>stops running containers</label><pre class="src src-go">docker stop
+</pre>
+</div>
+
+<p>
+removes (deletes) stopped containers
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 7: </span>removes (deletes) stopped containers</label><pre class="src src-go">docker rm
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org435f3c1" class="outline-2">
+<h2 id="org435f3c1"><span class="section-number-2">3</span> Course Overview</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org9bbbb2c" class="outline-3">
+<h3 id="org9bbbb2c"><span class="section-number-3">3.1</span> Course Overview</h3>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgd76a7b0" class="outline-2">
+<h2 id="orgd76a7b0"><span class="section-number-2">4</span> Course Introduction</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-orgb5a5a3a" class="outline-3">
+<h3 id="orgb5a5a3a"><span class="section-number-3">4.1</span> Introduction</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>Docker and containers massive pasrt of the future of IT.
+
+<ul class="org-ul">
+<li>just finished the big picture</li>
+
+<li>install docker</li>
+
+<li>working with containers</li>
+
+<li>working with apps</li>
+</ul></li>
+
+<li>kubernetes is a bigger deal but docker swarm is also on the map</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>quick refresher
+
+<ul class="org-ul">
+<li>modern day apps are made up of services
+
+<ul class="org-ul">
+<li>need an orchestration layer like kubernetes
+
+<ul class="org-ul">
+<li>going to see how to install it on various platforms</li>
+
+<li>going to finish play finish and play around</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org52e4c6f" class="outline-2">
+<h2 id="org52e4c6f"><span class="section-number-2">5</span> Installing Docker</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-org86519eb" class="outline-3">
+<h3 id="org86519eb"><span class="section-number-3">5.1</span> Module Intro</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>you can isntall on various platforms
+
+<ul class="org-ul">
+<li>window</li>
+<li>linux</li>
+<li>mac</li>
+</ul></li>
+
+<li><ul class="org-ul">
+<li>on prem</li>
+<li>cloud</li>
+<li>local</li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>This course will be doing docker on AWS</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org0f3f367" class="outline-3">
+<h3 id="org0f3f367"><span class="section-number-3">5.2</span> Docker for Windows</h3>
+<div class="outline-text-3" id="text-5-2">
+<ul class="org-ul">
+<li>Windows 10 64 bit only
+
+<ul class="org-ul">
+<li>install a docker</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org049baa4" class="outline-3">
+<h3 id="org049baa4"><span class="section-number-3">5.3</span> Docker for Mac</h3>
+</div>
+
+<div id="outline-container-org1eeca89" class="outline-3">
+<h3 id="org1eeca89"><span class="section-number-3">5.4</span> Installing Docker on Windows Server 2016</h3>
+</div>
+
+<div id="outline-container-org7c6a5a3" class="outline-3">
+<h3 id="org7c6a5a3"><span class="section-number-3">5.5</span> Installing Docker on Linux</h3>
+</div>
+<div id="outline-container-orgef041cf" class="outline-3">
+<h3 id="orgef041cf"><span class="section-number-3">5.6</span> Module Summary</h3>
+</div>
+</div>
+
+
+
+<div id="outline-container-org476fc55" class="outline-2">
+<h2 id="org476fc55"><span class="section-number-2">6</span> Working with Containers</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-org7822298" class="outline-3">
+<h3 id="org7822298"><span class="section-number-3">6.1</span> What Is a Container?</h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>virtual machine hypervisor
+
+<ul class="org-ul">
+<li><img src="../../images/docker.org_20200413_235441_sv1w28.png" alt="docker.org_20200413_235441_sv1w28.png" /></li>
+</ul></li>
+
+<li>Docker
+<ul class="org-ul">
+<li><img src="../../images/docker.org_20200413_235501_X2ksF7.png" alt="docker.org_20200413_235501_X2ksF7.png" /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org9916d83" class="outline-3">
+<h3 id="org9916d83"><span class="section-number-3">6.2</span> The &rsquo;docker run&rsquo; Command</h3>
+<div class="outline-text-3" id="text-6-2">
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 8: </span>docker version</label><pre class="src src-shell">[vagrant@dropwizard ~]$ docker version
+
+Client: Docker Engine - Community
+ Version:           19.03.8
+ API version:       1.40
+ Go version:        go1.12.17
+ Git commit:        afacb8b
+ Built:             Wed Mar 11 01:27:04 2020
+ OS/Arch:           linux/amd64
+ Experimental:      false
+
+Server: Docker Engine - Community
+ Engine:
+  Version:          19.03.8
+  API version:      1.40 (minimum version 1.12)
+  Go version:       go1.12.17
+  Git commit:       afacb8b
+  Built:            Wed Mar 11 01:25:42 2020
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          1.2.13
+  GitCommit:        7ad184331fa3e55e52b890ea95e65ba581ae3429
+ runc:
+  Version:          1.0.0-rc10
+  GitCommit:        dc9208a3303feef5b3839f4323d9beb36df0a9dd
+ docker-init:
+  Version:          0.18.0
+</pre>
+</div>
+
+
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 9: </span>We are creating a container below</label><pre class="src src-shell">
+[vagrant@dropwizard ~]$ docker run hello-world
+Unable to find image <span class="org-string">'hello-world:latest'</span> locally
+latest: Pulling from library/hello-world
+1b930d010525: Pull complete
+Digest: sha256:f9dfddf63636d84ef479d645ab5885156ae030f611a56f3a7ac7f2fdd86d7e4e
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the <span class="org-string">"hello-world"</span> image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+</pre>
+</div>
+
+
+
+<ul class="org-ul">
+<li>all the container did was open up and say &ldquo;Hello from Docker&rdquo; It&rsquo;s no longer running. Will show you below
+<ul class="org-ul">
+<li>prints to screen then exits</li>
+</ul></li>
+</ul>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 10: </span>Not running</label><pre class="src src-go">[vagrant@dropwizard ~]$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>You can see that it was running at one point though below:</li>
+</ul>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 11: </span>using -a flag</label><pre class="src src-shell">[vagrant@dropwizard ~]$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                     PORTS               NAMESe13c18cbdd12        hello-world         <span class="org-string">"/hello"</span>            5 minutes ago       Exited (0) 5 minutes ago                       naughty_albattani
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 12: </span>shows images that were local</label><pre class="src src-shell">[vagrant@dropwizard ~]$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+hello-world         latest              fce289e99eb9        15 months ago       1.84kB
+
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Quick recap
+
+<ul class="org-ul">
+<li>Docker client and Docker Daemon on the same host
+
+<ul class="org-ul">
+<li>docker client made api calls to the talker daemon</li>
+
+<li>docker says start me a container with a hello world image
+
+<ul class="org-ul">
+<li>went out to docker hub to get the image</li>
+</ul></li>
+
+<li>on premise registry is likely would cerner would have for their own applications
+
+<ul class="org-ul">
+<li>the docker daemon did not have it, then it pulled it and made a copy
+<ul class="org-ul">
+<li>at that point it created the container</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+
+<div class="figure">
+<p><img src="../../images/docker.org_20200414_000936_a2z6Dc.png" alt="docker.org_20200414_000936_a2z6Dc.png" />
+</p>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div id="outline-container-orgc832c79" class="outline-3">
+<h3 id="orgc832c79"><span class="section-number-3">6.3</span> Theory of Pulling and Running Containers</h3>
+</div>
+
+<div id="outline-container-orgcfa0ccc" class="outline-3">
+<h3 id="orgcfa0ccc"><span class="section-number-3">6.4</span> Working with Images</h3>
+<div class="outline-text-3" id="text-6-4">
+<ul class="org-ul">
+<li>images are just stopped containers</li>
+
+<li>containers are just running images</li>
+</ul>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 13: </span>pulling latest apline image</label><pre class="src src-go">docker pull alpine
+</pre>
+</div>
+
+<p>
+<a href="https://hub.docker.com/_/ubuntu">https://hub.docker.com/_/ubuntu</a>
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 14: </span>pulling the lastest docker image</label><pre class="src src-go">docker pull ubuntu
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 15: </span>pull specific image</label><pre class="src src-go">docker pull ubuntu:14:04
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 16: </span>removes the docker image that you specify</label><pre class="src src-go">docker rmi ubuntu:14.04
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-go">[vagrant@dropwizard ~]$ docker pull ubuntu
+Using default tag: latest
+latest: Pulling from library/ubuntu
+5bed26d33875: Pull complete
+f11b29a9c730: Pull complete
+930bda195c84: Pull complete
+78bf9a5ad49e: Pull complete
+Digest: sha256:bec5a2727be7fff3d308193cfde3491f8fba1a2ba392b7546b43a051853a341d
+Status: Downloaded newer image for ubuntu:latest
+docker.io/library/ubuntu:latest
+</pre>
+</div>
+
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 18: </span>here is how you see all your images</label><pre class="src src-go">[vagrant@dropwizard ~]$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+ubuntu              latest              4e5021d210f6        3 weeks ago         64.2MB
+hello-world         latest              fce289e99eb9        15 months ago       1.84kB
+</pre>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div id="outline-container-org3c863e7" class="outline-3">
+<h3 id="org3c863e7"><span class="section-number-3">6.5</span> Container Lifecycle</h3>
+<div class="outline-text-3" id="text-6-5">
+<p>
+lifecycle of a container is shortlived
+</p>
+
+<ul class="org-ul">
+<li>when you create a container, it goes into a running state. You can stop and start it as much as you want</li>
+
+<li>the only way to actually lose data is by removing the container like so</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-go">docker rm &lt;container&gt;
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>this is a second level image, not top level like before</li>
+</ul>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 20: </span>start the container in detached mode (throw it in the background). also mapping some network ports (web server listening on port 80) map to port 8080 on the docker host</label><pre class="src src-go">docker run -d --name web -p 80:8080 nigelpoulton/pluralsight-docker-ci
+
+[vagrant@dropwizard ~]$ docker run -d --name web -p 80:8080 nigelpoulton/pluralsight-docker-ci
+Unable to find image 'nigelpoulton/pluralsight-docker-ci:latest' locally
+latest: Pulling from nigelpoulton/pluralsight-docker-ci
+729ec3a6ada3: Pull complete
+f0a3eea3dca0: Pull complete
+e07851c50ad6: Pull complete
+f78e7cd1f8dc: Pull complete
+7cad1fbd2f07: Pull complete
+22835c51693f: Pull complete
+Digest: sha256:61bc64850a5f2bfbc65967cc33feaae8a77c8b49379c55aaf05bb02dcee41451
+Status: Downloaded newer image for nigelpoulton/pluralsight-docker-ci:latest
+41fa6d0761b4e1966ba32228cf54b3700765ffd01c1b08ed521f35c7d6054584
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-org210a89e" class="outline-4">
+<h4 id="org210a89e"><span class="section-number-4">6.5.1</span> vagrant config on workstation</h4>
+<div class="outline-text-4" id="text-6-5-1">
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 21: </span>add the following to docker vagrant file</label><pre class="src src-go">config.vm.network "forwarded_port", guest: 80, host: 80
+config.vm.network "public_network"
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 22: </span></label><pre class="src src-go">vagrant reload
+vagrant ssh
+docker start web
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 23: </span>get the ip address of the docker host</label><pre class="src src-go">[vagrant@dropwizard ~]$ ifconfig
+docker0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+	inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
+	inet6 fe80::42:33ff:feae:e38  prefixlen 64  scopeid 0x20&lt;link&gt;
+	ether 02:42:33:ae:0e:38  txqueuelen 0  (Ethernet)
+	RX packets 0  bytes 0 (0.0 B)
+	RX errors 0  dropped 0  overruns 0  frame 0
+	TX packets 8  bytes 656 (656.0 B)
+	TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enp0s3: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+	inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+	inet6 fe80::a00:27ff:fe5a:e9e7  prefixlen 64  scopeid 0x20&lt;link&gt;
+	ether 08:00:27:5a:e9:e7  txqueuelen 1000  (Ethernet)
+	RX packets 586  bytes 68059 (66.4 KiB)
+	RX errors 0  dropped 0  overruns 0  frame 0
+	TX packets 411  bytes 72841 (71.1 KiB)
+	TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enp0s8: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+	inet 192.168.1.228  netmask 255.255.255.0  broadcast 192.168.1.255
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>in this case it is 192.168.1.228</li>
+</ul>
+
+<p>
+<a href="http://192.168.1.228">http://192.168.1.228</a>
+</p>
+
+<p>
+you should get your page
+</p>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div id="outline-container-org1fa6898" class="outline-3">
+<h3 id="org1fa6898"><span class="section-number-3">6.6</span> back to container</h3>
+<div class="outline-text-3" id="text-6-6">
+<ul class="org-ul">
+<li>let&rsquo;s log in to the container and look inside</li>
+</ul>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 24: </span>in the bash shell of the container we just created</label><pre class="src src-go">docker run -it --name temp ubuntu:latest /bin/bash
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>you will not be able to do much in here like ping google.com or even vi into /etc/hosts
+
+<ul class="org-ul">
+<li>that is because it is extremely barebones. not meant to do much else
+
+<ul class="org-ul">
+<li>ps and top are even just temporary processes that usually do not run</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 25: </span>here is some output to show you how little it is doing</label><pre class="src src-go">top - 22:34:04 up 15 min,  0 users,  load average: 0.00, 0.02, 0.05
+Tasks:   2 total,   1 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.2 us,  0.0 sy,  0.0 ni, 99.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem :   756608 total,   125788 free,   270632 used,   360188 buff/cache
+KiB Swap:  2097148 total,  2096884 free,      264 used.   362928 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+    1 root      20   0   18496   2040   1636 S   0.0  0.3   0:00.01 bash
+   11 root      20   0   36616   1780   1328 R   0.0  0.2   0:00.00 top
+
+ctrl + p + q to exit
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 26: </span>the following commands will stop all containers, remove them, and then remove the images they were using</label><pre class="src src-go">[vagrant@dropwizard ~]$ docker stop $(docker ps -aq)
+130dac25ee36
+ebe6db2d5dc8
+41fa6d0761b4
+e13c18cbdd12
+[vagrant@dropwizard ~]$ docker rm $(docker ps -aq)
+130dac25ee36
+ebe6db2d5dc8
+41fa6d0761b4
+e13c18cbdd12
+[vagrant@dropwizard ~]$ docker rmi $(docker images -q)
+Untagged: ubuntu:latest
+Untagged: ubuntu@sha256:bec5a2727be7fff3d308193cfde3491f8fba1a2ba392b7546b43a051853a341d
+Deleted: sha256:4e5021d210f65ebe915670c7089120120bc0a303b90208592851708c1b8c04bd
+Deleted: sha256:1d9112746e9d86157c23e426ce87cc2d7bced0ba2ec8ddbdfbcc3093e0769472
+Deleted: sha256:efcf4a93c18b5d01aa8e10a2e3b7e2b2eef0378336456d8653e2d123d6232c1e
+Deleted: sha256:1e1aa31289fdca521c403edd6b37317bf0a349a941c7f19b6d9d311f59347502
+Deleted: sha256:c8be1b8f4d60d99c281fc2db75e0f56df42a83ad2f0b091621ce19357e19d853
+Untagged: nigelpoulton/pluralsight-docker-ci:latest
+Untagged: nigelpoulton/pluralsight-docker-ci@sha256:61bc64850a5f2bfbc65967cc33feaae8a77c8b49379c55aaf05bb02dcee41451
+Deleted: sha256:dd7a37fe7c1e6f3b9bcd1c51cad0a54fde3f393ac458af3b009b2032978f599d
+Deleted: sha256:62c2dc8575cf79fddcbf8466311d893100d89d8fe30532cd8949a6399bf0c59e
+Deleted: sha256:41d87f201eb33b39af235cb7aae8dce404407dbff9654886854ef076fedec0ed
+Deleted: sha256:fec1957285f8b705269c691bd78a70584888e4a7674a7f3e74351f131926edcf
+Deleted: sha256:27a18cba123036ad9cedaeed9dc75d3a55c81bf2da5c21837a2f23583882aee4
+Deleted: sha256:937d6f78d3ffb0b5bd95a1e8a39974008915ac044f7c7c89a18962efe973ca81
+Deleted: sha256:9e607bb861a7d58bece26dd2c02874beedd6a097c1b6eca5255d5eb0d2236983
+Untagged: hello-world:latest
+Untagged: hello-world@sha256:f9dfddf63636d84ef479d645ab5885156ae030f611a56f3a7ac7f2fdd86d7e4e
+Deleted: sha256:fce289e99eb9bca977dae136fbe2a82b6b7d4c372474c9235adc1741675f587e
+Deleted: sha256:af0b15c8625bb1938f1d7b17081031f649fd14e6b233688eea3c5483994a66a3
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org3c8ce3b" class="outline-3">
+<h3 id="org3c8ce3b"><span class="section-number-3">6.7</span> Lesson Recap</h3>
+<div class="outline-text-3" id="text-6-7">
+<ul class="org-ul">
+<li>docker run is just a client command
+
+<ul class="org-ul">
+<li><img src="../../images/docker.org_20200414_174308_6t4bIJ.png" alt="docker.org_20200414_174308_6t4bIJ.png" /></li>
+</ul></li>
+
+<li>docker is just talking to the daemon which is doing all the heavy lfiting through the docker api</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>here are the commands we learned</li>
+</ul>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 27: </span>starts a new container</label><pre class="src src-go">docker run
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 28: </span>copies images to the docker ost</label><pre class="src src-go">docker pull
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 29: </span>lists images on the docker host</label><pre class="src src-go">docker images
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 30: </span>removes images from the docker host</label><pre class="src src-go">docker rmi
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 31: </span>lists running containers</label><pre class="src src-go">docker ps
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 32: </span>stops running containers</label><pre class="src src-go">docker stop
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 33: </span>removes (deletes) stopped containers</label><pre class="src src-go">docker rm
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgc682159" class="outline-2">
+<h2 id="orgc682159"><span class="section-number-2">7</span> Swarm Mode and Microservices</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-orgeb35dc1" class="outline-3">
+<h3 id="orgeb35dc1"><span class="section-number-3">7.1</span> Module Intro</h3>
+<div class="outline-text-3" id="text-7-1">
+<ul class="org-ul">
+<li>We are going to build a swarm
+
+<ul class="org-ul">
+<li>start using services, scale them, and update them in this section</li>
+</ul></li>
+
+<li>deploy a multi-service app with stacks and bundles</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org2f5a34a" class="outline-3">
+<h3 id="org2f5a34a"><span class="section-number-3">7.2</span> Swarm Mode Theory</h3>
+<div class="outline-text-3" id="text-7-2">
+<ul class="org-ul">
+<li>cluster = a swarm
+
+<ul class="org-ul">
+<li>all about true native clustering</li>
+</ul></li>
+
+<li>manager nodes maintain the swarm
+
+<ul class="org-ul">
+<li>the more managers you have, the longer it takes to come to a conclusion</li>
+<li>only one is a leader</li>
+</ul></li>
+
+<li>worker nodes execute tasks</li>
+
+<li>services
+<ul class="org-ul">
+<li>declaritive way of running tasks</li>
+</ul></li>
+</ul>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 34: </span>go create a service named web-fe with 5 instances of the continual task it is going to run</label><pre class="src src-go">docker service create --name web-fe --replicas 5 ...
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>this is desired state. docker going to make sure actual state = desired state</li>
+
+<li>tasks
+
+<ul class="org-ul">
+<li>assigned to workers</li>
+
+<li>task is more or less a container</li>
+</ul></li>
+
+<li>swarm consists of manager and worker nodes
+
+<ul class="org-ul">
+<li>manager splits the service into tasks</li>
+
+<li>schedules tasks against available nodes in the swarm
+
+<ul class="org-ul">
+<li>worker node executes the tasks</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1242cf5" class="outline-3">
+<h3 id="org1242cf5"><span class="section-number-3">7.3</span> Configuring Swarm Mode</h3>
+<div class="outline-text-3" id="text-7-3">
+</div>
+<div id="outline-container-org2a5c648" class="outline-4">
+<h4 id="org2a5c648"><span class="section-number-4">7.3.1</span> this ended up failing</h4>
+<div class="outline-text-4" id="text-7-3-1">
+<ul class="org-ul">
+<li>Vagrant Setup:
+
+<ul class="org-ul">
+<li><a href="https://https//github.com/monicagangwar/docker-swarm-vagrant">https://https//github.com/monicagangwar/docker-swarm-vagrant</a></li>
+</ul></li>
+</ul>
+
+
+<div class="org-src-container">
+<pre class="src src-go">¦Ë vagrant status
+Current machine states:
+
+manager                   running (virtualbox)
+worker-1                  running (virtualbox)
+worker-2                  running (virtualbox)
+
+This environment represents multiple VMs. The VMs are all listed
+above with their current state. For more information about a specific
+VM, run `vagrant status NAME`.
+</pre>
+</div>
+
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 36: </span>initialize the swarm with the IP in the vagrant file</label><pre class="src src-go">vagrant@manager:~$ docker swarm init --advertise-addr 192.168.100.10:2377
+Swarm initialized: current node (y1qo6dke3ycq1d9sb742p1tax) is now a manager.
+
+To add a worker to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-087ujuq7iejr18p0yjc83n31l44t6k2mqneswl9prdt2lnyk9c-1tg0hg8baif9c3qf59ksmymnn 192.168.100.10:2377
+
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+</pre>
+</div>
+
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 37: </span>take the command that was generated and run it on the worker nodes</label><pre class="src src-go">¦Ë vagrant ssh worker-1
+Welcome to Ubuntu 14.04.6 LTS (GNU/Linux 3.13.0-170-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Apr 14 23:38:42 UTC 2020
+
+  System load:  0.23              Users logged in:        0
+  Usage of /:   4.3% of 39.34GB   IP address for eth0:    10.0.2.15
+  Memory usage: 19%               IP address for eth1:    192.168.100.11
+  Swap usage:   0%                IP address for docker0: 172.17.0.1
+  Processes:    84
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+New release '16.04.6 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+
+vagrant@worker-1:~$
+vagrant@worker-1:~$ docker swarm join --token SWMTKN-1-087ujuq7iejr18p0yjc83n31l44t6k2mqneswl9prdt2lnyk9c-1tg0hg8baif9c 3qf59ksmymnn 192.168.100.10:2377
+This node joined a swarm as a worker.
+vagrant@worker-1:~$
+vagrant@worker-1:~$
+vagrant@worker-1:~$ exit
+logout
+Connection to 127.0.0.1 closed.
+
+C:\Users\Evan\Desktop\vagrant_lab\docker-lab\docker-swarm-vagrant (master -&gt; origin)
+¦Ë vagrant ssh worker-2
+Welcome to Ubuntu 14.04.6 LTS (GNU/Linux 3.13.0-170-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Apr 14 23:40:05 UTC 2020
+
+  System load:  0.07              Users logged in:        0
+  Usage of /:   4.3% of 39.34GB   IP address for eth0:    10.0.2.15
+  Memory usage: 19%               IP address for eth1:    192.168.100.12
+  Swap usage:   0%                IP address for docker0: 172.17.0.1
+  Processes:    83
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+New release '16.04.6 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+vagrant@worker-2:~$ docker swarm join --token SWMTKN-1-087ujuq7iejr18p0yjc83n31l44t6k2mqneswl9prdt2lnyk9c-1tg0hg8baif9c 3qf59ksmymnn 192.168.100.10:2377
+This node joined a swarm as a worker.
+</pre>
+</div>
+
+
+
+<ul class="org-ul">
+<li>Now go back to your manager and see if you can see the workers you just added</li>
+</ul>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 38: </span>we only have one node and it is the leader. If there were more they would show as &rsquo;Reachable&rsquo;</label><pre class="src src-go">vagrant@manager:~$ docker node ls
+ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
+y1qo6dke3ycq1d9sb742p1tax *   manager             Ready               Active              Leader              18.06.3-cet5oyge8yi03guttihfblt8kdu     worker-1            Ready               Active                                  18.06.3-ceu5gknij4qqpkyivd2nkot57nq     worker-2            Ready               Active                                  18.06.3-cevagrant@manager:~$
+
+</pre>
+</div>
+
+
+<ul class="org-ul">
+<li>you can add managers the same way with the following command to generate a command:</li>
+</ul>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 39: </span>this is how you would do it. not going to in this lab</label><pre class="src src-go">vagrant@manager:~$ docker swarm join-token manager
+To add a manager to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-087ujuq7iejr18p0yjc83n31l44t6k2mqneswl9prdt2lnyk9c-8yebc12bg5mf50ew4tpbjqdti 192.168.100.10:2377
+
+</pre>
+</div>
+
+
+<ul class="org-ul">
+<li>creates an overlay network with the name specified which each of the container can join</li>
+</ul>
+<p>
+random-network will be the overlay network that our application containers live on
+-d tells which driver to use. Currently overlay driver is being used
+</p>
+
+<div class="org-src-container">
+<pre class="src src-go">vagrant@manager:~$ docker network create -d overlay my-overlay
+59da67u0bhow6l1hcmwp2gvnc
+</pre>
+</div>
+
+
+<ul class="org-ul">
+<li>might take a little bit since it has to pull the image down for every node
+
+<ul class="org-ul">
+<li>running into an error here:</li>
+</ul></li>
+</ul>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 41: </span>this is an error</label><pre class="src src-go">vagrant@manager:~$ docker service create --name psight1 -p 8080:8080 --replicas 5 nigelpoulton/pluralsight-docker-ci
+7ts4gxy2cfw6eyn4lw3n2nhq3
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+1/5: ready     [======================================&gt;            ]
+2/5: ready     [======================================&gt;            ]
+3/5: ready     [======================================&gt;            ]
+4/5: ready     [======================================&gt;            ]
+5/5: ready     [======================================&gt;            ]
+^COperation continuing in background.
+Use `docker service ps 7ts4gxy2cfw6eyn4lw3n2nhq3` to check progress.
+vagrant@manager:~$ docker service ps 7ts4gxy2cfw6eyn4lw3n2nhq3
+ID                  NAME                IMAGE                                       NODE                DESIRED STATE       CURRENT STATE                     ERROR                              PORTS
+njopbxxqozad        psight1.1           nigelpoulton/pluralsight-docker-ci:latest   worker-2            Running             Starting less than a second ago
+9b68yk1rq4gh         \_ psight1.1       nigelpoulton/pluralsight-docker-ci:latest   worker-1            Shutdown            Failed 3 seconds ago              "starting container failed: OC¡­"
+ectzwhjtcyck         \_ psight1.1       nigelpoulton/pluralsight-docker-ci:latest   manager             Shutdown            Failed 10 seconds ago             "starting container failed: OC¡­"
+skf2unhgsvbh         \_ psight1.1       nigelpoulton/pluralsight-docker-ci:latest   manager             Shutdown            Failed 15 seconds ago             "starting container failed: OC¡­"
+u8gxf5ybaza6         \_ psight1.1       nigelpoulton/pluralsight-docker-ci:latest   worker-2            Shutdown            Failed 21 seconds ago             "starting container failed: OC¡­"
+...
+
+#+CAPTION:you can view all the output by passing this flag
+#+BEGIN_SRC go
+docker service ps --no-trunc wamnlhva5t4zhfmihtbh6lhvn
+</pre>
+</div>
+
+
+<p>
+## went ahead and removed it
+</p>
+
+<p>
+vagrant@manager:~$ docker service rm psight1
+</p>
+
+<p>
+#+END_SRC
+</p>
+</div>
+</div>
+
+
+
+
+
+
+<div id="outline-container-org9fb1450" class="outline-4">
+<h4 id="org9fb1450"><span class="section-number-4">7.3.2</span> Second Attempt</h4>
+<div class="outline-text-4" id="text-7-3-2">
+<ul class="org-ul">
+<li><a href="https://medium.com/@gauravtalele/docker-swarm-cluster-setup-with-vagrant-bca5ddb7a672">https://medium.com/@gauravtalele/docker-swarm-cluster-setup-with-vagrant-bca5ddb7a672</a></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>Follow these steps and continue with pluralsight course:</li>
+</ul>
+
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 42: </span>got it working</label><pre class="src src-go">vagrant@manager:~$ docker service create --name psight1 -p 8080:8080 --replicas 5 nigelpoulton/pluralsight-docker-ci
+m2zu80xa6xklraxbxx7oj4o2j
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+overall progress: 0 out of 5 tasks
+1/5: preparing [=================================&gt;                 ]
+2/5: preparing [=================================&gt;                 ]
+3/5: preparing [=================================&gt;                 ]
+4/5: preparing [=================================&gt;                 ]
+5/5: preparing [=================================&gt;                 ]
+^COperation continuing in background.
+Use `docker service ps m2zu80xa6xklraxbxx7oj4o2j` to check progress.
+vagrant@manager:~$ docker service ps m2zu80xa6xklraxbxx7oj4o2j
+ID                  NAME                IMAGE                                       NODE                DESIRED STATE       CURRENT STATE                    ERROR               PORTS
+5r9exmy840dq        psight1.1           nigelpoulton/pluralsight-docker-ci:latest   worker02            Running             Running less than a second ago
+dytl0pbj3snu        psight1.2           nigelpoulton/pluralsight-docker-ci:latest   worker01            Running             Running 2 seconds ago
+kx5wtjmvfd3x        psight1.3           nigelpoulton/pluralsight-docker-ci:latest   worker02            Running             Running 1 second ago
+i9agm7xsi36p        psight1.4           nigelpoulton/pluralsight-docker-ci:latest   manager             Running             Running 3 seconds ago
+slpu9nfbms4z        psight1.5           nigelpoulton/pluralsight-docker-ci:latest   worker01            Running             Running 3 seconds ago
+
+</pre>
+</div>
+
+
+<ul class="org-ul">
+<li>grab the IP address of both workers</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-go">ifconfig
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>access locally</li>
+</ul>
+<p>
+<a href="http://10.100.199.201:8080/">http://10.100.199.201:8080/</a>
+<a href="http://10.100.199.202:8080/">http://10.100.199.202:8080/</a>
+</p>
+
+<ul class="org-ul">
+<li>you can even hit it from the manager node:</li>
+</ul>
+
+<p>
+<a href="http://10.100.199.200:8080/">http://10.100.199.200:8080/</a>
+</p>
+
+
+
+<div class="figure">
+<p><img src="../../images/docker.org_20200414_202242_OSUFM0.png" alt="docker.org_20200414_202242_OSUFM0.png" />
+</p>
+</div>
+
+
+
+<ul class="org-ul">
+<li>wrap up what we did:</li>
+
+<li>you can hit any of the nodes on port 8080, even the manager</li>
+</ul>
+
+<div class="figure">
+<p><img src="../../images/docker.org_20200414_202928_SMuRe8.png" alt="docker.org_20200414_202928_SMuRe8.png" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li>the swarmwide mesh container load balancer shown here, will balance across all the containers in the service
+
+<ul class="org-ul">
+<li>fully container aware load balancer &ldquo;routing mesh&rdquo;</li>
+
+<li></li>
+</ul></li>
+</ul>
+
+<div class="figure">
+<p><img src="../../images/docker.org_20200414_203011_1FuTy6.png" alt="docker.org_20200414_203011_1FuTy6.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org27e9031" class="outline-3">
+<h3 id="org27e9031"><span class="section-number-3">7.4</span> Services</h3>
+</div>
+
+
+<div id="outline-container-orgb051847" class="outline-3">
+<h3 id="orgb051847"><span class="section-number-3">7.5</span> Scaling Services</h3>
+<div class="outline-text-3" id="text-7-5">
+<ul class="org-ul">
+<li></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-go">vagrant@manager:~$ docker service ls
+ID                  NAME                MODE                REPLICAS            IMAGE                                       PORTS m2zu80xa6xkl        psight1             replicated          5/5                 nigelpoulton/pluralsight-docker-ci:latest   *:8080-&gt;8080/tcp
+</pre>
+</div>
+
+
+<div class="org-src-container">
+<pre class="src src-go">vagrant@manager:~$ docker service ps psight1
+ID                  NAME                IMAGE                                       NODE                DESIRED STATE       CURRENT STATE                 ERROR               PORTS
+xdonhierynle        psight1.1           nigelpoulton/pluralsight-docker-ci:latest   manager             Running             Running 3 minutes ago
+5r9exmy840dq         \_ psight1.1       nigelpoulton/pluralsight-docker-ci:latest   worker02            Shutdown            Shutdown about a minute ago
+di8claalixnm        psight1.2           nigelpoulton/pluralsight-docker-ci:latest   manager             Running             Running 3 minutes ago
+dytl0pbj3snu         \_ psight1.2       nigelpoulton/pluralsight-docker-ci:latest   worker01            Shutdown            Shutdown 2 minutes ago
+z24xnt4cp6ag        psight1.3           nigelpoulton/pluralsight-docker-ci:latest   manager             Running             Running 3 minutes ago
+kx5wtjmvfd3x         \_ psight1.3       nigelpoulton/pluralsight-docker-ci:latest   worker02            Shutdown            Shutdown about a minute ago
+i9agm7xsi36p        psight1.4           nigelpoulton/pluralsight-docker-ci:latest   manager             Running             Running 21 hours ago
+2irl5rq5qwep        psight1.5           nigelpoulton/pluralsight-docker-ci:latest   manager             Running             Running 3 minutes ago
+slpu9nfbms4z         \_ psight1.5       nigelpoulton/pluralsight-docker-ci:latest   worker01            Shutdown            Shutdown 2 minutes ago
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>actual state matches desired state
+
+<ul class="org-ul">
+<li>the ones with &ensp;next to it indicate that it is shutdown</li>
+</ul></li>
+</ul>
+
+
+
+<ul class="org-ul">
+<li>Now we we want to add running instances to this to scal the service:</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-go">vagrant@manager:~$ docker service scale psight1=7
+psight1 scaled to 7
+overall progress: 7 out of 7 tasks
+1/7: running   [==================================================&gt;]
+2/7: running   [==================================================&gt;]
+3/7: running   [==================================================&gt;]
+4/7: running   [==================================================&gt;]
+5/7: running   [==================================================&gt;]
+6/7: running   [==================================================&gt;]
+7/7: running   [==================================================&gt;]
+verify: Service converged
+
+
+vagrant@manager:~$ docker service ps psight1 | grep Running
+ID                  NAME                IMAGE                                       NODE                DESIRED STATE       CURRENT STATE                 ERROR               PORTS
+xdonhierynle        psight1.1           nigelpoulton/pluralsight-docker-ci:latest   manager             Running             Running 10 minutes ago
+di8claalixnm        psight1.2           nigelpoulton/pluralsight-docker-ci:latest   manager             Running             Running 10 minutes ago
+z24xnt4cp6ag        psight1.3           nigelpoulton/pluralsight-docker-ci:latest   manager             Running             Running 10 minutes ago
+i9agm7xsi36p        psight1.4           nigelpoulton/pluralsight-docker-ci:latest   manager             Running             Running 22 hours ago
+2irl5rq5qwep        psight1.5           nigelpoulton/pluralsight-docker-ci:latest   manager             Running             Running 10 minutes ago
+hgqxfm3eod5g        psight1.6           nigelpoulton/pluralsight-docker-ci:latest   worker02            Running             Running 2 minutes ago
+4hmxvdgxr3xi        psight1.7           nigelpoulton/pluralsight-docker-ci:latest   worker01            Running             Running 2 minutes ago
+</pre>
+</div>
+
+
+<ul class="org-ul">
+<li></li>
+</ul>
+</div>
+</div>
+
+
+
+
+
+
+
+<div id="outline-container-org83bd349" class="outline-3">
+<h3 id="org83bd349"><span class="section-number-3">7.6</span> Rolling Updates</h3>
+<div class="outline-text-3" id="text-7-6">
+<ul class="org-ul">
+<li>rolling updates 
+<ul class="org-ul">
+<li>always been a pain, rolling updates with containers is better</li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>Going to create an overlay network below
+<ul class="org-ul">
+<li>also going to create a service on top of it
+<ul class="org-ul">
+<li>notice the :1 at the end. That is a version tag</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-go">vagrant@manager:~$ docker network create -d overlay ps-net
+
+
+vagrant@manager:~$ docker service create --name psight2 --network ps-net -p 80:80 --replicas 12 nigelpoulton/tu-demo:v1
+w4kktdn6k46p5j4zf5igz98nc
+overall progress: 12 out of 12 tasks
+1/12: running   [==================================================&gt;]
+2/12: running   [==================================================&gt;]
+3/12: running   [==================================================&gt;]
+4/12: running   [==================================================&gt;]
+5/12: running   [==================================================&gt;]
+6/12: running   [==================================================&gt;]
+7/12: running   [==================================================&gt;]
+8/12: running   [==================================================&gt;]
+9/12: running   [==================================================&gt;]
+10/12: running   [==================================================&gt;]
+11/12: running   [==================================================&gt;]
+12/12: running   [==================================================&gt;]
+
+
+vagrant@manager:~$ docker service ps psight2
+ID                  NAME                IMAGE                     NODE                DESIRED STATE       CURRENT STATE                ERROR               PORTS
+tbo7pcn491oi        psight2.1           nigelpoulton/tu-demo:v1   worker02            Running             Running about a minute ago
+m15tnlyqei6u        psight2.2           nigelpoulton/tu-demo:v1   manager             Running             Running about a minute ago
+t97wldzlj00m        psight2.3           nigelpoulton/tu-demo:v1   manager             Running             Running about a minute ago
+um78ta64pdyn        psight2.4           nigelpoulton/tu-demo:v1   worker01            Running             Running about a minute ago
+yzt6ybgbesc4        psight2.5           nigelpoulton/tu-demo:v1   manager             Running             Running about a minute ago
+pwn23ocjr462        psight2.6           nigelpoulton/tu-demo:v1   worker02            Running             Running about a minute ago
+qt345jnyfjdl        psight2.7           nigelpoulton/tu-demo:v1   worker01            Running             Running about a minute ago
+snra2jl9k1s1        psight2.8           nigelpoulton/tu-demo:v1   worker02            Running             Running about a minute ago
+e86rdmhuvvft        psight2.9           nigelpoulton/tu-demo:v1   manager             Running             Running about a minute ago
+72yh2woehpic        psight2.10          nigelpoulton/tu-demo:v1   worker01            Running             Running about a minute ago
+k2xaihxxhhir        psight2.11          nigelpoulton/tu-demo:v1   worker02            Running             Running about a minute ago
+i2mwkryn64ll        psight2.12          nigelpoulton/tu-demo:v1   worker01            Running             Running about a minute ago
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>notice how there are two tasks per worker node
+<ul class="org-ul">
+<li>UpdateConfig is what we are going to change</li>
+</ul></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-go">vagrant@manager:~$ docker service inspect --pretty psight2
+
+ID:             w4kktdn6k46p5j4zf5igz98nc
+Name:           psight2
+Service Mode:   Replicated
+ Replicas:      12
+Placement:
+UpdateConfig:
+ Parallelism:   1
+ On failure:    pause
+ Monitoring Period: 5s
+ Max failure ratio: 0
+ Update order:      stop-first
+RollbackConfig:
+ Parallelism:   1
+ On failure:    pause
+ Monitoring Period: 5s
+ Max failure ratio: 0
+ Rollback order:    stop-first
+ContainerSpec:
+ Image:         nigelpoulton/tu-demo:v1@sha256:674cb034447ab34d442b8df03e0db6506a99390a1e282d126fb44af8598e4d2a
+ Init:          false
+Resources:
+Networks: ps-net
+Endpoint Mode:  vip
+Ports:
+ PublishedPort = 80
+  Protocol = tcp
+  TargetPort = 80
+  PublishMode = ingress
+
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>showing rolling event going from v:1 to v:2. update 2 at a time and wait 10 seconds in between</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-go">docker service update --image nigelpoulton/tu-demo:v2 --update-parallelism 2 --update-delay 10s psight2
+
+vagrant@manager:~$ docker service ps psight2 | grep :v2
+qr043j59552u        psight2.1           nigelpoulton/tu-demo:v2   worker02            Running             Running about a minute ago
+s2v1bon48u7w        psight2.2           nigelpoulton/tu-demo:v2   manager             Running             Running about a minute ago
+i7kiba3xeb38        psight2.3           nigelpoulton/tu-demo:v2   manager             Running             Running about a minute ago
+svdpcsiln02d        psight2.4           nigelpoulton/tu-demo:v2   worker01            Running             Running about a minute ago
+wwt744notimr        psight2.5           nigelpoulton/tu-demo:v2   manager             Running             Running about a minute ago
+jrie6ilhrtvb        psight2.6           nigelpoulton/tu-demo:v2   worker02            Running             Running 43 seconds ago
+8vhcvba8ysih        psight2.7           nigelpoulton/tu-demo:v2   worker01            Running             Running about a minute ago
+t6cabwqzcgiw        psight2.8           nigelpoulton/tu-demo:v2   worker02            Running             Running 43 seconds ago
+i7akkjtqfe5g        psight2.9           nigelpoulton/tu-demo:v2   manager             Running             Running 57 seconds ago
+nk8nte95k38e        psight2.10          nigelpoulton/tu-demo:v2   worker01            Running             Running 57 seconds ago
+n0xmq9feht67        psight2.11          nigelpoulton/tu-demo:v2   worker01            Running             Running about a minute ago
+k9uz4cv4krcs        psight2.12          nigelpoulton/tu-demo:v2   worker02            Running             Running about a minute ago
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbc62843" class="outline-3">
+<h3 id="orgbc62843"><span class="section-number-3">7.7</span> Stacks and DABs</h3>
+<div class="outline-text-3" id="text-7-7">
+<p>
+stacks and bundles
+</p>
+
+<p>
+stack is an application made up of multiple services files
+</p>
+<ul class="org-ul">
+<li>made up of DAB files</li>
+</ul>
+
+
+<p>
+here is the app we are going to work with:
+</p>
+
+
+<div class="figure">
+<p><img src="../../images/docker.org_20200415_181638_M3CuEF.png" alt="docker.org_20200415_181638_M3CuEF.png" />
+</p>
+</div>
+
+<p>
+it is made up of 5 micro services
+</p>
+
+
+<p>
+docker compose
+</p>
+<ul class="org-ul">
+<li>before stacks and dabs
+<ul class="org-ul">
+<li>pass docker compose yml files compose.yml files</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org85f61b6" class="outline-3">
+<h3 id="org85f61b6"><span class="section-number-3">7.8</span> Recap</h3>
+<div class="outline-text-3" id="text-7-8">
+
+<div class="figure">
+<p><img src="../../images/docker.org_20200415_182837_14FDE8.png" alt="docker.org_20200415_182837_14FDE8.png" />
+</p>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-go">docker swarm init ...
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 51: </span>joinging worker with manageer</label><pre class="src src-go">docker swarm join ...
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 52: </span>scaling services</label><pre class="src src-go">docker service create ...
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 53: </span>turning more instance</label><pre class="src src-go">docker service scale ...
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 54: </span>update from v:1 to v:2</label><pre class="src src-go">docker service update ...
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-go">docker stack deploy
+</pre>
+</div>
+
+
+<div class="figure">
+<p><img src="../../images/docker.org_20200415_183147_dhlX7F.png" alt="docker.org_20200415_183147_dhlX7F.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org833c020" class="outline-2">
+<h2 id="org833c020"><span class="section-number-2">8</span> What Next!</h2>
+<div class="outline-text-2" id="text-8">
+</div>
+<div id="outline-container-org846861d" class="outline-3">
+<h3 id="org846861d"><span class="section-number-3">8.1</span> Next Steps</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: EVAN-PC</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
