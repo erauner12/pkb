@@ -14,7 +14,7 @@ starts a new container
 docker run
 #+END_SRC
 
------
+----------------------
 
 copies images to the docker ost
 #+BEGIN_SRC go
