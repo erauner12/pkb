@@ -6,25 +6,14 @@
 https://app.pluralsight.com/library/courses/docker-getting-started/table-of-contents
 
 
-#+CAPTION:
-#+BEGIN_SRC shell script
-$ echo '#!/bin/sh' > my-script.sh
-$ echo 'echo Hello World' >> my-script.sh
-$ chmod 755 my-script.sh
-$ ./my-script.sh
-Hello World
-$
-#+END_SRC
-
-
 * Commands
 test
-#+CAPTION: starts a new container
+starts a new container
 #+BEGIN_SRC go
 docker run
 #+END_SRC
 test
-#+CAPTION: copies images to the docker ost
+copies images to the docker ost
 #+BEGIN_SRC go
 docker pull
 #+END_SRC
@@ -174,7 +163,7 @@ Server: Docker Engine - Community
 
 
 
-#+CAPTION: We are creating a container below
+We are creating a container below
 #+BEGIN_SRC shell script
 
 [vagrant@dropwizard ~]$ docker run hello-world
@@ -212,7 +201,7 @@ For more examples and ideas, visit:
 - all the container did was open up and say "Hello from Docker" It's no longer running. Will show you below
   - prints to screen then exits
 
-#+CAPTION: Not running
+Not running
 #+BEGIN_SRC go
 [vagrant@dropwizard ~]$ docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
@@ -220,13 +209,13 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 
 - You can see that it was running at one point though below:
 
-#+CAPTION: using -a flag
+using -a flag
 #+BEGIN_SRC shell script
 [vagrant@dropwizard ~]$ docker ps -a
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                     PORTS               NAMESe13c18cbdd12        hello-world         "/hello"            5 minutes ago       Exited (0) 5 minutes ago                       naughty_albattani
 #+END_SRC
 
-#+CAPTION: shows images that were local
+shows images that were local
 #+BEGIN_SRC shell script
 [vagrant@dropwizard ~]$ docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
@@ -269,7 +258,7 @@ file:../../images/docker.org_20200414_000936_a2z6Dc.png
 
 - containers are just running images
 
-#+CAPTION: pulling latest apline image
+pulling latest apline image
 #+BEGIN_SRC go
 docker pull alpine
 #+END_SRC
@@ -332,7 +321,7 @@ docker rm <container>
 #+END_SRC
 
 - this is a second level image, not top level like before
-#+CAPTION: start the container in detached mode (throw it in the background). also mapping some network ports (web server listening on port 80) map to port 8080 on the docker host
+start the container in detached mode (throw it in the background). also mapping some network ports (web server listening on port 80) map to port 8080 on the docker host
 #+BEGIN_SRC go
 docker run -d --name web -p 80:8080 nigelpoulton/pluralsight-docker-ci
 
@@ -353,13 +342,13 @@ Status: Downloaded newer image for nigelpoulton/pluralsight-docker-ci:latest
 
 *** vagrant config on workstation
 
-#+CAPTION: add the following to docker vagrant file
+add the following to docker vagrant file
 #+BEGIN_SRC go
   config.vm.network "forwarded_port", guest: 80, host: 80
   config.vm.network "public_network"
 #+END_SRC
 
-#+CAPTION: 
+
 #+BEGIN_SRC go
 vagrant reload
 vagrant ssh
@@ -411,7 +400,7 @@ you should get your page
 
 - let's log in to the container and look inside
 
-#+CAPTION: in the bash shell of the container we just created
+in the bash shell of the container we just created
 #+BEGIN_SRC go
 docker run -it --name temp ubuntu:latest /bin/bash
 #+END_SRC
@@ -422,7 +411,7 @@ docker run -it --name temp ubuntu:latest /bin/bash
 
     - ps and top are even just temporary processes that usually do not run
 
-#+CAPTION: here is some output to show you how little it is doing
+here is some output to show you how little it is doing
 #+BEGIN_SRC go
 top - 22:34:04 up 15 min,  0 users,  load average: 0.00, 0.02, 0.05
 Tasks:   2 total,   1 running,   1 sleeping,   0 stopped,   0 zombie
@@ -484,12 +473,12 @@ Deleted: sha256:af0b15c8625bb1938f1d7b17081031f649fd14e6b233688eea3c5483994a66a3
 
 - here are the commands we learned
 
-#+CAPTION: starts a new container
+starts a new container
 #+BEGIN_SRC go
 docker run
 #+END_SRC
 
-#+CAPTION: copies images to the docker ost
+copies images to the docker ost
 #+BEGIN_SRC go
 docker pull
 #+END_SRC
@@ -547,7 +536,7 @@ docker rm
 - services
   - declaritive way of running tasks
 
-#+CAPTION: go create a service named web-fe with 5 instances of the continual task it is going to run
+go create a service named web-fe with 5 instances of the continual task it is going to run
 #+BEGIN_SRC go
 docker service create --name web-fe --replicas 5 ...
 #+END_SRC
@@ -664,7 +653,7 @@ This node joined a swarm as a worker.
 
 - Now go back to your manager and see if you can see the workers you just added
 
-#+CAPTION: we only have one node and it is the leader. If there were more they would show as 'Reachable'
+we only have one node and it is the leader. If there were more they would show as 'Reachable'
 #+BEGIN_SRC go
 vagrant@manager:~$ docker node ls
 ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
@@ -675,7 +664,7 @@ y1qo6dke3ycq1d9sb742p1tax *   manager             Ready               Active    
 
 - you can add managers the same way with the following command to generate a command:
 
-#+CAPTION: this is how you would do it. not going to in this lab
+this is how you would do it. not going to in this lab
 #+BEGIN_SRC go
 vagrant@manager:~$ docker swarm join-token manager
 To add a manager to this swarm, run the following command:
@@ -758,7 +747,7 @@ vagrant@manager:~$ docker service rm psight1
 - Follow these steps and continue with pluralsight course:
 
 
-#+CAPTION:  got it working
+ got it working
 #+BEGIN_SRC go
 vagrant@manager:~$ docker service create --name psight1 -p 8080:8080 --replicas 5 nigelpoulton/pluralsight-docker-ci
 m2zu80xa6xklraxbxx7oj4o2j
