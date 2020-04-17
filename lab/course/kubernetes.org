@@ -1,5 +1,6 @@
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
 #+TITLE: Kubernetes
+#+HTML_HEAD: <script> var HS_STARTUP_FOLDED = true; </script>
 
 * Links
 

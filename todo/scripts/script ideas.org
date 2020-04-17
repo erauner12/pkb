@@ -5,6 +5,7 @@
 
 
 
+
 * TODO update update.sh
 
 add to update script find command that finds instances of pictures you need to find and replace on within the lines
@@ -13,7 +14,6 @@ add to update script find command that finds instances of pictures you need to f
 
 Look more into figuring out what application can do it and how
 
-
-
-
 * TODO 
+Create an ahk script for creating a title. or figure out how to automate creating a page
+
