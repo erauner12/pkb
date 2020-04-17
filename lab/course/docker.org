@@ -6,6 +6,16 @@
 https://app.pluralsight.com/library/courses/docker-getting-started/table-of-contents
 
 
+#+CAPTION:
+#+BEGIN_SRC shell script
+$ echo '#!/bin/sh' > my-script.sh
+$ echo 'echo Hello World' >> my-script.sh
+$ chmod 755 my-script.sh
+$ ./my-script.sh
+Hello World
+$
+#+END_SRC
+
 
 * Commands
 test
