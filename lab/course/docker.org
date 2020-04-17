@@ -7,42 +7,42 @@ https://app.pluralsight.com/library/courses/docker-getting-started/table-of-cont
 
 
 * Commands
-test
+
 starts a new container
 
 #+BEGIN_SRC go
 docker run
 #+END_SRC
 
-test
+
 
 copies images to the docker ost
 #+BEGIN_SRC go
 docker pull
 #+END_SRC
-test
-#+CAPTION:lists images on the docker host
+
+lists images on the docker host
 #+BEGIN_SRC go
 docker images
 #+END_SRC
 test
-#+CAPTION:removes images from the docker host
+removes images from the docker host
 #+BEGIN_SRC go
 docker rmi
 #+END_SRC
 test
-#+CAPTION:lists running containers
+lists running containers
 #+BEGIN_SRC go
 docker ps
 #+END_SRC
 test
-#+CAPTION:stops running containers
+stops running containers
 #+BEGIN_SRC go
 docker stop
 #+END_SRC
 
 removes (deletes) stopped containers
-#+CAPTION:removes (deletes) stopped containers
+removes (deletes) stopped containers
 #+BEGIN_SRC go
 docker rm
 #+END_SRC
@@ -132,7 +132,7 @@ docker rm
     
 ** The 'docker run' Command
 
-#+CAPTION:docker version
+docker version
 #+BEGIN_SRC shell script
 [vagrant@dropwizard ~]$ docker version
 
@@ -268,22 +268,22 @@ docker pull alpine
 
 https://hub.docker.com/_/ubuntu
 
-#+CAPTION:pulling the lastest docker image
+pulling the lastest docker image
 #+BEGIN_SRC go
 docker pull ubuntu
 #+END_SRC
 
-#+CAPTION:pull specific image
+pull specific image
 #+BEGIN_SRC go
 docker pull ubuntu:14:04
 #+END_SRC
 
-#+CAPTION:removes the docker image that you specify
+removes the docker image that you specify
 #+BEGIN_SRC go
 docker rmi ubuntu:14.04
 #+END_SRC
 
-#+CAPTION:
+
 #+BEGIN_SRC go
 [vagrant@dropwizard ~]$ docker pull ubuntu
 Using default tag: latest
@@ -298,7 +298,7 @@ docker.io/library/ubuntu:latest
 #+END_SRC
 
 
-#+CAPTION:here is how you see all your images
+here is how you see all your images
 #+BEGIN_SRC go
 [vagrant@dropwizard ~]$ docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
@@ -318,7 +318,7 @@ lifecycle of a container is shortlived
 
 - the only way to actually lose data is by removing the container like so
 
-#+CAPTION:
+
 #+BEGIN_SRC go
 docker rm <container>
 #+END_SRC
@@ -358,7 +358,7 @@ vagrant ssh
 docker start web
 #+END_SRC
 
-#+CAPTION:get the ip address of the docker host
+get the ip address of the docker host
 #+BEGIN_SRC go
 [vagrant@dropwizard ~]$ ifconfig
 docker0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
@@ -429,7 +429,7 @@ KiB Swap:  2097148 total,  2096884 free,      264 used.   362928 avail Mem
 ctrl + p + q to exit
 #+END_SRC
 
-#+CAPTION:the following commands will stop all containers, remove them, and then remove the images they were using
+the following commands will stop all containers, remove them, and then remove the images they were using
 #+BEGIN_SRC go
 [vagrant@dropwizard ~]$ docker stop $(docker ps -aq)
 130dac25ee36
@@ -486,27 +486,27 @@ copies images to the docker ost
 docker pull
 #+END_SRC
 
-#+CAPTION:lists images on the docker host
+lists images on the docker host
 #+BEGIN_SRC go
 docker images
 #+END_SRC
 
-#+CAPTION:removes images from the docker host
+removes images from the docker host
 #+BEGIN_SRC go
 docker rmi
 #+END_SRC
 
-#+CAPTION:lists running containers
+lists running containers
 #+BEGIN_SRC go
 docker ps
 #+END_SRC
 
-#+CAPTION:stops running containers
+stops running containers
 #+BEGIN_SRC go
 docker stop
 #+END_SRC
 
-#+CAPTION:removes (deletes) stopped containers
+removes (deletes) stopped containers
 #+BEGIN_SRC go
 docker rm
 #+END_SRC
@@ -567,7 +567,7 @@ docker service create --name web-fe --replicas 5 ...
   - https://https://github.com/monicagangwar/docker-swarm-vagrant
 
 
-#+CAPTION:
+
 #+BEGIN_SRC go
 ¦Ë vagrant status
 Current machine states:
@@ -582,7 +582,7 @@ VM, run `vagrant status NAME`.
 #+END_SRC
 
 
-#+CAPTION:initialize the swarm with the IP in the vagrant file
+initialize the swarm with the IP in the vagrant file
 #+BEGIN_SRC go
 vagrant@manager:~$ docker swarm init --advertise-addr 192.168.100.10:2377
 Swarm initialized: current node (y1qo6dke3ycq1d9sb742p1tax) is now a manager.
@@ -595,7 +595,7 @@ To add a manager to this swarm, run 'docker swarm join-token manager' and follow
 #+END_SRC
 
 
-#+CAPTION:take the command that was generated and run it on the worker nodes
+take the command that was generated and run it on the worker nodes
 #+BEGIN_SRC go
 ¦Ë vagrant ssh worker-1
 Welcome to Ubuntu 14.04.6 LTS (GNU/Linux 3.13.0-170-generic x86_64)
@@ -681,7 +681,7 @@ To add a manager to this swarm, run the following command:
 random-network will be the overlay network that our application containers live on
 -d tells which driver to use. Currently overlay driver is being used
 
-#+CAPTION:
+
 #+BEGIN_SRC go
 vagrant@manager:~$ docker network create -d overlay my-overlay
 59da67u0bhow6l1hcmwp2gvnc
@@ -692,7 +692,7 @@ vagrant@manager:~$ docker network create -d overlay my-overlay
 
   - running into an error here:
 
-#+CAPTION:this is an error
+this is an error
 #+BEGIN_SRC go
 vagrant@manager:~$ docker service create --name psight1 -p 8080:8080 --replicas 5 nigelpoulton/pluralsight-docker-ci
 7ts4gxy2cfw6eyn4lw3n2nhq3
@@ -725,7 +725,7 @@ skf2unhgsvbh         \_ psight1.1       nigelpoulton/pluralsight-docker-ci:lates
 u8gxf5ybaza6         \_ psight1.1       nigelpoulton/pluralsight-docker-ci:latest   worker-2            Shutdown            Failed 21 seconds ago             "starting container failed: OC¡­"
 ...
 
-#+CAPTION:you can view all the output by passing this flag
+you can view all the output by passing this flag
 #+BEGIN_SRC go
 docker service ps --no-trunc wamnlhva5t4zhfmihtbh6lhvn
 #+END_SRC
@@ -777,7 +777,7 @@ slpu9nfbms4z        psight1.5           nigelpoulton/pluralsight-docker-ci:lates
 
 - grab the IP address of both workers
 
-#+CAPTION:
+
 #+BEGIN_SRC go
 ifconfig
 #+END_SRC
@@ -816,14 +816,14 @@ file:../../images/docker.org_20200414_203011_1FuTy6.png
 
 - 
 
-#+CAPTION:
+
 #+BEGIN_SRC go
 vagrant@manager:~$ docker service ls
 ID                  NAME                MODE                REPLICAS            IMAGE                                       PORTS m2zu80xa6xkl        psight1             replicated          5/5                 nigelpoulton/pluralsight-docker-ci:latest   *:8080->8080/tcp
 #+END_SRC
 
 
-#+CAPTION:
+
 #+BEGIN_SRC go
 vagrant@manager:~$ docker service ps psight1
 ID                  NAME                IMAGE                                       NODE                DESIRED STATE       CURRENT STATE                 ERROR               PORTS
@@ -846,7 +846,7 @@ slpu9nfbms4z         \_ psight1.5       nigelpoulton/pluralsight-docker-ci:lates
 
 - Now we we want to add running instances to this to scal the service:
 
-#+CAPTION:
+
 #+BEGIN_SRC go
 vagrant@manager:~$ docker service scale psight1=7
 psight1 scaled to 7
@@ -891,7 +891,7 @@ hgqxfm3eod5g        psight1.6           nigelpoulton/pluralsight-docker-ci:lates
   - also going to create a service on top of it
     - notice the :1 at the end. That is a version tag
 
-#+CAPTION:
+
 #+BEGIN_SRC go
 vagrant@manager:~$ docker network create -d overlay ps-net
 
@@ -932,7 +932,7 @@ i2mwkryn64ll        psight2.12          nigelpoulton/tu-demo:v1   worker01      
 - notice how there are two tasks per worker node
   - UpdateConfig is what we are going to change
 
-#+CAPTION:
+
 #+BEGIN_SRC go
 vagrant@manager:~$ docker service inspect --pretty psight2
 
@@ -969,7 +969,7 @@ Ports:
 
 - showing rolling event going from v:1 to v:2. update 2 at a time and wait 10 seconds in between
 
-#+CAPTION:
+
 #+BEGIN_SRC go
 docker service update --image nigelpoulton/tu-demo:v2 --update-parallelism 2 --update-delay 10s psight2
 
@@ -1013,32 +1013,32 @@ docker compose
 
 file:../../images/docker.org_20200415_182837_14FDE8.png
 
-#+CAPTION:
+
 #+BEGIN_SRC go
 docker swarm init ...
 #+END_SRC
 
-#+CAPTION:joinging worker with manageer
+joinging worker with manageer
 #+BEGIN_SRC go
 docker swarm join ...
 #+END_SRC
 
-#+CAPTION:scaling services
+scaling services
 #+BEGIN_SRC go
 docker service create ...
 #+END_SRC
 
-#+CAPTION:turning more instance
+turning more instance
 #+BEGIN_SRC go
 docker service scale ...
 #+END_SRC
 
-#+CAPTION:update from v:1 to v:2
+update from v:1 to v:2
 #+BEGIN_SRC go
 docker service update ...
 #+END_SRC
 
-#+CAPTION:
+
 #+BEGIN_SRC go
 docker stack deploy
 #+END_SRC
