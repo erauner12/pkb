@@ -1,4 +1,4 @@
-#+SETUPFILE: ../../styles/readtheorg.setup
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
 #+TITLE: Docker
 
 * Links
@@ -998,7 +998,7 @@ here is the app we are going to work with:
 
 file:../../images/docker.org_20200415_181638_M3CuEF.png
 
-it is made up of 5 microservices
+it is made up of 5 micro services
 
 
 docker compose

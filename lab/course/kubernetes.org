@@ -75,7 +75,7 @@ Containers
   - manifest
 
 
-- very platfrom agnostic
+- very platform agnostic
 
   - as long as you can install the agent, it wil work
 
@@ -107,7 +107,7 @@ Big picture view
 - deployments
 
 ** Big Picture View
-
+    
 Kubernetes is just an orchestrator for microservice apps
 
 file:../../images/kubernetes.org_20200415_193424_e4YYOS.png
@@ -115,6 +115,8 @@ file:../../images/kubernetes.org_20200415_193424_e4YYOS.png
 package up your application and give it to the cluster
 
 file:../../images/kubernetes.org_20200415_193726_LpcgYX.png
+
+
 
 
 - Masters
@@ -154,8 +156,8 @@ kube-apiserver
 
 - Cluster Store
 
-  - perisent sotrage
-  - cluster state and config
+  - persistent storage
+  - cluster state and con fig
   - uses etcd
     - source of truth for the cluster
 
@@ -209,7 +211,7 @@ file:../../images/kubernetes.org_20200415_195033_dNRDgH.png
 
     - a pod is just a bunch of containers packaged together as a single unit
 
-      - because it is interacing with a container
+      - because it is interacting with a container
 
   - kubelet needs to interact container runtime
     - container runtime examples (pluggable) does not matter which
@@ -221,7 +223,7 @@ file:../../images/kubernetes.org_20200415_195033_dNRDgH.png
 
   - network brains of the node
 
-  - makes sure every pod get's it's ip
+  - makes sure every pod gets it's ip
 
     - ip per pod
 
@@ -327,9 +329,9 @@ file:../../images/kubernetes.org_20200415_203648_ajXxvQ.png
     - no state that it is in the process of coming up
     - pod is not declared available until the whole pod is up and running
 
-  - you cannot have a single pod spead over multiple nodes
+  - you cannot have a single pod spread over multiple nodes
 
-  - pods's lifecycle
+  - pods's life cycle
 
     - they are born, live and die. you don't bring one back to life
 
@@ -434,11 +436,11 @@ file:../../images/kubernetes.org_20200415_203648_ajXxvQ.png
 - rest objects in kubernets api
   - pods
     - atomic unit of scheduling
-  - replciaiton controllers
+  - replication controllers
     - old
 
   - deployments
-    - RC, roling updates, rollbacks
+    - RC, rolling updates, rollbacks
 
   - services
     - stable networking
