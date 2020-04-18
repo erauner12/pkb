@@ -26,3 +26,7 @@ git add -A
 git commit -m "Regular update"
 git push
 
+
+cat "find and replace this on the following images:\nfile:../../images/"
+grep -r "//wsl" .
+

@@ -525,3 +525,4 @@ file:../../images/kubernetes.org_20200415_203648_ajXxvQ.png
 
 
 ** What Next?
+file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200418_143658_tLYQXO.png
