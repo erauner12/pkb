@@ -12,9 +12,9 @@ find . -type f -name "*.org" -exec sed -i 's/png\]\]/png/g' {} \;
 
 echo -e "\n\nfind and replace image paths with this:\nfile:../../images/\n"
 
-
 grep -r "//wsl" . | grep -v update.sh | grep -v "<p><img" > change_file_paths.txt
-grep --color=auto -r ".org:" change_file_paths.txt
+
+grep --color=auto -A 1 -B 1 --group-separator======================== -r ".org:" change_file_paths.txt
 echo -e "\n"
 read -rsp $'Press any key to continue...\n' -n1 key
 
@@ -33,3 +33,5 @@ find . -mindepth 3 -regex ".*\.\(html\)" -type f | xargs sed -i '1 i\---\ntitle:
 git add -A
 git commit -m "Regular update"
 git push
+
+

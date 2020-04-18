@@ -17,6 +17,28 @@ title: "result"
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
@@ -25,34 +47,43 @@ title: "result"
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgff65d2f">1. sed</a></li>
+<li><a href="#org41acfa1">1. bash</a>
+<ul>
+<li><a href="#org71e61f3">1.1. sed</a></li>
+<li><a href="#org535b83d">1.2. overwrite file</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgff65d2f" class="outline-2">
-<h2 id="orgff65d2f"><span class="section-number-2">1</span> sed</h2>
+<div id="outline-container-org41acfa1" class="outline-2">
+<h2 id="org41acfa1"><span class="section-number-2">1</span> bash</h2>
 <div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org71e61f3" class="outline-3">
+<h3 id="org71e61f3"><span class="section-number-3">1.1</span> sed</h3>
+<div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 1: </span>If you want to get the &ldquo;cutted part&rdquo;</label><pre class="src src-go">yyy
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>If you want to get the &ldquo;cutted part&rdquo;</label><pre class="src src-shell">yyy
 yyyyy
 </pre>
 </div>
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 2: </span>You can use</label><pre class="src src-go">sed 's|.*/||' 
+<label class="org-src-name"><span class="listing-number">Listing 2: </span>You can use</label><pre class="src src-shell">sed <span class="org-string">'s|.*/||'</span> 
 </pre>
 </div>
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 3: </span>eg.</label><pre class="src src-go">echo "xxx/xxxx/xxxxx/yyy" | sed 's|.*/||'
-echo "xxxx/x/xx/xx/xxxx/x/yyyyy" | sed 's|.*\/||'
+<label class="org-src-name"><span class="listing-number">Listing 3: </span>eg.</label><pre class="src src-shell"><span class="org-builtin">echo</span> <span class="org-string">"xxx/xxxx/xxxxx/yyy"</span> | sed <span class="org-string">'s|.*/||'</span>
+<span class="org-builtin">echo</span> <span class="org-string">"xxxx/x/xx/xx/xxxx/x/yyyyy"</span> | sed <span class="org-string">'s|.*\/||'</span>
 </pre>
 </div>
 
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 4: </span>output</label><pre class="src src-go">yyy
+<label class="org-src-name"><span class="listing-number">Listing 4: </span>output</label><pre class="src src-shell">yyy
 yyyyy
 </pre>
 </div>
@@ -61,29 +92,43 @@ yyyyy
 
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 5: </span>If you want to get the begining of the string :</label><pre class="src src-go">xxx/xxxx/xxxxx
+<label class="org-src-name"><span class="listing-number">Listing 5: </span>If you want to get the begining of the string :</label><pre class="src src-shell">xxx/xxxx/xxxxx
 xxxx/x/xx/xx/xxxx/x
 </pre>
 </div>
 
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 6: </span>You can use</label><pre class="src src-go">sed 's|\(.*\)/.*|\1|'
+<label class="org-src-name"><span class="listing-number">Listing 6: </span>You can use</label><pre class="src src-shell">sed <span class="org-string">'s|\(.*\)/.*|\1|'</span>
 </pre>
 </div>
 
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 7: </span>eg.</label><pre class="src src-go">echo "xxx/xxxx/xxxxx/yyy" | sed 's|\(.*\)/.*|\1|'
-echo "xxxx/x/xx/xx/xxxx/x/yyyyy" | sed 's|\(.*\)/.*|\1|'
+<label class="org-src-name"><span class="listing-number">Listing 7: </span>eg.</label><pre class="src src-shell"><span class="org-builtin">echo</span> <span class="org-string">"xxx/xxxx/xxxxx/yyy"</span> | sed <span class="org-string">'s|\(.*\)/.*|\1|'</span>
+<span class="org-builtin">echo</span> <span class="org-string">"xxxx/x/xx/xx/xxxx/x/yyyyy"</span> | sed <span class="org-string">'s|\(.*\)/.*|\1|'</span>
 </pre>
 </div>
 
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 8: </span>outpu</label><pre class="src src-go">xxx/xxxx/xxxxx
+<label class="org-src-name"><span class="listing-number">Listing 8: </span>outpu</label><pre class="src src-shell">xxx/xxxx/xxxxx
 xxxx/x/xx/xx/xxxx/x
 </pre>
+</div>
+
+
+<hr />
+</div>
+</div>
+<div id="outline-container-org535b83d" class="outline-3">
+<h3 id="org535b83d"><span class="section-number-3">1.2</span> overwrite file</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+##+BEGIN_SRC go
+grep -r &ldquo;.org:&rdquo; change_file_paths.txt | sed &rsquo;s|\(.*\)/.*|\1|&rsquo; change_file_paths.txt &gt; change_file_paths.txt.tmp &amp;&amp; mv change_file_paths.txt.tmp change_file_paths.txt
+##+END_SRC
+</p>
 </div>
 </div>
 </div>

@@ -1,27 +1,29 @@
 #+SETUPFILE: ../../styles/readtheorg.setup
 #+TITLE: Text Manipulation
 
-* sed
+* bash
+
+** sed
 #+CAPTION:If you want to get the "cutted part"
-#+BEGIN_SRC go
+#+BEGIN_SRC shell
 yyy
 yyyyy
 #+END_SRC
 
 #+CAPTION:You can use
-#+BEGIN_SRC go
+#+BEGIN_SRC shell
 sed 's|.*/||' 
 #+END_SRC
 
 #+CAPTION:eg.
-#+BEGIN_SRC go
+#+BEGIN_SRC shell
 echo "xxx/xxxx/xxxxx/yyy" | sed 's|.*/||'
 echo "xxxx/x/xx/xx/xxxx/x/yyyyy" | sed 's|.*\/||'
 #+END_SRC
 
 
 #+CAPTION:output
-#+BEGIN_SRC go
+#+BEGIN_SRC shell script
 yyy
 yyyyy
 #+END_SRC
@@ -30,28 +32,36 @@ yyyyy
 
 
 #+CAPTION:If you want to get the begining of the string :
-#+BEGIN_SRC go
+#+BEGIN_SRC shell
 xxx/xxxx/xxxxx
 xxxx/x/xx/xx/xxxx/x
 #+END_SRC
 
 
 #+CAPTION:You can use
-#+BEGIN_SRC go
+#+BEGIN_SRC shell
 sed 's|\(.*\)/.*|\1|'
 #+END_SRC
 
 
 #+CAPTION:eg.
-#+BEGIN_SRC go
+#+BEGIN_SRC shell
 echo "xxx/xxxx/xxxxx/yyy" | sed 's|\(.*\)/.*|\1|'
 echo "xxxx/x/xx/xx/xxxx/x/yyyyy" | sed 's|\(.*\)/.*|\1|'
 #+END_SRC
 
 
 #+CAPTION:outpu
-#+BEGIN_SRC go
+#+BEGIN_SRC shell
 xxx/xxxx/xxxxx
 xxxx/x/xx/xx/xxxx/x
 #+END_SRC
+
+
+---------------------------
+** overwrite file
+#+CAPTION:overwrite file with new output
+##+BEGIN_SRC go
+grep -r ".org:" change_file_paths.txt | sed 's|\(.*\)/.*|\1|' change_file_paths.txt > change_file_paths.txt.tmp && mv change_file_paths.txt.tmp change_file_paths.txt
+##+END_SRC
 

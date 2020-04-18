@@ -1,0 +1,86 @@
+% Created 2020-04-18 Sat 16:06
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\date{\today}
+\title{Text Manipulation}
+\hypersetup{
+ pdfauthor={},
+ pdftitle={Text Manipulation},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.3 (Org mode 9.1.9)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section{sed}
+\label{sec:org56f9c82}
+\begin{verbatim}
+yyy
+yyyyy
+\end{verbatim}
+\captionof{figure}{If you want to get the "cutted part"}
+
+\begin{verbatim}
+sed 's|.*/||' 
+\end{verbatim}
+\captionof{figure}{You can use}
+
+\begin{verbatim}
+echo "xxx/xxxx/xxxxx/yyy" | sed 's|.*/||'
+echo "xxxx/x/xx/xx/xxxx/x/yyyyy" | sed 's|.*\/||'
+\end{verbatim}
+\captionof{figure}{eg.}
+
+
+\begin{verbatim}
+yyy
+yyyyy
+\end{verbatim}
+\captionof{figure}{output}
+
+\noindent\rule{\textwidth}{0.5pt}
+
+
+\begin{verbatim}
+xxx/xxxx/xxxxx
+xxxx/x/xx/xx/xxxx/x
+\end{verbatim}
+\captionof{figure}{If you want to get the begining of the string :}
+
+
+\begin{verbatim}
+sed 's|\(.*\)/.*|\1|'
+\end{verbatim}
+\captionof{figure}{You can use}
+
+
+\begin{verbatim}
+echo "xxx/xxxx/xxxxx/yyy" | sed 's|\(.*\)/.*|\1|'
+echo "xxxx/x/xx/xx/xxxx/x/yyyyy" | sed 's|\(.*\)/.*|\1|'
+\end{verbatim}
+\captionof{figure}{eg.}
+
+
+\begin{verbatim}
+xxx/xxxx/xxxxx
+xxxx/x/xx/xx/xxxx/x
+\end{verbatim}
+\captionof{figure}{outpu}
+\end{document}
