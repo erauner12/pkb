@@ -8,77 +8,40 @@ https://app.pluralsight.com/library/courses/docker-getting-started/table-of-cont
 
 * Commands
 
-starts a new container
+
+#+CAPTION:starts a new container
 #+BEGIN_SRC go
 docker run
 #+END_SRC
 
 
-copies images to the docker ost
+#+CAPTION:copies images to the docker ost
 #+BEGIN_SRC go
 docker pull
 #+END_SRC
 
-lists images on the docker host
+#+CAPTION:lists images on the docker host
 #+BEGIN_SRC go
 docker images
 #+END_SRC
-test
-removes images from the docker host
+
+#+CAPTION:removes images from the docker host
 #+BEGIN_SRC go
 docker rmi
 #+END_SRC
-test
-lists running containers
+
+#+CAPTION:lists running containers
 #+BEGIN_SRC go
 docker ps
 #+END_SRC
-test
-stops running containers
+
+
+#+CAPTION:stops running containers
 #+BEGIN_SRC go
 docker stop
 #+END_SRC
 
-
-this is this command
-#+BEGIN_SRC go
-bash commmand m261
-#+END_SRC
-
-#+BEGIN_SRC go
-bash command domain
-#+END_SRC
-----------------------
-this is this command
-#+BEGIN_SRC go
-bash commmand m261
-#+END_SRC
-
-#+BEGIN_SRC go
-bash command domain
-#+END_SRC
-----------------------
-this is this command
-#+BEGIN_SRC go
-bash commmand m261
-#+END_SRC
-
-#+BEGIN_SRC go
-bash command domain
-#+END_SRC
-----------------------
-this is this command
-#+BEGIN_SRC go
-bash commmand m261
-#+END_SRC
-
-#+BEGIN_SRC go
-bash command domain
-#+END_SRC
-----------------------
-
-removes (deletes) stopped containers
-removes (deletes) stopped containers
+#+CAPTION:removes (deletes) stopped containers
 #+BEGIN_SRC go
 docker rm
 #+END_SRC
