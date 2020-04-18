@@ -1,7 +1,7 @@
 #!/bin/bash
 python index.py
 
-# combine to get multiple directories and execute. excluding assets and styles dir
+# find all image excluding assets and styles dir and move them to ./images
 find . -type d \( -name assets -o -name styles \) -prune -o -name "*.png" -exec mv "{}" ./images \;                     
 
 # replace with "file"  and "png" from .org files
@@ -14,7 +14,7 @@ find . -type f -name "*.org" -exec sed -i 's/png\]\]/png/g' {} \;
 orgmk -r
 
 # find all html files and do not incude this directory or the two other below it and insert jekyll matters title so it can be searched
-find ./* -mindepth 2 -regex ".*\.\(html\)" -type f | xargs sed -i '1 i\ ---\ntitle: "title"\n--- '
+find . -mindepth 3 -regex ".*\.\(html\)" -type f | xargs sed -i '1 i\---\ntitle: "title"\n--- '
 
 # | cat - {} > {} \;
 
