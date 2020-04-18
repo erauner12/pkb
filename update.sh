@@ -14,7 +14,7 @@ find . -type f -name "*.org" -exec sed -i 's/png\]\]/png/g' {} \;
 orgmk -r
 
 # find all html files and do not incude this directory or the two other below it and insert jekyll matters title so it can be searched
-find . -mindepth 3 -regex ".*\.\(html\)" -type f | xargs sed -i '1 i\---\ntitle: "result"\n--- '
+find . -mindepth 3 -regex ".*\.\(html\)" -type f | xargs sed -i '1 i\---\ntitle: " "\n--- '
 
 # | cat - {} > {} \;
 
