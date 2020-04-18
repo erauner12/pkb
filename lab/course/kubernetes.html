@@ -8,6 +8,16 @@
 <title>Kubernetes</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="EVAN-PC" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://erauner12.github.io/setup/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+<style>pre.src{background:#343131;color:white;} </style>
+<style> #content{max-width:1800px;}</style>
+<style> p{max-width:800px;}</style>
+<style> li{max-width:800px;}</style
 <script> var HS_STARTUP_FOLDED = true; </script>
 </head>
 <body>
@@ -17,82 +27,82 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0577f64">1. Links</a></li>
-<li><a href="#org7fe9015">2. Vagrant Lab</a></li>
-<li><a href="#org1445b15">3. Course Overview</a>
+<li><a href="#orge907221">1. Links</a></li>
+<li><a href="#org8f10346">2. Vagrant Lab</a></li>
+<li><a href="#orgf1e7e99">3. Course Overview</a>
 <ul>
-<li><a href="#org1addf2b">3.1. Course Introduction</a></li>
+<li><a href="#orge7da4f8">3.1. Course Introduction</a></li>
 </ul>
 </li>
-<li><a href="#orgedb6485">4. Course Introduction</a>
+<li><a href="#org923bc16">4. Course Introduction</a>
 <ul>
-<li><a href="#org64cf666">4.1. Course intro</a></li>
+<li><a href="#orga4812bb">4.1. Course intro</a></li>
 </ul>
 </li>
-<li><a href="#org5f79da6">5. What Is Kubernetes?</a>
+<li><a href="#org5a26ae8">5. What Is Kubernetes?</a>
 <ul>
-<li><a href="#org1f732a1">5.1. Kubernetes: Where It Came From</a></li>
-<li><a href="#org6d40c1d">5.2. Kubernetes: What and Why</a></li>
+<li><a href="#orgd795447">5.1. Kubernetes: Where It Came From</a></li>
+<li><a href="#orgbaab47d">5.2. Kubernetes: What and Why</a></li>
 </ul>
 </li>
-<li><a href="#org018d11c">6. Kubernetes Architecture</a>
+<li><a href="#org1f47715">6. Kubernetes Architecture</a>
 <ul>
-<li><a href="#orge27d4a5">6.1. Module Intro</a></li>
-<li><a href="#orgc119bf2">6.2. Big Picture View</a></li>
-<li><a href="#org276bc76">6.3. Masters</a></li>
-<li><a href="#org52426a6">6.4. Nodes</a></li>
-<li><a href="#org7c73e0d">6.5. Desired State and the Declarative Model</a></li>
-<li><a href="#orgdb2cf1c">6.6. Pods</a></li>
-<li><a href="#orgce686b7">6.7. Services</a></li>
-<li><a href="#org3665ecb">6.8. Deployments</a></li>
-<li><a href="#org7ed4f95">6.9. Bringing It Home</a></li>
+<li><a href="#org4549c20">6.1. Module Intro</a></li>
+<li><a href="#orgeb2ef4c">6.2. Big Picture View</a></li>
+<li><a href="#orgc6794ce">6.3. Masters</a></li>
+<li><a href="#orgce4dec3">6.4. Nodes</a></li>
+<li><a href="#org4746c6c">6.5. Desired State and the Declarative Model</a></li>
+<li><a href="#org102f87b">6.6. Pods</a></li>
+<li><a href="#org4197b1c">6.7. Services</a></li>
+<li><a href="#orga373237">6.8. Deployments</a></li>
+<li><a href="#org56d61e7">6.9. Bringing It Home</a></li>
 </ul>
 </li>
-<li><a href="#orgb2c7f2b">7. Installing Kubernetes</a>
+<li><a href="#org5e3c37b">7. Installing Kubernetes</a>
 <ul>
-<li><a href="#org6ff2406">7.1. Module Intro</a></li>
-<li><a href="#org9484652">7.2. Minikube</a></li>
-<li><a href="#orgbf4ad67">7.3. Google Container Engine</a></li>
-<li><a href="#org711dede">7.4. Installing in AWS with kops</a></li>
-<li><a href="#org731d267">7.5. Installing Manually with kubeadm</a></li>
-<li><a href="#org02b8b83">7.6. Module Summary</a></li>
+<li><a href="#orgebf0637">7.1. Module Intro</a></li>
+<li><a href="#org67d6bc8">7.2. Minikube</a></li>
+<li><a href="#org344f703">7.3. Google Container Engine</a></li>
+<li><a href="#org2405c4b">7.4. Installing in AWS with kops</a></li>
+<li><a href="#org4058d28">7.5. Installing Manually with kubeadm</a></li>
+<li><a href="#org5b40fe5">7.6. Module Summary</a></li>
 </ul>
 </li>
-<li><a href="#orgebba795">8. Working with Pods</a>
+<li><a href="#orge6ba5e8">8. Working with Pods</a>
 <ul>
-<li><a href="#orge820057">8.1. Pod Theory</a></li>
-<li><a href="#org22c96c3">8.2. Deploying Your First Pod</a></li>
-<li><a href="#org833bc81">8.3. Deploying Pods via Replication Controllers</a></li>
-<li><a href="#org8eb6595">8.4. Module Summary</a></li>
-<li><a href="#org6f90dc0">8.5. Kubernetes Services</a></li>
-<li><a href="#org5f9c434">8.6. Module Intro</a></li>
-<li><a href="#org09fcb8e">8.7. The Theory</a></li>
-<li><a href="#org42610f9">8.8. Creating a Service the Iterative Way</a></li>
-<li><a href="#org864e4b3">8.9. Creating a Service the Declarative Way</a></li>
-<li><a href="#org6e51cb9">8.10. In the Real World</a></li>
-<li><a href="#org6e39c21">8.11. Summary</a></li>
+<li><a href="#org1c24c3c">8.1. Pod Theory</a></li>
+<li><a href="#org4c60207">8.2. Deploying Your First Pod</a></li>
+<li><a href="#orgb11f5f9">8.3. Deploying Pods via Replication Controllers</a></li>
+<li><a href="#org498b1fc">8.4. Module Summary</a></li>
+<li><a href="#org72d2f7a">8.5. Kubernetes Services</a></li>
+<li><a href="#org6827d84">8.6. Module Intro</a></li>
+<li><a href="#org789249e">8.7. The Theory</a></li>
+<li><a href="#org39fe499">8.8. Creating a Service the Iterative Way</a></li>
+<li><a href="#org1cd2465">8.9. Creating a Service the Declarative Way</a></li>
+<li><a href="#orga0ba12e">8.10. In the Real World</a></li>
+<li><a href="#org7b62ff6">8.11. Summary</a></li>
 </ul>
 </li>
-<li><a href="#org1cf31a5">9. Kubernetes Deployments</a>
+<li><a href="#orgff1cf10">9. Kubernetes Deployments</a>
 <ul>
-<li><a href="#org6581650">9.1. Module Intro</a></li>
-<li><a href="#org037871d">9.2. Deployment Theory</a></li>
-<li><a href="#orge2777ac">9.3. Creating Your First Kubernetes Deployment</a></li>
-<li><a href="#org799620a">9.4. Updating a Deployment</a></li>
-<li><a href="#org0b7453d">9.5. Module Summary</a></li>
+<li><a href="#orgf178f04">9.1. Module Intro</a></li>
+<li><a href="#org4c801d7">9.2. Deployment Theory</a></li>
+<li><a href="#org98b3979">9.3. Creating Your First Kubernetes Deployment</a></li>
+<li><a href="#org4421fb2">9.4. Updating a Deployment</a></li>
+<li><a href="#orgea809af">9.5. Module Summary</a></li>
 </ul>
 </li>
-<li><a href="#orgb98dbeb">10. What Next?</a>
+<li><a href="#org8c91a37">10. What Next?</a>
 <ul>
-<li><a href="#org5efcbad">10.1. What Next?</a></li>
+<li><a href="#org0fe31bb">10.1. What Next?</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org0577f64" class="outline-2">
-<h2 id="org0577f64"><span class="section-number-2">1</span> Links</h2>
+<div id="outline-container-orge907221" class="outline-2">
+<h2 id="orge907221"><span class="section-number-2">1</span> Links</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <a href="https://app.pluralsight.com/library/courses/getting-started-kubernetes/table-of-contents">https://app.pluralsight.com/library/courses/getting-started-kubernetes/table-of-contents</a>
@@ -100,8 +110,8 @@
 </div>
 </div>
 
-<div id="outline-container-org7fe9015" class="outline-2">
-<h2 id="org7fe9015"><span class="section-number-2">2</span> Vagrant Lab</h2>
+<div id="outline-container-org8f10346" class="outline-2">
+<h2 id="org8f10346"><span class="section-number-2">2</span> Vagrant Lab</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 <a href="https://blog.exxactcorp.com/building-a-kubernetes-cluster-using-vagrant/">https://blog.exxactcorp.com/building-a-kubernetes-cluster-using-vagrant/</a>
@@ -118,12 +128,12 @@ git clone https://exxsyseng@bitbucket.org/exxsyseng/k8s_ubuntu.git      # Ubuntu
 
 
 
-<div id="outline-container-org1445b15" class="outline-2">
-<h2 id="org1445b15"><span class="section-number-2">3</span> Course Overview</h2>
+<div id="outline-container-orgf1e7e99" class="outline-2">
+<h2 id="orgf1e7e99"><span class="section-number-2">3</span> Course Overview</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org1addf2b" class="outline-3">
-<h3 id="org1addf2b"><span class="section-number-3">3.1</span> Course Introduction</h3>
+<div id="outline-container-orge7da4f8" class="outline-3">
+<h3 id="orge7da4f8"><span class="section-number-3">3.1</span> Course Introduction</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 fundamental parts of kubernetes
@@ -142,21 +152,21 @@ fundamental parts of kubernetes
 
 
 
-<div id="outline-container-orgedb6485" class="outline-2">
-<h2 id="orgedb6485"><span class="section-number-2">4</span> Course Introduction</h2>
+<div id="outline-container-org923bc16" class="outline-2">
+<h2 id="org923bc16"><span class="section-number-2">4</span> Course Introduction</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org64cf666" class="outline-3">
-<h3 id="org64cf666"><span class="section-number-3">4.1</span> Course intro</h3>
+<div id="outline-container-orga4812bb" class="outline-3">
+<h3 id="orga4812bb"><span class="section-number-3">4.1</span> Course intro</h3>
 </div>
 </div>
 
-<div id="outline-container-org5f79da6" class="outline-2">
-<h2 id="org5f79da6"><span class="section-number-2">5</span> What Is Kubernetes?</h2>
+<div id="outline-container-org5a26ae8" class="outline-2">
+<h2 id="org5a26ae8"><span class="section-number-2">5</span> What Is Kubernetes?</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org1f732a1" class="outline-3">
-<h3 id="org1f732a1"><span class="section-number-3">5.1</span> Kubernetes: Where It Came From</h3>
+<div id="outline-container-orgd795447" class="outline-3">
+<h3 id="orgd795447"><span class="section-number-3">5.1</span> Kubernetes: Where It Came From</h3>
 <div class="outline-text-3" id="text-5-1">
 <ul class="org-ul">
 <li>written in go/golang
@@ -183,8 +193,8 @@ Kubernetes = K8s
 
 
 
-<div id="outline-container-org6d40c1d" class="outline-3">
-<h3 id="org6d40c1d"><span class="section-number-3">5.2</span> Kubernetes: What and Why</h3>
+<div id="outline-container-orgbaab47d" class="outline-3">
+<h3 id="orgbaab47d"><span class="section-number-3">5.2</span> Kubernetes: What and Why</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 Containers
@@ -246,12 +256,12 @@ Containers
 </div>
 </div>
 
-<div id="outline-container-org018d11c" class="outline-2">
-<h2 id="org018d11c"><span class="section-number-2">6</span> Kubernetes Architecture</h2>
+<div id="outline-container-org1f47715" class="outline-2">
+<h2 id="org1f47715"><span class="section-number-2">6</span> Kubernetes Architecture</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-orge27d4a5" class="outline-3">
-<h3 id="orge27d4a5"><span class="section-number-3">6.1</span> Module Intro</h3>
+<div id="outline-container-org4549c20" class="outline-3">
+<h3 id="org4549c20"><span class="section-number-3">6.1</span> Module Intro</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 Big picture view
@@ -275,8 +285,8 @@ Big picture view
 </div>
 </div>
 
-<div id="outline-container-orgc119bf2" class="outline-3">
-<h3 id="orgc119bf2"><span class="section-number-3">6.2</span> Big Picture View</h3>
+<div id="outline-container-orgeb2ef4c" class="outline-3">
+<h3 id="orgeb2ef4c"><span class="section-number-3">6.2</span> Big Picture View</h3>
 <div class="outline-text-3" id="text-6-2">
 <p>
 Kubernetes is just an orchestrator for microservice apps
@@ -333,8 +343,8 @@ package up your application and give it to the cluster
 
 
 
-<div id="outline-container-org276bc76" class="outline-3">
-<h3 id="org276bc76"><span class="section-number-3">6.3</span> Masters</h3>
+<div id="outline-container-orgc6794ce" class="outline-3">
+<h3 id="orgc6794ce"><span class="section-number-3">6.3</span> Masters</h3>
 <div class="outline-text-3" id="text-6-3">
 <p>
 platform agnostic
@@ -434,8 +444,8 @@ kube-apiserver
 </div>
 </div>
 
-<div id="outline-container-org52426a6" class="outline-3">
-<h3 id="org52426a6"><span class="section-number-3">6.4</span> Nodes</h3>
+<div id="outline-container-orgce4dec3" class="outline-3">
+<h3 id="orgce4dec3"><span class="section-number-3">6.4</span> Nodes</h3>
 <div class="outline-text-3" id="text-6-4">
 <ul class="org-ul">
 <li>kubelet
@@ -516,8 +526,8 @@ wrapup
 </div>
 
 
-<div id="outline-container-org7c73e0d" class="outline-3">
-<h3 id="org7c73e0d"><span class="section-number-3">6.5</span> Desired State and the Declarative Model</h3>
+<div id="outline-container-org4746c6c" class="outline-3">
+<h3 id="org4746c6c"><span class="section-number-3">6.5</span> Desired State and the Declarative Model</h3>
 <div class="outline-text-3" id="text-6-5">
 <ul class="org-ul">
 <li>kubernetes operates on declarative model
@@ -580,8 +590,8 @@ wrapup
 </div>
 </div>
 
-<div id="outline-container-orgdb2cf1c" class="outline-3">
-<h3 id="orgdb2cf1c"><span class="section-number-3">6.6</span> Pods</h3>
+<div id="outline-container-org102f87b" class="outline-3">
+<h3 id="org102f87b"><span class="section-number-3">6.6</span> Pods</h3>
 <div class="outline-text-3" id="text-6-6">
 <ul class="org-ul">
 <li>vmware runs vms</li>
@@ -679,8 +689,8 @@ wrapup
 </div>
 </div>
 
-<div id="outline-container-orgce686b7" class="outline-3">
-<h3 id="orgce686b7"><span class="section-number-3">6.7</span> Services</h3>
+<div id="outline-container-org4197b1c" class="outline-3">
+<h3 id="org4197b1c"><span class="section-number-3">6.7</span> Services</h3>
 <div class="outline-text-3" id="text-6-7">
 <ul class="org-ul">
 <li>pods die and come back up somewhere else in the cluster (on a different node possibly)
@@ -728,8 +738,8 @@ wrapup
 </div>
 </div>
 
-<div id="outline-container-org3665ecb" class="outline-3">
-<h3 id="org3665ecb"><span class="section-number-3">6.8</span> Deployments</h3>
+<div id="outline-container-orga373237" class="outline-3">
+<h3 id="orga373237"><span class="section-number-3">6.8</span> Deployments</h3>
 <div class="outline-text-3" id="text-6-8">
 <ul class="org-ul">
 <li>our infrastructure = masters and nodes
@@ -763,8 +773,8 @@ wrapup
 </div>
 </div>
 
-<div id="outline-container-org7ed4f95" class="outline-3">
-<h3 id="org7ed4f95"><span class="section-number-3">6.9</span> Bringing It Home</h3>
+<div id="outline-container-org56d61e7" class="outline-3">
+<h3 id="org56d61e7"><span class="section-number-3">6.9</span> Bringing It Home</h3>
 <div class="outline-text-3" id="text-6-9">
 <ul class="org-ul">
 <li>just give us linux, we&rsquo;ll give you kubernetes</li>
@@ -835,138 +845,138 @@ wrapup
 </div>
 </div>
 
-<div id="outline-container-orgb2c7f2b" class="outline-2">
-<h2 id="orgb2c7f2b"><span class="section-number-2">7</span> Installing Kubernetes</h2>
+<div id="outline-container-org5e3c37b" class="outline-2">
+<h2 id="org5e3c37b"><span class="section-number-2">7</span> Installing Kubernetes</h2>
 <div class="outline-text-2" id="text-7">
 </div>
-<div id="outline-container-org6ff2406" class="outline-3">
-<h3 id="org6ff2406"><span class="section-number-3">7.1</span> Module Intro</h3>
+<div id="outline-container-orgebf0637" class="outline-3">
+<h3 id="orgebf0637"><span class="section-number-3">7.1</span> Module Intro</h3>
 </div>
 
 
 
-<div id="outline-container-org9484652" class="outline-3">
-<h3 id="org9484652"><span class="section-number-3">7.2</span> Minikube</h3>
+<div id="outline-container-org67d6bc8" class="outline-3">
+<h3 id="org67d6bc8"><span class="section-number-3">7.2</span> Minikube</h3>
 </div>
 
 
-<div id="outline-container-orgbf4ad67" class="outline-3">
-<h3 id="orgbf4ad67"><span class="section-number-3">7.3</span> Google Container Engine</h3>
+<div id="outline-container-org344f703" class="outline-3">
+<h3 id="org344f703"><span class="section-number-3">7.3</span> Google Container Engine</h3>
 </div>
 
 
-<div id="outline-container-org711dede" class="outline-3">
-<h3 id="org711dede"><span class="section-number-3">7.4</span> Installing in AWS with kops</h3>
+<div id="outline-container-org2405c4b" class="outline-3">
+<h3 id="org2405c4b"><span class="section-number-3">7.4</span> Installing in AWS with kops</h3>
 </div>
 
-<div id="outline-container-org731d267" class="outline-3">
-<h3 id="org731d267"><span class="section-number-3">7.5</span> Installing Manually with kubeadm</h3>
-</div>
-
-
-<div id="outline-container-org02b8b83" class="outline-3">
-<h3 id="org02b8b83"><span class="section-number-3">7.6</span> Module Summary</h3>
-</div>
+<div id="outline-container-org4058d28" class="outline-3">
+<h3 id="org4058d28"><span class="section-number-3">7.5</span> Installing Manually with kubeadm</h3>
 </div>
 
 
+<div id="outline-container-org5b40fe5" class="outline-3">
+<h3 id="org5b40fe5"><span class="section-number-3">7.6</span> Module Summary</h3>
+</div>
+</div>
 
-<div id="outline-container-orgebba795" class="outline-2">
-<h2 id="orgebba795"><span class="section-number-2">8</span> Working with Pods</h2>
+
+
+<div id="outline-container-orge6ba5e8" class="outline-2">
+<h2 id="orge6ba5e8"><span class="section-number-2">8</span> Working with Pods</h2>
 <div class="outline-text-2" id="text-8">
 </div>
-<div id="outline-container-orge820057" class="outline-3">
-<h3 id="orge820057"><span class="section-number-3">8.1</span> Pod Theory</h3>
+<div id="outline-container-org1c24c3c" class="outline-3">
+<h3 id="org1c24c3c"><span class="section-number-3">8.1</span> Pod Theory</h3>
 </div>
 
 
-<div id="outline-container-org22c96c3" class="outline-3">
-<h3 id="org22c96c3"><span class="section-number-3">8.2</span> Deploying Your First Pod</h3>
+<div id="outline-container-org4c60207" class="outline-3">
+<h3 id="org4c60207"><span class="section-number-3">8.2</span> Deploying Your First Pod</h3>
 </div>
 
 
-<div id="outline-container-org833bc81" class="outline-3">
-<h3 id="org833bc81"><span class="section-number-3">8.3</span> Deploying Pods via Replication Controllers</h3>
+<div id="outline-container-orgb11f5f9" class="outline-3">
+<h3 id="orgb11f5f9"><span class="section-number-3">8.3</span> Deploying Pods via Replication Controllers</h3>
 </div>
 
 
-<div id="outline-container-org8eb6595" class="outline-3">
-<h3 id="org8eb6595"><span class="section-number-3">8.4</span> Module Summary</h3>
+<div id="outline-container-org498b1fc" class="outline-3">
+<h3 id="org498b1fc"><span class="section-number-3">8.4</span> Module Summary</h3>
 </div>
 
 
-<div id="outline-container-org6f90dc0" class="outline-3">
-<h3 id="org6f90dc0"><span class="section-number-3">8.5</span> Kubernetes Services</h3>
+<div id="outline-container-org72d2f7a" class="outline-3">
+<h3 id="org72d2f7a"><span class="section-number-3">8.5</span> Kubernetes Services</h3>
 </div>
 
 
-<div id="outline-container-org5f9c434" class="outline-3">
-<h3 id="org5f9c434"><span class="section-number-3">8.6</span> Module Intro</h3>
+<div id="outline-container-org6827d84" class="outline-3">
+<h3 id="org6827d84"><span class="section-number-3">8.6</span> Module Intro</h3>
 </div>
 
 
-<div id="outline-container-org09fcb8e" class="outline-3">
-<h3 id="org09fcb8e"><span class="section-number-3">8.7</span> The Theory</h3>
+<div id="outline-container-org789249e" class="outline-3">
+<h3 id="org789249e"><span class="section-number-3">8.7</span> The Theory</h3>
 </div>
 
 
-<div id="outline-container-org42610f9" class="outline-3">
-<h3 id="org42610f9"><span class="section-number-3">8.8</span> Creating a Service the Iterative Way</h3>
+<div id="outline-container-org39fe499" class="outline-3">
+<h3 id="org39fe499"><span class="section-number-3">8.8</span> Creating a Service the Iterative Way</h3>
 </div>
 
 
-<div id="outline-container-org864e4b3" class="outline-3">
-<h3 id="org864e4b3"><span class="section-number-3">8.9</span> Creating a Service the Declarative Way</h3>
+<div id="outline-container-org1cd2465" class="outline-3">
+<h3 id="org1cd2465"><span class="section-number-3">8.9</span> Creating a Service the Declarative Way</h3>
 </div>
 
 
-<div id="outline-container-org6e51cb9" class="outline-3">
-<h3 id="org6e51cb9"><span class="section-number-3">8.10</span> In the Real World</h3>
+<div id="outline-container-orga0ba12e" class="outline-3">
+<h3 id="orga0ba12e"><span class="section-number-3">8.10</span> In the Real World</h3>
 </div>
 
 
-<div id="outline-container-org6e39c21" class="outline-3">
-<h3 id="org6e39c21"><span class="section-number-3">8.11</span> Summary</h3>
+<div id="outline-container-org7b62ff6" class="outline-3">
+<h3 id="org7b62ff6"><span class="section-number-3">8.11</span> Summary</h3>
 </div>
 </div>
 
 
-<div id="outline-container-org1cf31a5" class="outline-2">
-<h2 id="org1cf31a5"><span class="section-number-2">9</span> Kubernetes Deployments</h2>
+<div id="outline-container-orgff1cf10" class="outline-2">
+<h2 id="orgff1cf10"><span class="section-number-2">9</span> Kubernetes Deployments</h2>
 <div class="outline-text-2" id="text-9">
 </div>
-<div id="outline-container-org6581650" class="outline-3">
-<h3 id="org6581650"><span class="section-number-3">9.1</span> Module Intro</h3>
+<div id="outline-container-orgf178f04" class="outline-3">
+<h3 id="orgf178f04"><span class="section-number-3">9.1</span> Module Intro</h3>
 </div>
 
 
-<div id="outline-container-org037871d" class="outline-3">
-<h3 id="org037871d"><span class="section-number-3">9.2</span> Deployment Theory</h3>
+<div id="outline-container-org4c801d7" class="outline-3">
+<h3 id="org4c801d7"><span class="section-number-3">9.2</span> Deployment Theory</h3>
 </div>
 
 
-<div id="outline-container-orge2777ac" class="outline-3">
-<h3 id="orge2777ac"><span class="section-number-3">9.3</span> Creating Your First Kubernetes Deployment</h3>
+<div id="outline-container-org98b3979" class="outline-3">
+<h3 id="org98b3979"><span class="section-number-3">9.3</span> Creating Your First Kubernetes Deployment</h3>
 </div>
 
 
-<div id="outline-container-org799620a" class="outline-3">
-<h3 id="org799620a"><span class="section-number-3">9.4</span> Updating a Deployment</h3>
+<div id="outline-container-org4421fb2" class="outline-3">
+<h3 id="org4421fb2"><span class="section-number-3">9.4</span> Updating a Deployment</h3>
 </div>
 
 
-<div id="outline-container-org0b7453d" class="outline-3">
-<h3 id="org0b7453d"><span class="section-number-3">9.5</span> Module Summary</h3>
+<div id="outline-container-orgea809af" class="outline-3">
+<h3 id="orgea809af"><span class="section-number-3">9.5</span> Module Summary</h3>
 </div>
 </div>
 
 
-<div id="outline-container-orgb98dbeb" class="outline-2">
-<h2 id="orgb98dbeb"><span class="section-number-2">10</span> What Next?</h2>
+<div id="outline-container-org8c91a37" class="outline-2">
+<h2 id="org8c91a37"><span class="section-number-2">10</span> What Next?</h2>
 <div class="outline-text-2" id="text-10">
 </div>
-<div id="outline-container-org5efcbad" class="outline-3">
-<h3 id="org5efcbad"><span class="section-number-3">10.1</span> What Next?</h3>
+<div id="outline-container-org0fe31bb" class="outline-3">
+<h3 id="org0fe31bb"><span class="section-number-3">10.1</span> What Next?</h3>
 </div>
 </div>
 </div>
