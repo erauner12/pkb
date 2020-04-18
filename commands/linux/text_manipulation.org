@@ -3,7 +3,7 @@
 
 * bash
 
-** sed
+** use sed to cut capture path or filename
 #+CAPTION:If you want to get the "cutted part"
 #+BEGIN_SRC shell
 yyy
@@ -59,7 +59,7 @@ xxxx/x/xx/xx/xxxx/x
 
 
 ---------------------------
-** overwrite file
+** overwrite file with output of another command
 
 #+CAPTION:overwrite file with new output
 #+BEGIN_SRC shell

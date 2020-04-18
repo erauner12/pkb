@@ -25,22 +25,22 @@ title: "result"
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb30efe2">1. bash</a>
+<li><a href="#orgf1cc703">1. bash</a>
 <ul>
-<li><a href="#org03a9353">1.1. sed</a></li>
-<li><a href="#orga8d2a03">1.2. overwrite file</a></li>
+<li><a href="#org009e9e5">1.1. use sed to cut capture path or filename</a></li>
+<li><a href="#org0bf1883">1.2. overwrite file with output of another command</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgb30efe2" class="outline-2">
-<h2 id="orgb30efe2"><span class="section-number-2">1</span> bash</h2>
+<div id="outline-container-orgf1cc703" class="outline-2">
+<h2 id="orgf1cc703"><span class="section-number-2">1</span> bash</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org03a9353" class="outline-3">
-<h3 id="org03a9353"><span class="section-number-3">1.1</span> sed</h3>
+<div id="outline-container-org009e9e5" class="outline-3">
+<h3 id="org009e9e5"><span class="section-number-3">1.1</span> use sed to cut capture path or filename</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
 <label class="org-src-name"><span class="listing-number">Listing 1: </span>If you want to get the &ldquo;cutted part&rdquo;</label><pre class="src src-shell">yyy
@@ -99,8 +99,8 @@ xxxx/x/xx/xx/xxxx/x
 <hr />
 </div>
 </div>
-<div id="outline-container-orga8d2a03" class="outline-3">
-<h3 id="orga8d2a03"><span class="section-number-3">1.2</span> overwrite file</h3>
+<div id="outline-container-org0bf1883" class="outline-3">
+<h3 id="org0bf1883"><span class="section-number-3">1.2</span> overwrite file with output of another command</h3>
 <div class="outline-text-3" id="text-1-2">
 <div class="org-src-container">
 <label class="org-src-name"><span class="listing-number">Listing 9: </span>overwrite file with new output</label><pre class="src src-shell">grep -r <span class="org-string">".org:"</span> change_file_paths.txt | sed <span class="org-string">'s|\(.*\)/.*|\1|'</span> change_file_paths.txt &gt; change_file_paths.txt.tmp &amp;&amp; mv change_file_paths.txt.tmp change_file_paths.txt
