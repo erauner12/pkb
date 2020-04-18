@@ -2,7 +2,7 @@
 python index.py
 
 # find all image excluding assets and styles dir and move them to ./images
-find . -type d \( -name assets -o -name styles \) -prune -o -name "*.png" -exec mv "{}" ./images 2>&1 \;                     
+find . -type d \( -name assets -o -name styles \) -prune -o -name "*.png" -exec mv "{}" ./images > /dev/null 2>&1 \;                     
 
 # replace with "file"  and "png" from .org files
 find . -type f -name "*.org" -exec sed -i 's/\[\[file/file/g' {} \;
@@ -10,8 +10,11 @@ find . -type f -name "*.org" -exec sed -i 's/\[\[file/file/g' {} \;
 # remove the "[[file" and "png]]" from .org files
 find . -type f -name "*.org" -exec sed -i 's/png\]\]/png/g' {} \;
 
-echo "\n\nfind and replace this on the following images:\nfile:../../images/"
-grep -r "//wsl" .
+echo -e "\n\nfind and replace this on the following images:\nfile:../../images/\n"
+
+
+grep -r "//wsl" . | grep -v update.sh | grep -v "<p><img"
+echo -e "\n"
 read -rsp $'Press any key to continue...\n' -n1 key
 
 # exports all org files to html
@@ -34,3 +37,5 @@ git push
 
 grep -r "//wsl" .
 
+./lab/course/kubernetes.html:<p><img src="file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200418_143658_tLYQXO.png" alt="kubernetes.org_20200418_143658_tLYQXO.png" />
+./lab/course/kubernetes.org:file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200418_143658_tLYQXO.png
