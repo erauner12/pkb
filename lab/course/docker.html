@@ -8,12 +8,6 @@
 <title>Docker</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="EVAN-PC" />
-<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/htmlize.css"/>
-<link rel="stylesheet" type="text/css" href="https://erauner12.github.io/pkb/setup/readtheorg.css"/>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
-<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
 </head>
 <body>
 <div id="content">
@@ -22,71 +16,71 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga16d118">1. Links</a></li>
-<li><a href="#orgf16db7f">2. Commands</a></li>
-<li><a href="#org4103d7f">3. Course Overview</a>
+<li><a href="#org5bec055">1. Links</a></li>
+<li><a href="#org2b6eefe">2. Commands</a></li>
+<li><a href="#org4de8515">3. Course Overview</a>
 <ul>
-<li><a href="#orgf39e1ff">3.1. Course Overview</a></li>
+<li><a href="#org351bcd4">3.1. Course Overview</a></li>
 </ul>
 </li>
-<li><a href="#org49021e7">4. Course Introduction</a>
+<li><a href="#org8ad700e">4. Course Introduction</a>
 <ul>
-<li><a href="#orgb11ef33">4.1. Introduction</a></li>
+<li><a href="#orga52f290">4.1. Introduction</a></li>
 </ul>
 </li>
-<li><a href="#org0f9b925">5. Installing Docker</a>
+<li><a href="#org8374da4">5. Installing Docker</a>
 <ul>
-<li><a href="#orgd8332a0">5.1. Module Intro</a></li>
-<li><a href="#orgf9f2833">5.2. Docker for Windows</a></li>
-<li><a href="#org98963da">5.3. Docker for Mac</a></li>
-<li><a href="#orgb270d93">5.4. Installing Docker on Windows Server 2016</a></li>
-<li><a href="#org6d862cf">5.5. Installing Docker on Linux</a></li>
-<li><a href="#org53b49ab">5.6. Module Summary</a></li>
+<li><a href="#org880eb02">5.1. Module Intro</a></li>
+<li><a href="#org9eca7f9">5.2. Docker for Windows</a></li>
+<li><a href="#org3c7c078">5.3. Docker for Mac</a></li>
+<li><a href="#orgb6cc891">5.4. Installing Docker on Windows Server 2016</a></li>
+<li><a href="#org4c37685">5.5. Installing Docker on Linux</a></li>
+<li><a href="#org3bf9dc3">5.6. Module Summary</a></li>
 </ul>
 </li>
-<li><a href="#org028bd76">6. Working with Containers</a>
+<li><a href="#org3819f2e">6. Working with Containers</a>
 <ul>
-<li><a href="#org7e2e34d">6.1. What Is a Container?</a></li>
-<li><a href="#org71ece68">6.2. The &rsquo;docker run&rsquo; Command</a></li>
-<li><a href="#org66d0eb0">6.3. Theory of Pulling and Running Containers</a></li>
-<li><a href="#org5278b77">6.4. Working with Images</a></li>
-<li><a href="#org8fae430">6.5. Container Lifecycle</a>
+<li><a href="#org0cc79b2">6.1. What Is a Container?</a></li>
+<li><a href="#org821c10e">6.2. The &rsquo;docker run&rsquo; Command</a></li>
+<li><a href="#org5410cdb">6.3. Theory of Pulling and Running Containers</a></li>
+<li><a href="#org1011523">6.4. Working with Images</a></li>
+<li><a href="#org1443360">6.5. Container Lifecycle</a>
 <ul>
-<li><a href="#org9382551">6.5.1. vagrant config on workstation</a></li>
+<li><a href="#org0f846a7">6.5.1. vagrant config on workstation</a></li>
 </ul>
 </li>
-<li><a href="#orge916a1c">6.6. back to container</a></li>
-<li><a href="#orgf3d65ae">6.7. Lesson Recap</a></li>
+<li><a href="#org52453fe">6.6. back to container</a></li>
+<li><a href="#org83b8ea1">6.7. Lesson Recap</a></li>
 </ul>
 </li>
-<li><a href="#org0116de8">7. Swarm Mode and Microservices</a>
+<li><a href="#org7e870cf">7. Swarm Mode and Microservices</a>
 <ul>
-<li><a href="#org92b42c2">7.1. Module Intro</a></li>
-<li><a href="#orgdd69948">7.2. Swarm Mode Theory</a></li>
-<li><a href="#orgc993051">7.3. Configuring Swarm Mode</a>
+<li><a href="#org7b3cf65">7.1. Module Intro</a></li>
+<li><a href="#org2897d2e">7.2. Swarm Mode Theory</a></li>
+<li><a href="#org35c2859">7.3. Configuring Swarm Mode</a>
 <ul>
-<li><a href="#org4b583d4">7.3.1. this ended up failing</a></li>
-<li><a href="#org941f83b">7.3.2. Second Attempt</a></li>
+<li><a href="#org005040d">7.3.1. this ended up failing</a></li>
+<li><a href="#org4c037d5">7.3.2. Second Attempt</a></li>
 </ul>
 </li>
-<li><a href="#org180dc20">7.4. Services</a></li>
-<li><a href="#orgf668d8e">7.5. Scaling Services</a></li>
-<li><a href="#orgdddefe3">7.6. Rolling Updates</a></li>
-<li><a href="#orge6aed29">7.7. Stacks and DABs</a></li>
-<li><a href="#orgb196d11">7.8. Recap</a></li>
+<li><a href="#orge31e2b9">7.4. Services</a></li>
+<li><a href="#org2818c0c">7.5. Scaling Services</a></li>
+<li><a href="#orgfc877f3">7.6. Rolling Updates</a></li>
+<li><a href="#org170487a">7.7. Stacks and DABs</a></li>
+<li><a href="#org2e64e59">7.8. Recap</a></li>
 </ul>
 </li>
-<li><a href="#orgb4b1aac">8. What Next!</a>
+<li><a href="#orgdc7f839">8. What Next!</a>
 <ul>
-<li><a href="#orga87c4dd">8.1. Next Steps</a></li>
+<li><a href="#org026eded">8.1. Next Steps</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orga16d118" class="outline-2">
-<h2 id="orga16d118"><span class="section-number-2">1</span> Links</h2>
+<div id="outline-container-org5bec055" class="outline-2">
+<h2 id="org5bec055"><span class="section-number-2">1</span> Links</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <a href="https://app.pluralsight.com/library/courses/docker-getting-started/table-of-contents">https://app.pluralsight.com/library/courses/docker-getting-started/table-of-contents</a>
@@ -95,8 +89,8 @@
 </div>
 
 
-<div id="outline-container-orgf16db7f" class="outline-2">
-<h2 id="orgf16db7f"><span class="section-number-2">2</span> Commands</h2>
+<div id="outline-container-org2b6eefe" class="outline-2">
+<h2 id="org2b6eefe"><span class="section-number-2">2</span> Commands</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 starts a new container
@@ -214,23 +208,23 @@ removes (deletes) stopped containers
 <hr />
 </div>
 </div>
-<div id="outline-container-org4103d7f" class="outline-2">
-<h2 id="org4103d7f"><span class="section-number-2">3</span> Course Overview</h2>
+<div id="outline-container-org4de8515" class="outline-2">
+<h2 id="org4de8515"><span class="section-number-2">3</span> Course Overview</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgf39e1ff" class="outline-3">
-<h3 id="orgf39e1ff"><span class="section-number-3">3.1</span> Course Overview</h3>
+<div id="outline-container-org351bcd4" class="outline-3">
+<h3 id="org351bcd4"><span class="section-number-3">3.1</span> Course Overview</h3>
 </div>
 </div>
 
 
 
-<div id="outline-container-org49021e7" class="outline-2">
-<h2 id="org49021e7"><span class="section-number-2">4</span> Course Introduction</h2>
+<div id="outline-container-org8ad700e" class="outline-2">
+<h2 id="org8ad700e"><span class="section-number-2">4</span> Course Introduction</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orgb11ef33" class="outline-3">
-<h3 id="orgb11ef33"><span class="section-number-3">4.1</span> Introduction</h3>
+<div id="outline-container-orga52f290" class="outline-3">
+<h3 id="orga52f290"><span class="section-number-3">4.1</span> Introduction</h3>
 <div class="outline-text-3" id="text-4-1">
 <ul class="org-ul">
 <li>Docker and containers massive pasrt of the future of IT.
@@ -271,12 +265,12 @@ removes (deletes) stopped containers
 </div>
 
 
-<div id="outline-container-org0f9b925" class="outline-2">
-<h2 id="org0f9b925"><span class="section-number-2">5</span> Installing Docker</h2>
+<div id="outline-container-org8374da4" class="outline-2">
+<h2 id="org8374da4"><span class="section-number-2">5</span> Installing Docker</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-orgd8332a0" class="outline-3">
-<h3 id="orgd8332a0"><span class="section-number-3">5.1</span> Module Intro</h3>
+<div id="outline-container-org880eb02" class="outline-3">
+<h3 id="org880eb02"><span class="section-number-3">5.1</span> Module Intro</h3>
 <div class="outline-text-3" id="text-5-1">
 <ul class="org-ul">
 <li>you can isntall on various platforms
@@ -302,8 +296,8 @@ removes (deletes) stopped containers
 </div>
 
 
-<div id="outline-container-orgf9f2833" class="outline-3">
-<h3 id="orgf9f2833"><span class="section-number-3">5.2</span> Docker for Windows</h3>
+<div id="outline-container-org9eca7f9" class="outline-3">
+<h3 id="org9eca7f9"><span class="section-number-3">5.2</span> Docker for Windows</h3>
 <div class="outline-text-3" id="text-5-2">
 <ul class="org-ul">
 <li>Windows 10 64 bit only
@@ -315,30 +309,30 @@ removes (deletes) stopped containers
 </div>
 </div>
 
-<div id="outline-container-org98963da" class="outline-3">
-<h3 id="org98963da"><span class="section-number-3">5.3</span> Docker for Mac</h3>
+<div id="outline-container-org3c7c078" class="outline-3">
+<h3 id="org3c7c078"><span class="section-number-3">5.3</span> Docker for Mac</h3>
 </div>
 
-<div id="outline-container-orgb270d93" class="outline-3">
-<h3 id="orgb270d93"><span class="section-number-3">5.4</span> Installing Docker on Windows Server 2016</h3>
+<div id="outline-container-orgb6cc891" class="outline-3">
+<h3 id="orgb6cc891"><span class="section-number-3">5.4</span> Installing Docker on Windows Server 2016</h3>
 </div>
 
-<div id="outline-container-org6d862cf" class="outline-3">
-<h3 id="org6d862cf"><span class="section-number-3">5.5</span> Installing Docker on Linux</h3>
+<div id="outline-container-org4c37685" class="outline-3">
+<h3 id="org4c37685"><span class="section-number-3">5.5</span> Installing Docker on Linux</h3>
 </div>
-<div id="outline-container-org53b49ab" class="outline-3">
-<h3 id="org53b49ab"><span class="section-number-3">5.6</span> Module Summary</h3>
+<div id="outline-container-org3bf9dc3" class="outline-3">
+<h3 id="org3bf9dc3"><span class="section-number-3">5.6</span> Module Summary</h3>
 </div>
 </div>
 
 
 
-<div id="outline-container-org028bd76" class="outline-2">
-<h2 id="org028bd76"><span class="section-number-2">6</span> Working with Containers</h2>
+<div id="outline-container-org3819f2e" class="outline-2">
+<h2 id="org3819f2e"><span class="section-number-2">6</span> Working with Containers</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org7e2e34d" class="outline-3">
-<h3 id="org7e2e34d"><span class="section-number-3">6.1</span> What Is a Container?</h3>
+<div id="outline-container-org0cc79b2" class="outline-3">
+<h3 id="org0cc79b2"><span class="section-number-3">6.1</span> What Is a Container?</h3>
 <div class="outline-text-3" id="text-6-1">
 <ul class="org-ul">
 <li>virtual machine hypervisor
@@ -356,8 +350,8 @@ removes (deletes) stopped containers
 </div>
 
 
-<div id="outline-container-org71ece68" class="outline-3">
-<h3 id="org71ece68"><span class="section-number-3">6.2</span> The &rsquo;docker run&rsquo; Command</h3>
+<div id="outline-container-org821c10e" class="outline-3">
+<h3 id="org821c10e"><span class="section-number-3">6.2</span> The &rsquo;docker run&rsquo; Command</h3>
 <div class="outline-text-3" id="text-6-2">
 <p>
 docker version
@@ -519,12 +513,12 @@ hello-world         latest              fce289e99eb9        15 months ago       
 
 
 
-<div id="outline-container-org66d0eb0" class="outline-3">
-<h3 id="org66d0eb0"><span class="section-number-3">6.3</span> Theory of Pulling and Running Containers</h3>
+<div id="outline-container-org5410cdb" class="outline-3">
+<h3 id="org5410cdb"><span class="section-number-3">6.3</span> Theory of Pulling and Running Containers</h3>
 </div>
 
-<div id="outline-container-org5278b77" class="outline-3">
-<h3 id="org5278b77"><span class="section-number-3">6.4</span> Working with Images</h3>
+<div id="outline-container-org1011523" class="outline-3">
+<h3 id="org1011523"><span class="section-number-3">6.4</span> Working with Images</h3>
 <div class="outline-text-3" id="text-6-4">
 <ul class="org-ul">
 <li>images are just stopped containers</li>
@@ -601,8 +595,8 @@ hello-world         latest              fce289e99eb9        15 months ago       
 
 
 
-<div id="outline-container-org8fae430" class="outline-3">
-<h3 id="org8fae430"><span class="section-number-3">6.5</span> Container Lifecycle</h3>
+<div id="outline-container-org1443360" class="outline-3">
+<h3 id="org1443360"><span class="section-number-3">6.5</span> Container Lifecycle</h3>
 <div class="outline-text-3" id="text-6-5">
 <p>
 lifecycle of a container is shortlived
@@ -646,8 +640,8 @@ Status: Downloaded newer image for nigelpoulton/pluralsight-docker-ci:latest
 </div>
 
 
-<div id="outline-container-org9382551" class="outline-4">
-<h4 id="org9382551"><span class="section-number-4">6.5.1</span> vagrant config on workstation</h4>
+<div id="outline-container-org0f846a7" class="outline-4">
+<h4 id="org0f846a7"><span class="section-number-4">6.5.1</span> vagrant config on workstation</h4>
 <div class="outline-text-4" id="text-6-5-1">
 <p>
 add the following to docker vagrant file
@@ -719,8 +713,8 @@ you should get your page
 
 
 
-<div id="outline-container-orge916a1c" class="outline-3">
-<h3 id="orge916a1c"><span class="section-number-3">6.6</span> back to container</h3>
+<div id="outline-container-org52453fe" class="outline-3">
+<h3 id="org52453fe"><span class="section-number-3">6.6</span> back to container</h3>
 <div class="outline-text-3" id="text-6-6">
 <ul class="org-ul">
 <li>let&rsquo;s log in to the container and look inside</li>
@@ -805,8 +799,8 @@ Deleted: sha256:af0b15c8625bb1938f1d7b17081031f649fd14e6b233688eea3c5483994a66a3
 </div>
 
 
-<div id="outline-container-orgf3d65ae" class="outline-3">
-<h3 id="orgf3d65ae"><span class="section-number-3">6.7</span> Lesson Recap</h3>
+<div id="outline-container-org83b8ea1" class="outline-3">
+<h3 id="org83b8ea1"><span class="section-number-3">6.7</span> Lesson Recap</h3>
 <div class="outline-text-3" id="text-6-7">
 <ul class="org-ul">
 <li>docker run is just a client command
@@ -883,12 +877,12 @@ removes (deletes) stopped containers
 </div>
 
 
-<div id="outline-container-org0116de8" class="outline-2">
-<h2 id="org0116de8"><span class="section-number-2">7</span> Swarm Mode and Microservices</h2>
+<div id="outline-container-org7e870cf" class="outline-2">
+<h2 id="org7e870cf"><span class="section-number-2">7</span> Swarm Mode and Microservices</h2>
 <div class="outline-text-2" id="text-7">
 </div>
-<div id="outline-container-org92b42c2" class="outline-3">
-<h3 id="org92b42c2"><span class="section-number-3">7.1</span> Module Intro</h3>
+<div id="outline-container-org7b3cf65" class="outline-3">
+<h3 id="org7b3cf65"><span class="section-number-3">7.1</span> Module Intro</h3>
 <div class="outline-text-3" id="text-7-1">
 <ul class="org-ul">
 <li>We are going to build a swarm
@@ -903,8 +897,8 @@ removes (deletes) stopped containers
 </div>
 
 
-<div id="outline-container-orgdd69948" class="outline-3">
-<h3 id="orgdd69948"><span class="section-number-3">7.2</span> Swarm Mode Theory</h3>
+<div id="outline-container-org2897d2e" class="outline-3">
+<h3 id="org2897d2e"><span class="section-number-3">7.2</span> Swarm Mode Theory</h3>
 <div class="outline-text-3" id="text-7-2">
 <ul class="org-ul">
 <li>cluster = a swarm
@@ -962,12 +956,12 @@ go create a service named web-fe with 5 instances of the continual task it is go
 </div>
 </div>
 
-<div id="outline-container-orgc993051" class="outline-3">
-<h3 id="orgc993051"><span class="section-number-3">7.3</span> Configuring Swarm Mode</h3>
+<div id="outline-container-org35c2859" class="outline-3">
+<h3 id="org35c2859"><span class="section-number-3">7.3</span> Configuring Swarm Mode</h3>
 <div class="outline-text-3" id="text-7-3">
 </div>
-<div id="outline-container-org4b583d4" class="outline-4">
-<h4 id="org4b583d4"><span class="section-number-4">7.3.1</span> this ended up failing</h4>
+<div id="outline-container-org005040d" class="outline-4">
+<h4 id="org005040d"><span class="section-number-4">7.3.1</span> this ended up failing</h4>
 <div class="outline-text-4" id="text-7-3-1">
 <ul class="org-ul">
 <li>Vagrant Setup:
@@ -1190,8 +1184,8 @@ vagrant@manager:~$ docker service rm psight1
 
 
 
-<div id="outline-container-org941f83b" class="outline-4">
-<h4 id="org941f83b"><span class="section-number-4">7.3.2</span> Second Attempt</h4>
+<div id="outline-container-org4c037d5" class="outline-4">
+<h4 id="org4c037d5"><span class="section-number-4">7.3.2</span> Second Attempt</h4>
 <div class="outline-text-4" id="text-7-3-2">
 <ul class="org-ul">
 <li><a href="https://medium.com/@gauravtalele/docker-swarm-cluster-setup-with-vagrant-bca5ddb7a672">https://medium.com/@gauravtalele/docker-swarm-cluster-setup-with-vagrant-bca5ddb7a672</a></li>
@@ -1297,13 +1291,13 @@ slpu9nfbms4z        psight1.5           nigelpoulton/pluralsight-docker-ci:lates
 
 
 
-<div id="outline-container-org180dc20" class="outline-3">
-<h3 id="org180dc20"><span class="section-number-3">7.4</span> Services</h3>
+<div id="outline-container-orge31e2b9" class="outline-3">
+<h3 id="orge31e2b9"><span class="section-number-3">7.4</span> Services</h3>
 </div>
 
 
-<div id="outline-container-orgf668d8e" class="outline-3">
-<h3 id="orgf668d8e"><span class="section-number-3">7.5</span> Scaling Services</h3>
+<div id="outline-container-org2818c0c" class="outline-3">
+<h3 id="org2818c0c"><span class="section-number-3">7.5</span> Scaling Services</h3>
 <div class="outline-text-3" id="text-7-5">
 <ul class="org-ul">
 <li></li>
@@ -1387,8 +1381,8 @@ hgqxfm3eod5g        psight1.6           nigelpoulton/pluralsight-docker-ci:lates
 
 
 
-<div id="outline-container-orgdddefe3" class="outline-3">
-<h3 id="orgdddefe3"><span class="section-number-3">7.6</span> Rolling Updates</h3>
+<div id="outline-container-orgfc877f3" class="outline-3">
+<h3 id="orgfc877f3"><span class="section-number-3">7.6</span> Rolling Updates</h3>
 <div class="outline-text-3" id="text-7-6">
 <ul class="org-ul">
 <li>rolling updates 
@@ -1516,8 +1510,8 @@ k9uz4cv4krcs        psight2.12          nigelpoulton/tu-demo:v2   worker02      
 </div>
 </div>
 
-<div id="outline-container-orge6aed29" class="outline-3">
-<h3 id="orge6aed29"><span class="section-number-3">7.7</span> Stacks and DABs</h3>
+<div id="outline-container-org170487a" class="outline-3">
+<h3 id="org170487a"><span class="section-number-3">7.7</span> Stacks and DABs</h3>
 <div class="outline-text-3" id="text-7-7">
 <p>
 stacks and bundles
@@ -1559,8 +1553,8 @@ docker compose
 </div>
 
 
-<div id="outline-container-orgb196d11" class="outline-3">
-<h3 id="orgb196d11"><span class="section-number-3">7.8</span> Recap</h3>
+<div id="outline-container-org2e64e59" class="outline-3">
+<h3 id="org2e64e59"><span class="section-number-3">7.8</span> Recap</h3>
 <div class="outline-text-3" id="text-7-8">
 
 <div class="figure">
@@ -1622,12 +1616,12 @@ update from v:1 to v:2
 </div>
 
 
-<div id="outline-container-orgb4b1aac" class="outline-2">
-<h2 id="orgb4b1aac"><span class="section-number-2">8</span> What Next!</h2>
+<div id="outline-container-orgdc7f839" class="outline-2">
+<h2 id="orgdc7f839"><span class="section-number-2">8</span> What Next!</h2>
 <div class="outline-text-2" id="text-8">
 </div>
-<div id="outline-container-orga87c4dd" class="outline-3">
-<h3 id="orga87c4dd"><span class="section-number-3">8.1</span> Next Steps</h3>
+<div id="outline-container-org026eded" class="outline-3">
+<h3 id="org026eded"><span class="section-number-3">8.1</span> Next Steps</h3>
 </div>
 </div>
 </div>
