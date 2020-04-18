@@ -1,4 +1,4 @@
-#+SETUPFILE: https://erauner12.github.io/pkb/setup2/theme-readtheorg.setup
+#+SETUPFILE: ../../styles/readtheorg.setup
 #+TITLE: Kubernetes
 #+HTML_HEAD: <script> var HS_STARTUP_FOLDED = true; </script>
 
