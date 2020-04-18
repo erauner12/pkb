@@ -4,4 +4,5 @@ title: ""
 
 ## Commands / Linux
 
-- [find_and_replace](/pkb/commands/linux/sed.html)
+- [text_manipulation](/pkb/commands/linux/sed.html)
+- [Text Manipulation](/pkb/commands/linux/text_manipulation.html)

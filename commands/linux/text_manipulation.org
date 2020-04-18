@@ -1,7 +1,7 @@
 #+SETUPFILE: ../../styles/readtheorg.setup
-#+TITLE: find_and_replace
+#+TITLE: Text Manipulation
 
-
+* sed
 #+CAPTION:If you want to get the "cutted part"
 #+BEGIN_SRC go
 yyy
@@ -48,8 +48,10 @@ echo "xxx/xxxx/xxxxx/yyy" | sed 's|\(.*\)/.*|\1|'
 echo "xxxx/x/xx/xx/xxxx/x/yyyyy" | sed 's|\(.*\)/.*|\1|'
 #+END_SRC
 
-#+CAPTION:output
+
+#+CAPTION:outpu
 #+BEGIN_SRC go
 xxx/xxxx/xxxxx
 xxxx/x/xx/xx/xxxx/x
+#+END_SRC
 

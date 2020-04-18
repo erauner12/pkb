@@ -1,7 +1,7 @@
 #+SETUPFILE: ../../styles/readtheorg.setup
-#+TITLE: find_and_replace
+#+TITLE: text_manipulation
 
-
+* sed
 #+CAPTION:If you want to get the "cutted part"
 #+BEGIN_SRC go
 yyy
