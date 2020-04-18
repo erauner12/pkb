@@ -62,7 +62,7 @@ xxxx/x/xx/xx/xxxx/x
 ** overwrite file
 
 #+CAPTION:overwrite file with new output
-##+BEGIN_SRC shell
+#+BEGIN_SRC shell
 grep -r ".org:" change_file_paths.txt | sed 's|\(.*\)/.*|\1|' change_file_paths.txt > change_file_paths.txt.tmp && mv change_file_paths.txt.tmp change_file_paths.txt
-##+END_SRC
+#+END_SRC
 

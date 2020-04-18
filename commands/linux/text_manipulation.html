@@ -17,28 +17,6 @@ title: "result"
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
-</script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
@@ -47,22 +25,22 @@ title: "result"
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org3ea9158">1. bash</a>
+<li><a href="#orgb30efe2">1. bash</a>
 <ul>
-<li><a href="#org8fda714">1.1. sed</a></li>
-<li><a href="#orgb9fffb8">1.2. overwrite file</a></li>
+<li><a href="#org03a9353">1.1. sed</a></li>
+<li><a href="#orga8d2a03">1.2. overwrite file</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org3ea9158" class="outline-2">
-<h2 id="org3ea9158"><span class="section-number-2">1</span> bash</h2>
+<div id="outline-container-orgb30efe2" class="outline-2">
+<h2 id="orgb30efe2"><span class="section-number-2">1</span> bash</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org8fda714" class="outline-3">
-<h3 id="org8fda714"><span class="section-number-3">1.1</span> sed</h3>
+<div id="outline-container-org03a9353" class="outline-3">
+<h3 id="org03a9353"><span class="section-number-3">1.1</span> sed</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
 <label class="org-src-name"><span class="listing-number">Listing 1: </span>If you want to get the &ldquo;cutted part&rdquo;</label><pre class="src src-shell">yyy
@@ -121,14 +99,13 @@ xxxx/x/xx/xx/xxxx/x
 <hr />
 </div>
 </div>
-<div id="outline-container-orgb9fffb8" class="outline-3">
-<h3 id="orgb9fffb8"><span class="section-number-3">1.2</span> overwrite file</h3>
+<div id="outline-container-orga8d2a03" class="outline-3">
+<h3 id="orga8d2a03"><span class="section-number-3">1.2</span> overwrite file</h3>
 <div class="outline-text-3" id="text-1-2">
-<p>
-##+BEGIN_SRC shell
-grep -r &ldquo;.org:&rdquo; change_file_paths.txt | sed &rsquo;s|\(.*\)/.*|\1|&rsquo; change_file_paths.txt &gt; change_file_paths.txt.tmp &amp;&amp; mv change_file_paths.txt.tmp change_file_paths.txt
-##+END_SRC
-</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 9: </span>overwrite file with new output</label><pre class="src src-shell">grep -r <span class="org-string">".org:"</span> change_file_paths.txt | sed <span class="org-string">'s|\(.*\)/.*|\1|'</span> change_file_paths.txt &gt; change_file_paths.txt.tmp &amp;&amp; mv change_file_paths.txt.tmp change_file_paths.txt
+</pre>
+</div>
 </div>
 </div>
 </div>
