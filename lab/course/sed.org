@@ -1,0 +1,55 @@
+#+SETUPFILE: ../../styles/readtheorg.setup
+#+TITLE: find_and_replace
+
+
+#+CAPTION:If you want to get the "cutted part"
+#+BEGIN_SRC go
+yyy
+yyyyy
+#+END_SRC
+
+#+CAPTION:You can use
+#+BEGIN_SRC go
+sed 's|.*/||' 
+#+END_SRC
+
+#+CAPTION:eg.
+#+BEGIN_SRC go
+echo "xxx/xxxx/xxxxx/yyy" | sed 's|.*/||'
+echo "xxxx/x/xx/xx/xxxx/x/yyyyy" | sed 's|.*\/||'
+#+END_SRC
+
+
+#+CAPTION:output
+#+BEGIN_SRC go
+yyy
+yyyyy
+#+END_SRC
+
+-----------------
+
+
+#+CAPTION:If you want to get the begining of the string :
+#+BEGIN_SRC go
+xxx/xxxx/xxxxx
+xxxx/x/xx/xx/xxxx/x
+#+END_SRC
+
+
+#+CAPTION:You can use
+#+BEGIN_SRC go
+sed 's|\(.*\)/.*|\1|'
+#+END_SRC
+
+
+#+CAPTION:eg.
+#+BEGIN_SRC go
+echo "xxx/xxxx/xxxxx/yyy" | sed 's|\(.*\)/.*|\1|'
+echo "xxxx/x/xx/xx/xxxx/x/yyyyy" | sed 's|\(.*\)/.*|\1|'
+#+END_SRC
+
+#+CAPTION:output
+#+BEGIN_SRC go
+xxx/xxxx/xxxxx
+xxxx/x/xx/xx/xxxx/x
+

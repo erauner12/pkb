@@ -10,10 +10,11 @@ find . -type f -name "*.org" -exec sed -i 's/\[\[file/file/g' {} \;
 # remove the "[[file" and "png]]" from .org files
 find . -type f -name "*.org" -exec sed -i 's/png\]\]/png/g' {} \;
 
-echo -e "\n\nfind and replace this on the following images:\nfile:../../images/\n"
+echo -e "\n\nfind and replace image paths with this:\nfile:../../images/\n"
 
 
-grep -r "//wsl" . | grep -v update.sh | grep -v "<p><img"
+grep -r "//wsl" . | grep -v update.sh | grep -v "<p><img" > change_file_paths.txt
+grep --color=auto -r ".org:" change_file_paths.txt
 echo -e "\n"
 read -rsp $'Press any key to continue...\n' -n1 key
 
@@ -32,10 +33,3 @@ find . -mindepth 3 -regex ".*\.\(html\)" -type f | xargs sed -i '1 i\---\ntitle:
 git add -A
 git commit -m "Regular update"
 git push
-
-
-
-grep -r "//wsl" .
-
-./lab/course/kubernetes.html:<p><img src="file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200418_143658_tLYQXO.png" alt="kubernetes.org_20200418_143658_tLYQXO.png" />
-./lab/course/kubernetes.org:file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200418_143658_tLYQXO.png
