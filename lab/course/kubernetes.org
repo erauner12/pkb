@@ -450,21 +450,61 @@ file:../../images/kubernetes.org_20200415_203648_ajXxvQ.png
 
 ** Module Intro
 
-
+going to use minikube
+- cerner dailyprogrammer uses kind
 
 ** Minikube
 
+*** mac
+
+#+CAPTION:
+#+BEGIN_SRC go
+brew install kubectl
+kubectl --version
+#+END_SRC
+
+#+CAPTION:
+#+BEGIN_SRC go
+brew cask install minikube
+#+END_SRC
+
+*** windows
+https://technology.amis.nl/2019/02/12/rapidly-spinning-up-a-vm-with-ubuntu-docker-and-minikube-using-the-vm-drivernone-option-on-my-windows-laptop-using-vagrant-and-oracle-virtualbox/
+
+go straight to here:
+
+Please click for: Vagrantfile
+Please click for: docker.sh
+Please click for: minikube.sh
+Please click for: kubectl.sh
+
+
+#+CAPTION:
+#+BEGIN_SRC go
+vagrant up
+#+END_SRC
+
+http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/http:kubernetes-dashboard:/proxy/
 
 ** Google Container Engine
-
-
+n/a
 ** Installing in AWS with kops
-
+n/a
 ** Installing Manually with kubeadm
 
-
+n/a
 ** Module Summary
 
+
+- smallest unit of scheduling is a pod (atomic)
+
+- pod manfests (yaml or JSON)
+
+- deployed via other objects
+  - replication controllers etc
+
+- replication controllers
+  - implement desired state
 
 
 * Working with Pods
@@ -472,26 +512,263 @@ file:../../images/kubernetes.org_20200415_203648_ajXxvQ.png
 
 ** Pod Theory
 
+- VM = Container in the docker world
+  - kubernetes = pods are the atomic unit of scheduling
+
+file:../../images/kubernetes.org_20200418_181935_M8nSpF.png
+
+- deploy a pod to a cluster by giving it a manifest file
+  - api server deploys it to a node
+
+
+file:../../images/kubernetes.org_20200418_182037_nDoMNC.png
+
+- pod gets one IP
+  - one IP for each pod
+  - access each container by the port
+    - each ip is it's own network namespace
+    - each container needs to be accessed on it's own port. two containers cannot share the same port
+
+file:../../images/kubernetes.org_20200418_182316_Pvj4kb.png
+
+- interpod communication
+  - every pod talk to every other pod
+file:../../images/kubernetes.org_20200418_182400_5rUGA9.png
+
+
+- intra-pod communication (within the pod)
+
+file:../../images/kubernetes.org_20200418_182454_73XXGe.png
+
+
+- no such thing as a half deployed
+  - pod cannot be parcially up
+
+- one pod : one node
+  - cannot have a pod on two nodes
+
+- you can more than oen container on one pod though
+
+- scheduled on nodes (monions)
+
+- pod lifecycle
+  - manifest -> api server
+    - pod pending state
+      - pod -> running state
+	- pod either succeeds
+	- pod failed
+
+file:../../images/kubernetes.org_20200418_182719_KCcaeg.png
+
+
+
+
+
+
 
 ** Deploying Your First Pod
 
+#+CAPTION:pod.yml
+#+BEGIN_SRC go
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-pod
+spec:
+  containers:
+  - name: hello-ctr
+    image: nigelpoulton/pluralsight-docker-cilatest
+    ports:
+    - containerPort: 8080
+#+END_SRC
+
+- setting the api version
+- setting what kind of object to deploy
+- setting the name of the pod
+- spec is setting what is in the resource
+  - naming the image and specifying the imae
+  - if it is going to be a multi-container pod would just set more up down below this section
+
+
+#+CAPTION:creating the pod
+#+BEGIN_SRC shell
+vagrant@ubuntu-xenial:~$ kubectl create -f pod.yml
+pod/hello-pod created
+
+
+vagrant@ubuntu-xenial:~$ kubectl get pods
+NAME        READY   STATUS              RESTARTS   AGE
+hello-pod   0/1     ContainerCreating   0          2s
+
+vagrant@ubuntu-xenial:~$ kubectl get pods
+NAME        READY   STATUS    RESTARTS   AGE
+hello-pod   1/1     Running   0          25s
+#+END_SRC
+
+#+CAPTION:filter when getting pods
+#+BEGIN_SRC shell
+kubectl get pods/hello-pod
+#+END_SRC
+
+
+#+CAPTION:get all pods in all namespaces
+#+BEGIN_SRC shell
+kubetl get pods --all-namespaces
+#+END_SRC
+
+- we do not typicall manage pods like this though
+
+- assume you wanted 5 instances of a pod, and wanted the desired state to be that way
+file:../../images/kubernetes.org_20200418_184703_zV5rBP.png
+
+- kubernetes makes sure it always stays that way
+
+
+
+
+
 
 ** Deploying Pods via Replication Controllers
+#+CAPTION:rc.yml
+#+BEGIN_SRC yml
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: hello-rc
+spec:
+  replicas: 10
+  selector:
+    app: hello-world
+  template:
+    metadata:
+      labers:
+        app: hello-world
+  containers:
+    - name:
+      image: nigelpoulton/pluralsight-docker-ci:latest
+      ports:
+      - containerPort: 8080
+#+END_SRC
 
+#+CAPTION:create what you just made
+#+BEGIN_SRC go
+kubectl create -f rc.yml
+#+END_SRC
+
+#+CAPTION:upp the amount of instances
+#+BEGIN_SRC yml
+<change rc.yml>
+
+vagrant@ubuntu-xenial:~$ kubectl apply -f rc.yml
+Warning: kubectl apply should be used on resource created by either kubectl create --save-config or kubectl apply
+replicationcontroller/hello-rc configured
+#+END_SRC
+
+#+CAPTION: see that it is 20 now
+#+BEGIN_SRC go
+vagrant@ubuntu-xenial:~$ kubectl get pods              
+NAME             READY   STATUS    RESTARTS   AGE      
+hello-rc-2tqmt   1/1     Running   0          5m36s    
+hello-rc-54q76   1/1     Running   0          5m36s    
+hello-rc-7bpdg   1/1     Running   0          5m36s    
+hello-rc-7kk4c   1/1     Running   0          7m28s    
+hello-rc-8kmkc   1/1     Running   0          5m36s    
+hello-rc-cj99d   1/1     Running   0          7m28s    
+hello-rc-fbffc   1/1     Running   0          7m28s    
+hello-rc-jbjlz   1/1     Running   0          5m36s    
+hello-rc-jnxc5   1/1     Running   0          5m36s    
+hello-rc-k59v6   1/1     Running   0          7m28s    
+hello-rc-k5grr   1/1     Running   0          7m28s    
+hello-rc-l4nst   1/1     Running   0          7m28s    
+hello-rc-mlsrl   1/1     Running   0          5m36s    
+hello-rc-pf9s8   1/1     Running   0          5m36s    
+hello-rc-qd5zp   1/1     Running   0          7m28s    
+hello-rc-rb262   1/1     Running   0          5m36s    
+hello-rc-rhfhv   1/1     Running   0          7m28s    
+hello-rc-vzvzr   1/1     Running   0          7m28s    
+hello-rc-x72kl   1/1     Running   0          5m36s    
+hello-rc-zksnl   1/1     Running   0          7m28s    
+#+END_SRC
 
 ** Module Summary
 
+- theory of services
 
+- create a service the iterative way
+
+- create a serice the decalairtive way
+
+- real-world application
+
+- recap
 ** Kubernetes Services
 
+- services are rest objects in the K8s API
+  - services are an abstraction
+  - services = reliable
+    - pods are not
 
-** Module Intro
+- we have no solid way of connecting to the pods right now
+  - file:../../images/kubernetes.org_20200418_190633_51bw9l.png
 
+    - service gets it's own IP in the middle that never changes
+
+  - no matter what is changing on the replication controller, the service accomodates it
+
+
+- you can hit any of the nodes in the cluster on the port that the container is running on:
+
+  - file:../../images/kubernetes.org_20200418_191019_cZheVp.png
+
+  - whatever comes in or leaves, the service keeps an endpoint directory
+
+
+- labels
+
+file:../../images/kubernetes.org_20200418_191202_o29yew.png
+
+- tell the service to look at the label of the pods
+  - version label specifically
+
+
+- service discovery
+
+  - DNS based (best)
+    - makes sure kubeletes (nodes) can be found
 
 ** The Theory
 
 
 ** Creating a Service the Iterative Way
+
+- going to create a service
+
+#+CAPTION:creating a service
+#+BEGIN_SRC go
+vagrant@ubuntu-xenial:~$ kubectl expose rc hello-rc --name=hello-svc  --target-port=8080 --type=NodePort
+service/hello-svc exposed
+
+
+vagrant@ubuntu-xenial:~$ kubectl describe svc hello-svc
+Name:                     hello-svc
+Namespace:                default
+Labels:                   app=hello-world
+Annotations:              <none>
+Selector:                 app=hello-world
+Type:                     NodePort
+IP:                       10.102.123.13
+Port:                     <unset>  8080/TCP
+TargetPort:               8080/TCP
+NodePort:                 <unset>  31894/TCP
+Endpoints:                172.17.0.10:8080,172.17.0.11:8080,172.17.0.12:8080 + 17 more...
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>
+
+#+END_SRC
+
+
+
 
 
 ** Creating a Service the Declarative Way
@@ -525,4 +802,4 @@ file:../../images/kubernetes.org_20200415_203648_ajXxvQ.png
 
 
 ** What Next?
-file://wsl$/Ubuntu-18.04/home/erauner12/pkb/lab/course/kubernetes.org_20200418_143658_tLYQXO.png
+file:../../images/kubernetes.org_20200418_143658_tLYQXO.png
