@@ -118,6 +118,6 @@ def info(message):
 
 
 index(
-	['lab', 'general','commands','todo'],
+	['lab', 'general','commands','todo','testdir'],
 	['images']
 )

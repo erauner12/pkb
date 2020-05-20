@@ -14,3 +14,7 @@ title: ""
 ## Todo
 
 - [Scripts](/pkb/todo/scripts/index)
+
+## Testdir
+
+- [Course1](/pkb/testdir/course1/index)
