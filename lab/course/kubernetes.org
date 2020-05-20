@@ -11,7 +11,6 @@ https://app.pluralsight.com/library/courses/getting-started-kubernetes/table-of-
 https://blog.exxactcorp.com/building-a-kubernetes-cluster-using-vagrant/
 
 
-#+CAPTION:
 #+BEGIN_SRC go
 git clone https://exxsyseng@bitbucket.org/exxsyseng/k8s_centos.git      # Centos k8s Cluster
 git clone https://exxsyseng@bitbucket.org/exxsyseng/k8s_ubuntu.git      # Ubuntu k8s Cluster
@@ -743,7 +742,6 @@ file:../../images/kubernetes.org_20200418_191202_o29yew.png
 
 - going to create a service
 
-#+CAPTION:creating a service
 #+BEGIN_SRC go
 vagrant@ubuntu-xenial:~$ kubectl expose rc hello-rc --name=hello-svc  --target-port=8080 --type=NodePort
 service/hello-svc exposed
