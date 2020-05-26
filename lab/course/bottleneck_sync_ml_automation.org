@@ -1,0 +1,114 @@
+
+
+
+
+
+
+* TODO Create a jira for this and make subtasks for each
+
+
+
+
+* bottlenecks
+** service.keystore
+*** working on have jira open
+
+** cerner_mustard
+*** look into using grep or diff to get only the following lines:
+*** /Users/er046256/git/alva-config/production/cluster.yml
+**** desired output
+chef_environment: sync_ml_production
+node_groups:
+  b1835.cgf_ny.cernerasp.com_chart:
+  - cgfnysync06.cernerasp.com
+  b1835.cgf_ny.cernerasp.com_mplus:
+  - cgfnysync05.cernerasp.com
+chef_tags:
+  b1835.cgf_ny.cernerasp.com_chart:
+  - rho
+  - non-prod
+  b1835.cgf_ny.cernerasp.com_mplus:
+  - rho
+  - non-prod
+run_lists:
+  b1835.cgf_ny.cernerasp.com_chart:
+  - role[sync_ml_chart_b1835_cgf_ny_cernerasp_com]
+  b1835.cgf_ny.cernerasp.com_mplus:
+  - role[sync_ml_mplus_b1835_cgf_ny_cernerasp_com]
+  b186.usc_ca.cernerasp.com_chart:
+
+*** solution
+**** reformat the file
+# remove all other clients from cluster.yml
+awk '(  /chef\_environment/ || /node\_groups/ || /chef\_tags/ || /run\_lists/ || /cgfny/ || /cgf_ny/ || /\ rho/ || /\ non\-prod/ || /\-\-/ )' > updatedfile
+
+# replace line line separators with valeus
+awk '/\-\-/{c++; if (c==3) { sub("\-\-","run_lists\:")}}1' updatedfile > temp && mv temp updatedfile
+awk '/\-\-/{c++; if (c==2) { sub("\-\-","")}}1' updatedfile > temp && mv temp updatedfile
+awk '/\-\-/{c++; if (c==1) { sub("\-\-","chef_tags\:")}}1' updatedfile > temp && mv temp updatedfile
+
+# insert first two lines of cluster.yml
+awk 'BEGIN{printf("\n")}1' updatedfile > temp && mv temp updatedfile
+awk 'BEGIN{printf("node_groups:")}1' updatedfile > temp && mv temp updatedfile
+awk 'BEGIN{printf("\n")}1' updatedfile > temp && mv temp updatedfile
+awk 'BEGIN{printf("chef_environment: sync_ml_production")}1' updatedfile > temp && mv temp updatedfile
+
+# remove white space
+cat updatedfile | grep '\S' > cluster_b1835.yml && rm updatedfile
+****
+
+** Remedy
+*** we have the api key, need to investigate closedstack to see how to leverage it
+
+
+** PR creation
+*** wait for jenkins implmentation
+
+** chef client too early issue. ran back through and null out the values
+
+
+
+
+** insert vmware tools removal after chef client runs
+
+
+* helpful info that could be inserted in script
+
+** The summon process has begun
+Waiting 30 Minutes for summon process for automatic ping testing.
+*** we could insert closedstack link here
+**** https://closedstack.cernerasp.com/users/ER046256
+**** or we could take this info:
+I, [2020-05-26T15:31:55.310547 #11328]  INFO -- summon: Virtual provision job(b789bb1c-ba3e-4be8-8b76-53fdae9a2e46) has been started.
+I, [2020-05-26T15:31:55.311380 #11328]  INFO -- summon: Virtual provision job(120ddfe5-1d7e-464c-beef-f64396900309) has been started.
+
+and create links based off the job ids
+
+https://closedstack.cernerasp.com/jobs/b789bb1c-ba3e-4be8-8b76-53fdae9a2e46
+
+https://closedstack.cernerasp.com/jobs/<jobid>
+
+** What is the subnet (ex 170.71.221.0/24)? 137.252.78.0/23
+*** https://nethawk.cernerasp.com/dc/client_report
+
+** What is the vlan? (ex LS5-MT-DVS-IHCUT_170_71_221_0-24) samtaz|rhoAppProfile|Web
+*** http://sysappwhq01/vminfo/Search.aspx
+<was nodename>%
+**** port group
+
+** What is the cluster? (ex LS5ESXB3 - Full) LS3ESXWAS12-ACI - Full
+http://sysappwhq01/vminfo/Search.aspx
+<was nodename>%
+**** cluster
+
+** The following datacenter should be in all caps.
+**** DC will be in cluster name, if not:
+https://puma.cernerasp.com/
+
+** The company name should be copied from the Remedy search bar.
+**** https://remedy.cerner.com/arsys/forms/remedyappkc/SHR%3ALandingConsole/Default+Administrator+View/?cacheid=92b4aa6d
+oneview
+
+** What is the hostname for the database (ex ihcutdb11)? samtazdb11
+**** https://puma.cernerasp.com/
+**** insert mill domain and search for "db"
