@@ -1,2 +1,0 @@
-#+SETUPFILE: ../../styles/readtheorg.setup
-#+TITLE: <title>
