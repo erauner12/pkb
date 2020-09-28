@@ -9,9 +9,9 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <!-- Chrome, Firefox OS and Opera Status Bar Color -->
   <meta name="theme-color" content="#FFFFFF">
-  <meta property="og:title" content="gist">
+  <meta property="og:title" content="g">
     <meta property="og:type" content="blog">
-  <title>gist</title>
+  <title>g</title>
   <!-- Favicon -->
     <link rel="shortcut icon" href="📖">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css">
@@ -46,15 +46,90 @@
     </a>
                                 <span class="Navbar__Delim">&centerdot;</span>
     <a href="dd8d9f2cde854eb286ea1342e221c6b1.html">
-      <div class="Navbar__Btn"> <span>gist</span></div>
+      <div class="Navbar__Btn"> <span>g</span></div>
     </a>
                   </nav>
   <header class="Header">
           <div class="Header__Spacer Header__Spacer--NoCover">
     </div>
-        <h1 class="Header__Title">gist</h1>
+        <h1 class="Header__Title">g</h1>
           </header>
-      <article id="https://www.notion.so/dd8d9f2cde854eb286ea1342e221c6b1" class="PageRoot"><div></div></article>  <footer class="Footer">
+      <article id="https://www.notion.so/dd8d9f2cde854eb286ea1342e221c6b1" class="PageRoot"><div id="https://www.notion.so/e0241dbedd344c488f6c3e70425e2d35" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"></span></p></div><pre id="https://www.notion.so/c7a569b373c7447ea087f0f4886f30cc" class="Code Code--NoWrap"><code><span class="SemanticStringArray"><span class="SemanticString"><span>def stack = &quot;chart&quot;
+def domain = &quot;m0657&quot;
+def client = &quot;yava_az&quot;
+def phaseOne = true
+def phase = &quot;1&quot;
+
+if (phaseOne != true){
+    phase = &quot;&quot;
+}
+def csv = new StringReader(&#x27;&#x27;&#x27;FQDN,Client,VIP,DNS,Servers,Datacenter,Group,Ports,Phase,DomainType,SSSD,GlobalName
+m0657.yava_az.cernerasp.com,,,,yavaazsync09.cernerasp.com,ls5,chart,,1,non-prod,true,
+m0657.yava_az.cernerasp.com,,,,yavaazsync10.cernerasp.com,ls5,mplus,,1,non-prod,true,
+m0657.yava_az.cernerasp.com,,,,yavaazsync10.cernerasp.com,ls5,nursing,,1,non-prod,true,
+&#x27;&#x27;&#x27;)
+
+
+def headers=null
+csv.splitEachLine(&#x27;,&#x27;){line-&gt;
+    //remove spaces
+    line=line.collect{it.trim()}
+    if(headers==null){
+        //convert headers array to [name:index] map
+        //csvFile.each { line -&gt;
+        count = 0
+        def headerMapList = []
+        line.each { l -&gt;
+            def headerMap = [:]
+            headerMap.putAt(l, count)
+            headerMapList &lt;&lt; headerMap
+            count = count + 1
+        }
+        count = 0
+        def allMaps = [:]
+        headerMapList.each { m -&gt;
+        tmpVar = m.keySet()
+            def array = []
+            tmpVar.each { a -&gt;
+                array &lt;&lt; a
+            }
+            def headerMap = [:]
+            headerMap = [:]
+            tmp = tmpVar[0]
+            headerMap.put(tmp, count)
+            allMaps &lt;&lt; headerMap
+            count++
+        }
+        headers = allMaps
+        //the key needs to be FQDN and the value can be count ++
+    }else{
+        //print line only when you have a valid value in line
+
+
+        if( line[headers[&#x27;Group&#x27;]] = &quot;${stack}&quot; ){
+            fqdnIndex = headers[&#x27;FQDN&#x27;]
+            serversIndex = headers[&#x27;Servers&#x27;]
+            datacenterIndex = headers[&#x27;Datacenter&#x27;]
+            groupIndex = headers[&#x27;Group&#x27;]
+            phaseIndex = headers[&#x27;Phase&#x27;]
+            domainIndex = headers[&#x27;DomainType&#x27;]
+
+            def tmpMap = [:]
+            tmpMap.putAt(&quot;FQDN&quot;, line[fqdnIndex])
+            tmpMap.putAt(&quot;Servers&quot;, line[serversIndex])
+            tmpMap.putAt(&quot;Datacenter&quot;, line[datacenterIndex])
+            tmpMap.putAt(&quot;Group&quot;, line[groupIndex])
+            tmpMap.putAt(&quot;Phase&quot;, line[phaseIndex])
+            tmpMap.putAt(&quot;DomainType&quot;, line[domainIndex])
+            
+            if ( phaseOne == true ){
+            tmpMap.putAt(&quot;Phase&quot;, &quot;1&quot;)
+            }
+            //println tmpMap
+            return tmpMap
+        }
+    }
+}</span></span></span></code></pre><div id="https://www.notion.so/41e00f9b1d7b499d861eb08a8aa43338" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"></span></p></div></article>  <footer class="Footer">
         <div>&copy; Notablog 2019</div>
         <div>&centerdot;</div>
         <div>Powered by <a href="https://github.com/dragonman225/notablog" target="_blank"
