@@ -9,9 +9,9 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <!-- Chrome, Firefox OS and Opera Status Bar Color -->
   <meta name="theme-color" content="#FFFFFF">
-  <meta property="og:title" content="g">
+  <meta property="og:title" content="gist">
     <meta property="og:type" content="blog">
-  <title>g</title>
+  <title>gist</title>
   <!-- Favicon -->
     <link rel="shortcut icon" href="📖">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css">
@@ -46,90 +46,90 @@
     </a>
                                 <span class="Navbar__Delim">&centerdot;</span>
     <a href="dd8d9f2cde854eb286ea1342e221c6b1.html">
-      <div class="Navbar__Btn"> <span>g</span></div>
+      <div class="Navbar__Btn"> <span>gist</span></div>
     </a>
                   </nav>
   <header class="Header">
           <div class="Header__Spacer Header__Spacer--NoCover">
     </div>
-        <h1 class="Header__Title">g</h1>
+        <h1 class="Header__Title">gist</h1>
           </header>
-      <article id="https://www.notion.so/dd8d9f2cde854eb286ea1342e221c6b1" class="PageRoot"><div id="https://www.notion.so/e0241dbedd344c488f6c3e70425e2d35" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"></span></p></div><pre id="https://www.notion.so/c7a569b373c7447ea087f0f4886f30cc" class="Code Code--NoWrap"><code><span class="SemanticStringArray"><span class="SemanticString"><span>def stack = &quot;chart&quot;
-def domain = &quot;m0657&quot;
-def client = &quot;yava_az&quot;
-def phaseOne = true
-def phase = &quot;1&quot;
+      <article id="https://www.notion.so/dd8d9f2cde854eb286ea1342e221c6b1" class="PageRoot"><div id="https://www.notion.so/e0241dbedd344c488f6c3e70425e2d35" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"></span></p></div><pre id="https://www.notion.so/c7a569b373c7447ea087f0f4886f30cc" class="Code Code--NoWrap"><code><span class="SemanticStringArray"><span class="SemanticString"><span>def stack <span class="token operator">=</span> <span class="token string">"chart"</span>
+def domain <span class="token operator">=</span> <span class="token string">"m0657"</span>
+def client <span class="token operator">=</span> <span class="token string">"yava_az"</span>
+def phaseOne <span class="token operator">=</span> <span class="token boolean">true</span>
+def phase <span class="token operator">=</span> <span class="token string">"1"</span>
 
-if (phaseOne != true){
-    phase = &quot;&quot;
-}
-def csv = new StringReader(&#x27;&#x27;&#x27;FQDN,Client,VIP,DNS,Servers,Datacenter,Group,Ports,Phase,DomainType,SSSD,GlobalName
+<span class="token keyword">if</span> <span class="token punctuation">(</span>phaseOne <span class="token operator">!=</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    phase <span class="token operator">=</span> <span class="token string">""</span>
+<span class="token punctuation">}</span>
+def csv <span class="token operator">=</span> new StringReader<span class="token punctuation">(</span><span class="token string">''</span>'FQDN,Client,VIP,DNS,Servers,Datacenter,Group,Ports,Phase,DomainType,SSSD,GlobalName
 m0657.yava_az.cernerasp.com,,,,yavaazsync09.cernerasp.com,ls5,chart,,1,non-prod,true,
 m0657.yava_az.cernerasp.com,,,,yavaazsync10.cernerasp.com,ls5,mplus,,1,non-prod,true,
 m0657.yava_az.cernerasp.com,,,,yavaazsync10.cernerasp.com,ls5,nursing,,1,non-prod,true,
-&#x27;&#x27;&#x27;)
+<span class="token string">''</span>'<span class="token punctuation">)</span>
 
 
-def headers=null
-csv.splitEachLine(&#x27;,&#x27;){line-&gt;
+def <span class="token assign-left variable">headers</span><span class="token operator">=</span>null
+csv.splitEachLine<span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">{</span>line-<span class="token operator">></span>
     //remove spaces
-    line=line.collect{it.trim()}
-    if(headers==null){
-        //convert headers array to [name:index] map
-        //csvFile.each { line -&gt;
-        count = 0
-        def headerMapList = []
-        line.each { l -&gt;
-            def headerMap = [:]
-            headerMap.putAt(l, count)
-            headerMapList &lt;&lt; headerMap
-            count = count + 1
-        }
-        count = 0
-        def allMaps = [:]
-        headerMapList.each { m -&gt;
-        tmpVar = m.keySet()
-            def array = []
-            tmpVar.each { a -&gt;
-                array &lt;&lt; a
-            }
-            def headerMap = [:]
-            headerMap = [:]
-            tmp = tmpVar[0]
-            headerMap.put(tmp, count)
-            allMaps &lt;&lt; headerMap
+    <span class="token assign-left variable">line</span><span class="token operator">=</span>line.collect<span class="token punctuation">{</span>it.trim<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+    if<span class="token punctuation">(</span>headers<span class="token operator">==</span>null<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        //convert headers array to <span class="token punctuation">[</span>name:index<span class="token punctuation">]</span> map
+        //csvFile.each <span class="token punctuation">{</span> line -<span class="token operator">></span>
+        count <span class="token operator">=</span> <span class="token number">0</span>
+        def headerMapList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        line.each <span class="token punctuation">{</span> l -<span class="token operator">></span>
+            def headerMap <span class="token operator">=</span> <span class="token punctuation">[</span>:<span class="token punctuation">]</span>
+            headerMap.putAt<span class="token punctuation">(</span>l, count<span class="token punctuation">)</span>
+            headerMapList <span class="token operator">&lt;&lt;</span> headerMap
+            count <span class="token operator">=</span> count + <span class="token number">1</span>
+        <span class="token punctuation">}</span>
+        count <span class="token operator">=</span> <span class="token number">0</span>
+        def allMaps <span class="token operator">=</span> <span class="token punctuation">[</span>:<span class="token punctuation">]</span>
+        headerMapList.each <span class="token punctuation">{</span> m -<span class="token operator">></span>
+        tmpVar <span class="token operator">=</span> m.keySet<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            def array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+            tmpVar.each <span class="token punctuation">{</span> a -<span class="token operator">></span>
+                array <span class="token operator">&lt;&lt;</span> a
+            <span class="token punctuation">}</span>
+            def headerMap <span class="token operator">=</span> <span class="token punctuation">[</span>:<span class="token punctuation">]</span>
+            headerMap <span class="token operator">=</span> <span class="token punctuation">[</span>:<span class="token punctuation">]</span>
+            tmp <span class="token operator">=</span> tmpVar<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+            headerMap.put<span class="token punctuation">(</span>tmp, count<span class="token punctuation">)</span>
+            allMaps <span class="token operator">&lt;&lt;</span> headerMap
             count++
-        }
-        headers = allMaps
+        <span class="token punctuation">}</span>
+        headers <span class="token operator">=</span> allMaps
         //the key needs to be FQDN and the value can be count ++
-    }else{
-        //print line only when you have a valid value in line
+    <span class="token punctuation">}</span>else<span class="token punctuation">{</span>
+        //print line only when you have a valid value <span class="token keyword">in</span> line
 
 
-        if( line[headers[&#x27;Group&#x27;]] = &quot;${stack}&quot; ){
-            fqdnIndex = headers[&#x27;FQDN&#x27;]
-            serversIndex = headers[&#x27;Servers&#x27;]
-            datacenterIndex = headers[&#x27;Datacenter&#x27;]
-            groupIndex = headers[&#x27;Group&#x27;]
-            phaseIndex = headers[&#x27;Phase&#x27;]
-            domainIndex = headers[&#x27;DomainType&#x27;]
+        if<span class="token punctuation">(</span> line<span class="token punctuation">[</span>headers<span class="token punctuation">[</span><span class="token string">'Group'</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"<span class="token variable">${stack}</span>"</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+            fqdnIndex <span class="token operator">=</span> headers<span class="token punctuation">[</span><span class="token string">'FQDN'</span><span class="token punctuation">]</span>
+            serversIndex <span class="token operator">=</span> headers<span class="token punctuation">[</span><span class="token string">'Servers'</span><span class="token punctuation">]</span>
+            datacenterIndex <span class="token operator">=</span> headers<span class="token punctuation">[</span><span class="token string">'Datacenter'</span><span class="token punctuation">]</span>
+            groupIndex <span class="token operator">=</span> headers<span class="token punctuation">[</span><span class="token string">'Group'</span><span class="token punctuation">]</span>
+            phaseIndex <span class="token operator">=</span> headers<span class="token punctuation">[</span><span class="token string">'Phase'</span><span class="token punctuation">]</span>
+            domainIndex <span class="token operator">=</span> headers<span class="token punctuation">[</span><span class="token string">'DomainType'</span><span class="token punctuation">]</span>
 
-            def tmpMap = [:]
-            tmpMap.putAt(&quot;FQDN&quot;, line[fqdnIndex])
-            tmpMap.putAt(&quot;Servers&quot;, line[serversIndex])
-            tmpMap.putAt(&quot;Datacenter&quot;, line[datacenterIndex])
-            tmpMap.putAt(&quot;Group&quot;, line[groupIndex])
-            tmpMap.putAt(&quot;Phase&quot;, line[phaseIndex])
-            tmpMap.putAt(&quot;DomainType&quot;, line[domainIndex])
+            def tmpMap <span class="token operator">=</span> <span class="token punctuation">[</span>:<span class="token punctuation">]</span>
+            tmpMap.putAt<span class="token punctuation">(</span><span class="token string">"FQDN"</span>, line<span class="token punctuation">[</span>fqdnIndex<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            tmpMap.putAt<span class="token punctuation">(</span><span class="token string">"Servers"</span>, line<span class="token punctuation">[</span>serversIndex<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            tmpMap.putAt<span class="token punctuation">(</span><span class="token string">"Datacenter"</span>, line<span class="token punctuation">[</span>datacenterIndex<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            tmpMap.putAt<span class="token punctuation">(</span><span class="token string">"Group"</span>, line<span class="token punctuation">[</span>groupIndex<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            tmpMap.putAt<span class="token punctuation">(</span><span class="token string">"Phase"</span>, line<span class="token punctuation">[</span>phaseIndex<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            tmpMap.putAt<span class="token punctuation">(</span><span class="token string">"DomainType"</span>, line<span class="token punctuation">[</span>domainIndex<span class="token punctuation">]</span><span class="token punctuation">)</span>
             
-            if ( phaseOne == true ){
-            tmpMap.putAt(&quot;Phase&quot;, &quot;1&quot;)
-            }
+            <span class="token keyword">if</span> <span class="token punctuation">(</span> phaseOne <span class="token operator">==</span> <span class="token boolean">true</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+            tmpMap.putAt<span class="token punctuation">(</span><span class="token string">"Phase"</span>, <span class="token string">"1"</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
             //println tmpMap
-            return tmpMap
-        }
-    }
-}</span></span></span></code></pre><div id="https://www.notion.so/41e00f9b1d7b499d861eb08a8aa43338" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"></span></p></div></article>  <footer class="Footer">
+            <span class="token builtin class-name">return</span> tmpMap
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></span></span></span></code></pre><div id="https://www.notion.so/41e00f9b1d7b499d861eb08a8aa43338" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"></span></p></div></article>  <footer class="Footer">
         <div>&copy; Notablog 2019</div>
         <div>&centerdot;</div>
         <div>Powered by <a href="https://github.com/dragonman225/notablog" target="_blank"
