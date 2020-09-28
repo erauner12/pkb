@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <!-- Chrome, Firefox OS and Opera Status Bar Color -->
+  <meta name="theme-color" content="#FFFFFF">
+  <meta property="og:title" content="gist">
+    <meta name="description" content="test gist code blocks">
+  <meta property="og:description" content="test gist code blocks">
+    <meta property="og:type" content="blog">
+  <title>gist</title>
+  <!-- Favicon -->
+    <link rel="shortcut icon" href="📖">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism.min.css">
+  <link rel="stylesheet" type="text/css" href="css/SourceSansPro.css">
+  <link rel="stylesheet" type="text/css" href="css/notablog.css">
+  <link rel="stylesheet" type="text/css" href="css/theme.css">
+  <style>
+    :root {
+      font-size: 18px;
+    }
+
+    .DateTagBar {
+      margin-top: 1.0rem;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="Navbar">
+    <a href="index.html">
+      <div class="Navbar__Btn"><span>📖</span> <span>Home</span></div>
+    </a>
+            <span class="Navbar__Delim">&centerdot;</span>
+    <a href="gist.html">
+      <div class="Navbar__Btn"> <span>gist</span></div>
+    </a>
+                        <span class="Navbar__Delim">&centerdot;</span>
+    <a href="draft.html">
+      <div class="Navbar__Btn"><span>🖋</span> <span>This is a draft</span></div>
+    </a>
+                <span class="Navbar__Delim">&centerdot;</span>
+    <a href="about.html">
+      <div class="Navbar__Btn"><span>😀</span> <span>About</span></div>
+    </a>
+                  </nav>
+  <header class="Header">
+          <div class="Header__Spacer Header__Spacer--NoCover">
+    </div>
+        <h1 class="Header__Title">gist</h1>
+            <div class="DateTagBar">
+                <span class="DateTagBar__Item DateTagBar__Date">Posted on Sun, Sep 27, 2020</span>
+                          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--orange">
+            <a href="tag/gist.html">gist</a>
+          </span>
+                  </div>
+          </header>
+      <article id="https://www.notion.so/dd8d9f2cde854eb286ea1342e221c6b1" class="PageRoot"><div id="https://www.notion.so/e0241dbedd344c488f6c3e70425e2d35" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"></span></p></div><pre id="https://www.notion.so/c7a569b373c7447ea087f0f4886f30cc" class="Code Code--NoWrap"><code><span class="SemanticStringArray"><span class="SemanticString"><span>def stack <span class="token operator">=</span> <span class="token string">"chart"</span>
+def domain <span class="token operator">=</span> <span class="token string">"m0657"</span>
+def client <span class="token operator">=</span> <span class="token string">"yava_az"</span>
+def phaseOne <span class="token operator">=</span> <span class="token boolean">true</span>
+def phase <span class="token operator">=</span> <span class="token string">"1"</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>phaseOne <span class="token operator">!=</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    phase <span class="token operator">=</span> <span class="token string">""</span>
+<span class="token punctuation">}</span>
+def csv <span class="token operator">=</span> new StringReader<span class="token punctuation">(</span><span class="token string">''</span>'FQDN,Client,VIP,DNS,Servers,Datacenter,Group,Ports,Phase,DomainType,SSSD,GlobalName
+m0657.yava_az.cernerasp.com,,,,yavaazsync09.cernerasp.com,ls5,chart,,1,non-prod,true,
+m0657.yava_az.cernerasp.com,,,,yavaazsync10.cernerasp.com,ls5,mplus,,1,non-prod,true,
+m0657.yava_az.cernerasp.com,,,,yavaazsync10.cernerasp.com,ls5,nursing,,1,non-prod,true,
+<span class="token string">''</span>'<span class="token punctuation">)</span>
+
+
+def <span class="token assign-left variable">headers</span><span class="token operator">=</span>null
+csv.splitEachLine<span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">{</span>line-<span class="token operator">></span>
+    //remove spaces
+    <span class="token assign-left variable">line</span><span class="token operator">=</span>line.collect<span class="token punctuation">{</span>it.trim<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+    if<span class="token punctuation">(</span>headers<span class="token operator">==</span>null<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        //convert headers array to <span class="token punctuation">[</span>name:index<span class="token punctuation">]</span> map
+        //csvFile.each <span class="token punctuation">{</span> line -<span class="token operator">></span>
+        count <span class="token operator">=</span> <span class="token number">0</span>
+        def headerMapList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        line.each <span class="token punctuation">{</span> l -<span class="token operator">></span>
+            def headerMap <span class="token operator">=</span> <span class="token punctuation">[</span>:<span class="token punctuation">]</span>
+            headerMap.putAt<span class="token punctuation">(</span>l, count<span class="token punctuation">)</span>
+            headerMapList <span class="token operator">&lt;&lt;</span> headerMap
+            count <span class="token operator">=</span> count + <span class="token number">1</span>
+        <span class="token punctuation">}</span>
+        count <span class="token operator">=</span> <span class="token number">0</span>
+        def allMaps <span class="token operator">=</span> <span class="token punctuation">[</span>:<span class="token punctuation">]</span>
+        headerMapList.each <span class="token punctuation">{</span> m -<span class="token operator">></span>
+        tmpVar <span class="token operator">=</span> m.keySet<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            def array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+            tmpVar.each <span class="token punctuation">{</span> a -<span class="token operator">></span>
+                array <span class="token operator">&lt;&lt;</span> a
+            <span class="token punctuation">}</span>
+            def headerMap <span class="token operator">=</span> <span class="token punctuation">[</span>:<span class="token punctuation">]</span>
+            headerMap <span class="token operator">=</span> <span class="token punctuation">[</span>:<span class="token punctuation">]</span>
+            tmp <span class="token operator">=</span> tmpVar<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+            headerMap.put<span class="token punctuation">(</span>tmp, count<span class="token punctuation">)</span>
+            allMaps <span class="token operator">&lt;&lt;</span> headerMap
+            count++
+        <span class="token punctuation">}</span>
+        headers <span class="token operator">=</span> allMaps
+        //the key needs to be FQDN and the value can be count ++
+    <span class="token punctuation">}</span>else<span class="token punctuation">{</span>
+        //print line only when you have a valid value <span class="token keyword">in</span> line
+
+
+        if<span class="token punctuation">(</span> line<span class="token punctuation">[</span>headers<span class="token punctuation">[</span><span class="token string">'Group'</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"<span class="token variable">${stack}</span>"</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+            fqdnIndex <span class="token operator">=</span> headers<span class="token punctuation">[</span><span class="token string">'FQDN'</span><span class="token punctuation">]</span>
+            serversIndex <span class="token operator">=</span> headers<span class="token punctuation">[</span><span class="token string">'Servers'</span><span class="token punctuation">]</span>
+            datacenterIndex <span class="token operator">=</span> headers<span class="token punctuation">[</span><span class="token string">'Datacenter'</span><span class="token punctuation">]</span>
+            groupIndex <span class="token operator">=</span> headers<span class="token punctuation">[</span><span class="token string">'Group'</span><span class="token punctuation">]</span>
+            phaseIndex <span class="token operator">=</span> headers<span class="token punctuation">[</span><span class="token string">'Phase'</span><span class="token punctuation">]</span>
+            domainIndex <span class="token operator">=</span> headers<span class="token punctuation">[</span><span class="token string">'DomainType'</span><span class="token punctuation">]</span>
+
+            def tmpMap <span class="token operator">=</span> <span class="token punctuation">[</span>:<span class="token punctuation">]</span>
+            tmpMap.putAt<span class="token punctuation">(</span><span class="token string">"FQDN"</span>, line<span class="token punctuation">[</span>fqdnIndex<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            tmpMap.putAt<span class="token punctuation">(</span><span class="token string">"Servers"</span>, line<span class="token punctuation">[</span>serversIndex<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            tmpMap.putAt<span class="token punctuation">(</span><span class="token string">"Datacenter"</span>, line<span class="token punctuation">[</span>datacenterIndex<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            tmpMap.putAt<span class="token punctuation">(</span><span class="token string">"Group"</span>, line<span class="token punctuation">[</span>groupIndex<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            tmpMap.putAt<span class="token punctuation">(</span><span class="token string">"Phase"</span>, line<span class="token punctuation">[</span>phaseIndex<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            tmpMap.putAt<span class="token punctuation">(</span><span class="token string">"DomainType"</span>, line<span class="token punctuation">[</span>domainIndex<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            
+            <span class="token keyword">if</span> <span class="token punctuation">(</span> phaseOne <span class="token operator">==</span> <span class="token boolean">true</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+            tmpMap.putAt<span class="token punctuation">(</span><span class="token string">"Phase"</span>, <span class="token string">"1"</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+            //println tmpMap
+            <span class="token builtin class-name">return</span> tmpMap
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></span></span></span></code></pre><div id="https://www.notion.so/41e00f9b1d7b499d861eb08a8aa43338" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"></span></p></div></article>  <footer class="Footer">
+        <div>&copy; Notablog 2019</div>
+        <div>&centerdot;</div>
+        <div>Powered by <a href="https://github.com/dragonman225/notablog" target="_blank"
+            rel="noopener noreferrer">Notablog</a>.
+        </div>
+    </footer>
+</body>
+
+</html>
